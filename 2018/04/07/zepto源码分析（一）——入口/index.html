@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最外层"><span class="post-toc-number">1.</span> <span class="post-toc-text">最外层</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -486,7 +486,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>他山之石，可以攻玉。</p>
-<p>zepto最外层的基本结构是一个匿名的立即执行函数：</p>
+<h2 id="最外层"><a href="#最外层" class="headerlink" title="最外层"></a>最外层</h2><p>zepto最外层的基本结构是一个匿名的立即执行函数：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Zepto = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...省略N行代码...</span></span><br><span class="line">    </span><br><span class="line">    $ = <span class="function"><span class="keyword">function</span>(<span class="params">selector, context</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> zepto.init(selector, context)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...省略N行代码...</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> $</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.Zepto = Zepto</span><br><span class="line"><span class="built_in">window</span>.$ === <span class="literal">undefined</span> &amp;&amp; (<span class="built_in">window</span>.$ = Zepto)</span><br></pre></td></tr></table></figure>
 <p>立即执行函数(IIFE)的主要特征是：</p>
 <ol>
