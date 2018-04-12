@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: random thoughts | 
+            JS中逻辑运算符|| &amp;&amp;的特殊技巧 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Mr.Stupid Bird">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",JavaScript">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: random thoughts | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="JS中逻辑运算符|| &amp;&amp;的特殊技巧 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="JavaScript"> 
 
+    
+        <meta property="article:published_time" content="4月 04, 2018" />
+        <meta property="article:modified_time" content="4月 12, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: random thoughts | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="JS中逻辑运算符|| &amp;&amp;的特殊技巧 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/categories/random-thoughts/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/04/04/构造函数与 new 命令/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Stupid Bird&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Mr.Stupid Bird",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "JS中逻辑运算符|| &&的特殊技巧",
+    "url": "http://yoursite.com/2018/04/04/构造函数与 new 命令/index.html",
+    "datePublished": "4月 04, 2018",
+    "dateModified": "4月 12, 2018",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -275,95 +308,261 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构造函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">构造函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简述构造函数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简述构造函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重新定义JavaScript中的构造函数"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">重新定义JavaScript中的构造函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#new-命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">new 命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#new命令的原理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">new命令的原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推荐写法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">推荐写法</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/thumbnails/abandon.png">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/thumbnails/JavaScript.jpg)">
+    
+            <p class="article-headline-p">
+                JS中逻辑运算符|| &&的特殊技巧
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avater.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mr.Stupid Bird</strong>
+        <span>4月 04, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3aS3IbMQwFQN3/0vEBHMvvgbQzIZsrlVQaoakFCp/XnyvPCxsbGxsbGxsbG/uR7Fd8/vKgt++//+77p33+1udP25ixsbGxz2bnASWBJuAE+RVjFjM2Njb2DezkZ/JQkovIk9yGeLCxsbGx4zKjTWZJ0lqJGRsbGxs7KQPefzdh5K0obGxsbOyVplLe4mnTYdJg+me9NGxsbOzHs/Oh6XNe/+p8GxsbG/vB7PbMGklFcGUZU0SOjY2NfSh7FlxSEuSw2dXUrShsbGzsQ9l5g362ppOktLxVtILHxsbGvoGdJKGV5s76MGBlSQgbGxv7BnZeeOwa7ubFTL70Ew16sbGxsQ9ltys1s2JjBp79CjY2NvYN7F2D1eiH47Q3a2l98z42Njb2BezZ8HXGS2LIU2DyJ2FjY2Ofyp6lnzztJamovYJZGsPGxsY+m90OA9qrmV1W3n6KnomNjY19KDtfYSwa8QtBz4qZ6FNsbGzsQ9mzgNbLg1nbqD3Y2NjYN7DzFk9eWuTJbFbMzEYU2NjY2Gez82Q2W/RZaQ+1CWw438bGxsb+z9mzZcf8yvICJr+4DZtK2NjY2Eew83DztNSmovXGU9TSwsbGxj6Unbd16oQxauW3F1G0q7CxsbEPZefhJpc1Y6w8J/9jsLGxsU9lz9Zu2oDyNaB26WdDLw0bGxv7CHY7vp21+2fXMRsVFBUYNjY29kHstn3fJph24WZXJNjY2Nj3sNuyJEkqu8qM2cHGxsa+gd2eNpHkzabk09kwAxsbG/ts9iwZJCmwbRKtvI7ixMbGxj6anSetfH0np65f2YbxADY2NvYR7KQNNBvftr+162BjY2Nj7wq3LWNmw4ZvEi02NjY2djmC3TUqaAuSH0xg2NjY2I9n58Pd2SC2HRvnKS16MjY2NvbR7LxBM0tX7ZghT2xLTSVsbGzsI9j3HGxsbGxsbGxsbOzHnA9kKKS3JTURxgAAAABJRU5ErkJggg==">
+    
+</ul>
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/03/为什么我放弃中山建协/">为什么我放弃中山建协</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            中山建协是我接手的第一个项目。
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/03/为什么我放弃中山建协/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>4月 03, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/random-thoughts/">random thoughts</a>
-            </span>
+    
 
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JS中逻辑运算符|| &amp;&amp;的特殊技巧&url=http://yoursite.com/2018/04/04/构造函数与 new 命令/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JS中逻辑运算符|| &amp;&amp;的特殊技巧&url=http://yoursite.com/2018/04/04/构造函数与 new 命令/index.html&via=Mr.Stupid Bird" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/04/构造函数与 new 命令/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/04/构造函数与 new 命令/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-
+        <p>重新定义JavaScript中的构造函数。</p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><h3 id="简述构造函数"><a href="#简述构造函数" class="headerlink" title="简述构造函数"></a>简述构造函数</h3><p>JavaScript是一门面向对象语言。</p>
+<p>典型的面向对象编程语言（比如 C++ 和 Java），都有“类”（class）这个概念。所谓“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript 语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。</p>
+<p>在JavaScript中，构造函数就是生成对象的模板。所谓”构造函数”，就是专门用来生成实例对象的函数。它就是对象的模板，描述实例对象的基本结构。一个构造函数，可以生成多个实例对象，这些实例对象都有相同的结构。</p>
+<p>构造函数有两个特点:</p>
+<ol>
+<li>函数体内部使用了<code>this</code>关键字，代表了所要生成的对象实例。</li>
+<li>生成对象的时候，必须使用new命令。</li>
+</ol>
+<h3 id="重新定义JavaScript中的构造函数"><a href="#重新定义JavaScript中的构造函数" class="headerlink" title="重新定义JavaScript中的构造函数"></a>重新定义JavaScript中的构造函数</h3><p>在传统的面向类的语言中，“构造函数”是类的特殊方法，使用<code>new</code>操作符初始化类时会调用类中的构造函数。</p>
+<p>而在JavaScript中，<strong>构造函数只是一些使用<code>new</code>操作符时被调用的函数。</strong></p>
+<p>函数本身并不是构造函数，可如果在函数调用前面加上<code>new</code>关键字，就会把这个函数调用变成一个“构造函数调用”。</p>
+<p>可以这么说：实际上并不存在所谓的“构造函数”，只有对函数的“构造调用”。</p>
+<h2 id="new-命令"><a href="#new-命令" class="headerlink" title="new 命令"></a>new 命令</h2><p>正是因为JavaScript中，构造函数只是一些使用<code>new</code>操作符时被调用的函数，所以包括内置对象函数（Number(…)…等）在内的所有函数都可以用<code>new</code>调用。</p>
+<h3 id="new命令的原理"><a href="#new命令的原理" class="headerlink" title="new命令的原理"></a>new命令的原理</h3><p>当使用<code>new</code>调用函数时，后面的函数会自动依次执行以下操作：</p>
+<ol>
+<li>创建一个新的空对象，作为要返回的实例。</li>
+<li>[[prototype]]连接。即将空对象的原型，指向构造函数的<code>prototype</code>属性。</li>
+<li>将空对象绑定到函数内部的<code>this</code>。</li>
+<li>执行函数内部代码。如果函数没有返回其他对象，那么函数自动返回这个新对象。</li>
+</ol>
+<p>说一下第4步。</p>
+<p>如果构造函数内部有<code>return</code>语句，而且<code>return</code>后面一个对象，<code>new</code>命令会返回<code>return</code>语句指定的对象；否则，就会不管return语句，返回this对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 推荐的写法</span></span><br><span class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle();</span><br><span class="line"><span class="comment">// 不推荐的写法</span></span><br><span class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle;</span><br></pre></td></tr></table></figure>
+<p>上面的代码，由于return返回的是数值，而不是对象，所以<code>new</code>命令就会忽略这个<code>return</code>语句，返回“构造”后的<code>this</code>对象。</p>
+<p>但，如果return返回一个对象，哪怕与<code>this</code>无关，<code>new</code>都会返回这个对象，而不是<code>this</code>“构造”的形象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Vehicle = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.price = <span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">price</span>: <span class="number">2000</span> &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">new</span> Vehicle()).price</span><br><span class="line"><span class="comment">// 2000</span></span><br></pre></td></tr></table></figure>
+<p>前面提到构造函数的一个特点是：“使用了<code>this</code>关键字，代表了所要生成的对象实例”，为什么呢？</p>
+<p>因为，如果对普通函数（内部没有this关键字的函数）使用new命令，则会返回一个空对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMessage</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'this is a message'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> msg = <span class="keyword">new</span> getMessage();</span><br><span class="line"></span><br><span class="line">msg <span class="comment">// &#123;&#125;</span></span><br><span class="line"><span class="keyword">typeof</span> msg <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码中，<code>getMessage</code>函数内部没有<code>this</code>，并<code>return</code>一个字符串。当<code>new</code>命令调用对象的时候，执行<code>new</code>命令的4个步骤：创建了一个空对象，并进行[[prototype]]连接，由于没有this，忽略第3步，新对象没有属性，为空对象。<code>return</code>语句返回的是字符串，所以new命令就忽略了该语句，并返回创建的对象。</p>
+<h3 id="推荐写法"><a href="#推荐写法" class="headerlink" title="推荐写法"></a>推荐写法</h3><p><code>new</code>命令本身就可以执行构造函数，所以后面的构造函数可以带括号，也可以不带括号。下面两行代码是等价的，但是为了表示这里是函数调用，推荐使用括号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 推荐的写法</span></span><br><span class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle();</span><br><span class="line"><span class="comment">// 不推荐的写法</span></span><br><span class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle;</span><br></pre></td></tr></table></figure>
     
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
 
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/04/04/JS中逻辑运算符的特殊技巧/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/03/为什么我放弃中山建协/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
