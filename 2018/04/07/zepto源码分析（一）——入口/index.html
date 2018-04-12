@@ -72,7 +72,7 @@
 
     
         <meta property="article:published_time" content="4月 07, 2018" />
-        <meta property="article:modified_time" content="4月 07, 2018" />
+        <meta property="article:modified_time" content="4月 12, 2018" />
     
 
     <!-- The Twitter Card protocol -->
@@ -113,7 +113,7 @@
     "headline": "zepto源码分析（一）——入口",
     "url": "http://yoursite.com/2018/04/07/zepto源码分析（一）——入口/index.html",
     "datePublished": "4月 07, 2018",
-    "dateModified": "4月 07, 2018",
+    "dateModified": "4月 12, 2018",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -485,7 +485,19 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <p>他山之石，可以攻玉。</p>
+<p>zepto最外层的基本结构是一个匿名的立即执行函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Zepto = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...省略N行代码...</span></span><br><span class="line">    </span><br><span class="line">    $ = <span class="function"><span class="keyword">function</span>(<span class="params">selector, context</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> zepto.init(selector, context)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...省略N行代码...</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> $</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.Zepto = Zepto</span><br><span class="line"><span class="built_in">window</span>.$ === <span class="literal">undefined</span> &amp;&amp; (<span class="built_in">window</span>.$ = Zepto)</span><br></pre></td></tr></table></figure>
+<p>立即执行函数(IIFE)的主要特征是：</p>
+<ol>
+<li>使用函数表达式声明一个函数</li>
+<li>在其后使用括号直接调用</li>
+<li>利用了JavaScript的函数作用域的概念，防止其他代码对该函数内部造成影响，而且不会创造全局变量防止污染全局空间。</li>
+</ol>
+<p>从上面的代码可以看到，这个匿名立即执行函数返回了一个<code>$</code>，这里的<code>$</code>指的是立即执行函数内部的变量，而不是全局变量的<code>$</code>。<code>$</code>又被赋值一个函数，并返回一个<code>zepto.init(selector, context)</code>这个匿名立即执行函数内部的自定义函数。</p>
+<p>到这里可以看到，平时我们使用zepto的时候比如：<code>$(&#39;p&#39;)</code>，会执行到<code>$ = function(selector, context)</code>这一个函数，然后又执行到<code>zepto.init(selector, context)</code>函数，而<code>p</code>这一个字符串也会作为<code>selector</code>参数传到<code>$ = function(selector, context)</code>，然后再传到<code>zepto.init(selector, context)</code>函数里。</p>
+<p>最后两行将Zepto暴露为全局变量，并利用JavaScript运算符特性，判断<code>$</code>是否被占用，如果没有被占用，就将<code>$</code>赋值为<code>Zepto</code>，这样就能够使用<code>$</code>调用Zepto，比如：<code>$(&#39;p&#39;)</code>。</p>
+
     
 
     
