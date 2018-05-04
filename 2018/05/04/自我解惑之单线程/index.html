@@ -12,7 +12,7 @@
     
     <title>
         
-            Hello World | 
+            自我解惑之单线程 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Mr.Stupid Bird">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",JavaScript">
 
     <!-- Site Verification -->
     
@@ -65,18 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hello World | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="自我解惑之单线程 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="JavaScript"> 
 
     
-        <meta property="article:published_time" content="4月 01, 2018" />
-        <meta property="article:modified_time" content="4月 01, 2018" />
+        <meta property="article:published_time" content="5月 04, 2018" />
+        <meta property="article:modified_time" content="5月 04, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Hello World | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="自我解惑之单线程 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/04/01/hello-world/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/05/04/自我解惑之单线程/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -110,10 +110,10 @@
         },
         "description": "Hi, nice to meet you"
     },
-    "headline": "Hello World",
-    "url": "http://yoursite.com/2018/04/01/hello-world/index.html",
-    "datePublished": "4月 01, 2018",
-    "dateModified": "4月 01, 2018",
+    "headline": "自我解惑之单线程",
+    "url": "http://yoursite.com/2018/05/04/自我解惑之单线程/index.html",
+    "datePublished": "5月 04, 2018",
+    "dateModified": "5月 04, 2018",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分析-思考"><span class="post-toc-number">2.</span> <span class="post-toc-text">分析+思考</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么JavaScript是单线程？"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">为什么JavaScript是单线程？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#任务队列"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">任务队列</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -360,20 +360,11 @@
                 
     <!-- Paradox Post Header -->
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/thumbnails/JavaScript.jpg)">
     
             <p class="article-headline-p">
-                Hello World
+                自我解惑之单线程
             </p>
         </div>
 
@@ -392,7 +383,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Mr.Stupid Bird</strong>
-        <span>4月 01, 2018</span>
+        <span>5月 04, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +405,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYklEQVR42u3awW6DMBAE0Pz/T7fXShXNjBcDjZ5PUQLBzwe8mvXr66PHCw8PDw8PDw8P72G8Vzx+Xn907+9rju46msNkbnh4eHhX8t68ag9IyfVHd7VLWTwLDw8P70Je+5ic0U5xtAnh4eHhPYw3xx9deVr5joeHh/cwXjKtyVaBh4eH9794bcmbPDgPbZPAd3vWgoeHhxfzJg2w3Z9v7u/h4eHh/eK149yCu92iohni4eHhbeYlEW17rCopjs/6z8WsBQ8PD2/Mmz+sPQSQF9P1ouDh4eFt5iW3RRHAn9+3xXe+OeHh4eFdz1sLanf8etrhVzw8PLzNvPzVnEe050YM9VEwPDw8vM28pFxOXsoT8Fq8i4eHh3cXL59uMvUc0D735JMReHh4eANeG8ju20jawBcPDw/vLl5UpJbRQH44NY858q0CDw8P70peMqFJCd4eHcjjXTw8PLzn8CYtrrzRlS/BYoyLh4eHt4G31ppqF2geWyT34uHh4e3mzQ9OJYXvWiCbbCd4eHh4d/G+gnFW8Do5kBp9g4eHh7eZl8epUfOpnGjbTluMcfHw8PA28PL2Ur5tFPHBuEDHw8PDu5K3WLaWUcKb+CCIG5JZ4eHh4V3Da8ckOGgD4sUFxcPDw9vMawOIyQGptcC3jpvx8PDwLuG1zft8C1lDtv+Gh4eHdxcvL5eLdlS55ZywEHh4eHgP47UNqja6nbfZ8PDw8J7Myw8fTFplpx0dwMPDw9vAS2KF9qUfxQfxQYHoWXh4eHiX8OaRwWSB2rD4za94eHh4m3mfN/Dw8PDw8PDw8B4wvgGZWWkEdARVaAAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2UlEQVR42u3aS47jMAwFwNz/0j0HmI7znugMPFJp1WjEtoobgp/Xz5HnhY2NjY2NjY2Njf1I9is+fz/17j3J/z9c8fKLi3fGxsbG3prdXuId6Zr97pfzoEeBw8bGxj6APbnidSCS9HaNye+DjY2NjZ2wJxe6hiVPYWNjY2N/L4G1pUVOxcbGxsa+q6mUhGOS2NZIX++lYWNjYz+e3aacJ/z9T+fb2NjY2A9mt6cdD6wVJ/Oln19ujo2Njb0pO08MybJOWzbMv16MirGxsbG3ZudLM8nwNR8J52FqQ4CNjY19Jrtt9K8lobbwyMcJHwKEjY2NvTU7H/22BcOoeChbTqOVHWxsbOz/lj1v67fFSfL7tWZWkcCwsbGxD2Ang9X8cnnDKG8q5eHGxsbGPoHdJpKkPdSGqaXWX8fGxsbemp03hvJmU36hthWVhwwbGxv7TPakhGhb+clY9zppFSNhbGxs7GPYbXrIRwt5MbO2lFksX2JjY2Nvx14rSNoWT7tS2Y6Z6wSGjY2NfQw7KS3aZtPa+KFd98TGxsY+h90mg7WhbxKg/D55EYKNjY19Dju/YlvGJAFtU91tKzvY2NjYW7DbhnvRlF/irTWYPqRPbGxs7E3Z84QxX9ZJns0HDNF4ABsbG3s7dtskagcD9765HUJjY2Njn8NO0sA3BrF5OTEKEDY2NvZh7OtCIi8boiLhpmJjsRTBxsbG3oidvzQP01qqS9JYnW6xsbGxj2Enn8+XI/Ngzce9H96AjY2NvSm7PW250g6VJ4XHh0BgY2Njb8puVxvbdk9euuQNrHyVExsbG/scdp60JqS7mll5AwsbGxv7NHaePO5aiG+Lk9HXsbGxsbHLBlA7yk1C1pYo2NjY2NiTJs7akk2bloohBDY2NvYB7LXhbrvKk7xhMuL94qYSNjY29oPZbbMmuW7bxE9SZtuQwsbGxj6Bfc7BxsbGxsbGxsbGfsz5A2w7e+6H7d1rAAAAAElFTkSuQmCC">
     
 </ul>
     
@@ -427,7 +418,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
     </ul>
     
 
@@ -443,7 +434,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello World&url=http://yoursite.com/2018/04/01/hello-world/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=自我解惑之单线程&url=http://yoursite.com/2018/05/04/自我解惑之单线程/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -452,7 +443,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello World&url=http://yoursite.com/2018/04/01/hello-world/index.html&via=Mr.Stupid Bird" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=自我解惑之单线程&url=http://yoursite.com/2018/05/04/自我解惑之单线程/index.html&via=Mr.Stupid Bird" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -461,7 +452,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/01/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/04/自我解惑之单线程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -470,7 +461,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/01/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/04/自我解惑之单线程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -494,15 +485,36 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在看《你不知道的JavaScript上卷》第五章作用域闭包的时候看到这段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;,i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于其中每秒一次输出五次6的结果还是心存疑惑，只能用书上的：</p>
+<blockquote>
+<p>延迟函数的回调会在循环结束时才执行。</p>
+</blockquote>
+<p>即“for循环执行完后，才开始执行setTimeout，所以才输出五次6”这样敷衍应付自己。<br>直到今天看到了<a href="https://www.imooc.com/article/26094" target="_blank" rel="noopener">你不知道的Javascript：有趣的setTimeout</a>这篇文章，才算是给自己一个还算满意的答案。</p>
+<h2 id="分析-思考"><a href="#分析-思考" class="headerlink" title="分析+思考"></a>分析+思考</h2><p>众所周知，JavaScript在ES6出现以前，是没有块状作用域的，也就是说，在上面的代码中：for循环中用var定义的变量i，是全局变量，所以，每次for循环都i是在更新这个i。这个for循环的终止条件是i不&lt;=5，而条件首次成立的i值为6，所以i=6，输出的全部都是全局变量i的最终值6。</p>
+<p>而我心存疑虑的地方是：为什么for循环执行完毕后才开始执行setTimeout，而不是一次迭代执行一次。</p>
+<p>答案是JavaScript的一大特性：单线程</p>
+<h3 id="为什么JavaScript是单线程？"><a href="#为什么JavaScript是单线程？" class="headerlink" title="为什么JavaScript是单线程？"></a>为什么JavaScript是单线程？</h3><p>单线程，也就是说，同一个时间只能做一件事。那为什么JavaScript不能有多个线程呢？<br>JavaScript的单线程，与它的用途有关。作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题。比如，假定JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？</p>
+<p>所以，为了避免复杂性，从一诞生，JavaScript就是单线程，这已经成了这门语言的核心特征，将来也不会改变。</p>
+<p>为了利用多核CPU的计算能力，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以，这个新标准并没有改变JavaScript单线程的本质。</p>
+<h3 id="任务队列"><a href="#任务队列" class="headerlink" title="任务队列"></a>任务队列</h3><p>单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。</p>
+<p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入”任务队列”（task queue）的任务，只有主线程中的同步任务执行完毕，才会去读取”任务队列”，这就是JavaScript的运行机制。这个过程会不断重复，如下：</p>
+<ol>
+<li><p>所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。</p>
+</li>
+<li><p>主线程之外，还存在一个”任务队列”（task queue）。只要异步任务有了运行结果，就在”任务队列”之中放置一个事件。</p>
+</li>
+<li><p>一旦”执行栈”中的所有同步任务执行完毕，系统就会读取”任务队列”，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。</p>
+</li>
+<li><p>主线程不断重复上面的第三步。</p>
+</li>
+</ol>
+<p>而setTimeout，就被JavaScript定义为异步任务。setTimeout(fn,0)的含义是，指定某个任务在主线程最早可得的空闲时间执行，也就是说，尽可能早得执行。它在”任务队列”的尾部添加一个事件，因此要等到同步任务和”任务队列”现有的事件都处理完，才会得到执行。</p>
+<p>每次for循环的迭代，都将setTimeout中的回调函数加入任务队列等待执行。也就是说，只有同步任务中的for循环完全结束，主线程中才会去任务队列中找到尚未执行的五个setTimeout（五次迭代）回调函数并顺序执行（队列的特点是先进先出）。而此时，i已经经过循环结束变成了6，所以，此时主线程执行的，是五个一模一样的打印i的回调函数，即打印五个6。执行顺序如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;&#125;</span><br><span class="line">i = <span class="number">6</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br><span class="line"><span class="built_in">console</span>.log(i),i*<span class="number">1000</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.imooc.com/article/26094" target="_blank" rel="noopener">你不知道的Javascript：有趣的setTimeout</a></li>
+<li><a href="http://www.ituring.com.cn/book/1488" target="_blank" rel="noopener">你不知道的Javascript上卷</a></li>
+</ul>
 
     
 
@@ -522,19 +534,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/04/01/start-blogging/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/04/11/构造函数与 new 命令/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -620,7 +632,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">7</span></a>
             </ul>
         </li>
         
@@ -638,7 +650,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/random-thoughts/">random thoughts<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/学习笔记/">学习笔记<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/瞎折腾/">瞎折腾<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
