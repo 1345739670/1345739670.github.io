@@ -12,7 +12,7 @@
     
     <title>
         
-            标签: 胡言乱语,random thoughts | 
+            Git 新建远程仓库并关联本地项目 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 胡言乱语,random thoughts | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="Git 新建远程仓库并关联本地项目 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="7月 31, 2018" />
+        <meta property="article:modified_time" content="7月 31, 2018" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签: 胡言乱语,random thoughts | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="Git 新建远程仓库并关联本地项目 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/tags/胡言乱语-random-thoughts/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/07/31/Git 新建远程仓库并关联本地项目/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Stupid Bird&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Mr.Stupid Bird",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "Git 新建远程仓库并关联本地项目",
+    "url": "http://yoursite.com/2018/07/31/Git 新建远程仓库并关联本地项目/index.html",
+    "datePublished": "7月 31, 2018",
+    "dateModified": "7月 31, 2018",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -275,95 +308,242 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/thumbnails/abandon.png">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/03/为什么我放弃中山建协/">为什么我放弃中山建协</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            中山建协是我接手的第一个项目。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/03/为什么我放弃中山建协/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>4月 03, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/random-thoughts/">random thoughts</a>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
+        </a>
     </div>
-</div>
+    -->
 
-            
-            
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#新建远程仓库"><span class="post-toc-number">2.</span> <span class="post-toc-text">新建远程仓库</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#新建本地仓库"><span class="post-toc-number">3.</span> <span class="post-toc-text">新建本地仓库</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#将远程仓库关联本地仓库"><span class="post-toc-number">4.</span> <span class="post-toc-text">将远程仓库关联本地仓库</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#推送并追踪分支"><span class="post-toc-number">5.</span> <span class="post-toc-text">推送并追踪分支</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
-    
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Git 新建远程仓库并关联本地项目
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avater.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mr.Stupid Bird</strong>
+        <span>7月 31, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADjElEQVR42u3aQW7jQAwEwPz/07vXAAsr3eSM4wVKp8CRrVHp0CKHX38c344vBDhw4MCBAwcOHDhwfDDHV3y8/LkX53z/JP/95Lr5d5N7wYEDBw4cNzh+iKLFOcmNPfPNHkC+Thw4cODAcY/jOcDyc5JoTOL2FOjzOnHgwIEDx6dxPC89Ke3y20tCHQcOHDhw/I8ceeF0qiGYBDAOHDhw4Pg0jnwRs/PrDaFFhL+pV4oDBw4cONYDDZ//91vnO3DgwIEDxz8c7ZFEY76BlBdv9w4cOHDgwHGWIw+q59ueNQRz7rx1mKwfBw4cOHDc40jGFJ4XtBl3mA065O3C6OUABw4cOHAc5WjH4/JiLA/FfHChfRjDEg4HDhw4cBziSIItubH9qEH+YHKUOmhx4MCBA8eIo73hNszyxbWDFMkDiM7EgQMHDhxHOdrlbkqszQhFXgq22104cODAgeMGx2ZEIG/ztdtIs/Zl27LEgQMHDhw3OIZDZsHl9+3FfJiv3XDCgQMHDhw3OIZbNaOYbNuIs/jMXwJw4MCBA8d7OPJFt+dsYngf1cVAAw4cOHDgWHNs2nCbzaoNcdKUjChx4MCBA8dRjk3gPX932KqLW4F5JK8GGnDgwIEDR8nRji+00di2/zbtxWHBiQMHDhw4rnG0G0jtqEEesbNWYL5NhQMHDhw47nHkDcEZTf7fdg2nSkccOHDgwHGWoy178vGC/dJnDcEcEQcOHDhw3OCYBeommNtBuuSXk5ISBw4cOHC8k2O/qTMbmMsDckP8Q9MTBw4cOHAc5dgURe0izqK313pZBOLAgQMHjgscw7ZaOUaQNwHbM5NBChw4cODA8R6OvFiabQjNtqnagbxVmYcDBw4cOC5zbJa4H3rIg3PzCHHgwIEDx29xnCqT2qW3rcNkzS+vjgMHDhw43sKxuaW2rGqHJJK4LSIZBw4cOHBc49iXYZuFtvG/eSHAgQMHDhz3OGYRu4m9WZTOHlXUNMSBAwcOHEc5ZhHVfpJsAj1vZW1eDur3Dhw4cODAsea4vrVTblzNaIYvBDhw4MCB4xpHcnv55fMicNMinBHjwIEDB45P42ijNA/RvGjctA5x4MCBA8enceTDDUmBN0PPHwMOHDhw4PgtjryU2hRgybZTC51HOA4cOHDgeA/HqUZb3gqcbU3NhuR+eDA4cODAgeMohwMHDhw4cODAgQMHDhwfdvwFmhF8hfFaym4AAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Git 新建远程仓库并关联本地项目&url=http://yoursite.com/2018/07/31/Git 新建远程仓库并关联本地项目/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Git 新建远程仓库并关联本地项目&url=http://yoursite.com/2018/07/31/Git 新建远程仓库并关联本地项目/index.html&via=Mr.Stupid Bird" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/31/Git 新建远程仓库并关联本地项目/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/31/Git 新建远程仓库并关联本地项目/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>经常这么做，所以记录一下工作流程。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>安装 Git</li>
+<li>拥有 github 账号</li>
+<li>在 Github 进行 SSH 加密</li>
+</ul>
+<h1 id="新建远程仓库"><a href="#新建远程仓库" class="headerlink" title="新建远程仓库"></a>新建远程仓库</h1><h1 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h1><ol>
+<li>初始化本地仓库<br>可以把远程仓库下载至本地，再把已经写好的代码复制过来。<br>并在本地项目文件夹根目录执行以下命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">"Project initialization"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="将远程仓库关联本地仓库"><a href="#将远程仓库关联本地仓库" class="headerlink" title="将远程仓库关联本地仓库"></a>将远程仓库关联本地仓库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:1345739670/yourrepname.git</span><br></pre></td></tr></table></figure>
+<h1 id="推送并追踪分支"><a href="#推送并追踪分支" class="headerlink" title="推送并追踪分支"></a>推送并追踪分支</h1><p>初次提交要加上 -u 参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 为防止出错先 pull 一下</span></span><br><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line"><span class="comment"># 执行完后如果有冲突，先去解决冲突再执行下git push</span></span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/29/暑假日志/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -524,6 +704,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
