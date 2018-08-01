@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: random thoughts | 
+            初试MongoDB | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: random thoughts | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="初试MongoDB | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="8月 01, 2018" />
+        <meta property="article:modified_time" content="8月 01, 2018" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: random thoughts | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="初试MongoDB | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/categories/random-thoughts/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/08/01/初试MongoDB/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Stupid Bird&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Mr.Stupid Bird",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "初试MongoDB",
+    "url": "http://yoursite.com/2018/08/01/初试MongoDB/index.html",
+    "datePublished": "8月 01, 2018",
+    "dateModified": "8月 01, 2018",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -275,95 +308,260 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/thumbnails/abandon.png">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/03/为什么我放弃中山建协/">为什么我放弃中山建协</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            中山建协是我接手的第一个项目。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/03/为什么我放弃中山建协/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>4月 03, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/random-thoughts/">random thoughts</a>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
+        </a>
     </div>
-</div>
+    -->
 
-            
-            
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装与准备"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装与准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#初次运行"><span class="post-toc-number">2.</span> <span class="post-toc-text">初次运行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础配置"><span class="post-toc-number">3.</span> <span class="post-toc-text">基础配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开启-interface-页面"><span class="post-toc-number">4.</span> <span class="post-toc-text">开启 interface 页面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建并启动MongoDB服务"><span class="post-toc-number">5.</span> <span class="post-toc-text">创建并启动MongoDB服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加环境变量"><span class="post-toc-number">6.</span> <span class="post-toc-text">添加环境变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-mongo-VUE"><span class="post-toc-number">7.</span> <span class="post-toc-text">使用 mongo VUE</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#报错"><span class="post-toc-number">8.</span> <span class="post-toc-text">报错</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
-    
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                初试MongoDB
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avater.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mr.Stupid Bird</strong>
+        <span>8月 01, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaElEQVR42u3b0U7DQAwEwPz/T8MrUmlZ23fXUE2eEBRyA1Lsrs319dHXhYeHh4eHh4eHdzPeFV8/X//4vY9fffaaZ6/85aDFs+Hh4eGd5CW3eX3L15jk0K/vm5wNDw8P7zxvUgyqRSX5TPVseHh4ePfkJQUgLxV5g46Hh4f3f3l5+zsvFXh4eHj35+Vv+POHfhI65KHw9qwFDw8PL+ZNBmC7P37zfA8PDw9v0dJVMvpKAt+8zDSXrvDw8PA28KohQn7cXrucLGmNlq7w8PDwFvF6K1CTBYJq4774HQMeHh7emNeLcfMmO18dyMtVs6XGw8PDG/OqDWteVJIHfW9shoeHh3c3XvVAvRA2iXGrLT4eHh7ee3nVY0U3bt2lvIaFh4eHt5k3iVmTUlEdgy0YtuHh4eFt5k2OkjTf1SghQf5xcjw8PLzNvN6hq61w8nCvFqfRfA8PDw9vwKsOtPI2uspYFUng4eHhneHtCAjytrg3ZmsOwPDw8PAW8arHylesckD1HwMKWQseHh7eNt5k2bTaFvfGZgvCCDw8PLwxrxqVJqOyPObYsgiLh4eHd4Q3jyHydrnaoFf/GHh4eHgneb3Ger7emvxa85+Jh4eHd4bXi2h3BBPV5hsPDw/vPK969djz0KFQZvDw8PA28+bN8XwVoFeQynUPDw8PbylvVTFoBq9xENwsDHh4eHjbeMlK6DW4eqFtOfLAw8PDuz2vWkiqawTV8AIPDw/vbrzJd1WXFZIxGx4eHt57eUkY0SPlvAVsPDw8vCO83gAsf8TnjfiCFQQ8PDy8zbzPu/Dw8PDw8PDw8G5wfQP5isRweb1EWgAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=初试MongoDB&url=http://yoursite.com/2018/08/01/初试MongoDB/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=初试MongoDB&url=http://yoursite.com/2018/08/01/初试MongoDB/index.html&via=Mr.Stupid Bird" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/01/初试MongoDB/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/01/初试MongoDB/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>你好，MongoDB。</p>
+<h2 id="安装与准备"><a href="#安装与准备" class="headerlink" title="安装与准备"></a>安装与准备</h2><p>由于电脑用的 win7，并考虑到版本的稳定性问题。并未使用最新的 MongoDB4.0，而是mongodb-win32-x86_64-2008plus-ssl-3.4.1-signed。</p>
+<p>下载对应版本，并安装。</p>
+<p>在 choose setup type 这一步的时候，如果选择 Complete 会直接默认安装到默认的C盘，而如果选择 Custom，就可以自定义安装路径。</p>
+<p>在任意目录下创建两个文件夹：</p>
+<ul>
+<li>数据库路径（data 目录）</li>
+<li>日志路径（logs 目录）</li>
+<li>配置路径（etc 目录）<br>在日志路径下新建日志文件（mongo.log 文件）<br>在配置路径下新建配置文件（mongo.conf 文件）</li>
+</ul>
+<h2 id="初次运行"><a href="#初次运行" class="headerlink" title="初次运行"></a>初次运行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录下的 bin 文件夹</span></span><br><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> <span class="string">"Program Files\MongoDB\Server\3.4\bin"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line"><span class="comment"># --dbpath 后面的参数是你自己刚才新建的数据库路径</span></span><br><span class="line">mongod --dbpath D:\MongoDB\data</span><br></pre></td></tr></table></figure>
+<p>然后启动浏览器打开 <a href="http://127.0.0.1:27017" target="_blank" rel="noopener">http://127.0.0.1:27017</a> 如有有行英文：It looks like you are trying to assess MongoDB over HTTP on the native drive port,那就说明已经启动成功了。</p>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><p>虽然已经连接成功，但是每次这样实在是太麻烦了。所以需要进行一些配置。</p>
+<p>打开配置路径下的 mongo.conf 文件，进行配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#数据库路径  </span><br><span class="line">dbpath=D:\MongoDB\data</span><br><span class="line">#日志输出文件路径  </span><br><span class="line">logpath=D:\MongoDB\logs\mongo.log  </span><br><span class="line">#错误日志采用追加模式  </span><br><span class="line">logappend=true  </span><br><span class="line">#启用日志文件，默认启用  </span><br><span class="line">journal=true  </span><br><span class="line">#这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false  </span><br><span class="line">quiet=true  </span><br><span class="line">#端口号 默认为27017  </span><br><span class="line">port=27017</span><br><span class="line">#http 配置</span><br><span class="line">httpinterface=true</span><br></pre></td></tr></table></figure></p>
+<p>打开命令行运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录下的 bin 文件夹</span></span><br><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> <span class="string">"Program Files\MongoDB\Server\3.4\bin"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line"><span class="comment"># --config 后面的参数是你自己的配置文件</span></span><br><span class="line">mongod --config <span class="string">"D:\MongoDB\mongo.conf"</span></span><br></pre></td></tr></table></figure></p>
+<p>启动浏览器打开 <a href="http://127.0.0.1:27017" target="_blank" rel="noopener">http://127.0.0.1:27017</a> ，还是那行英文。</p>
+<h2 id="开启-interface-页面"><a href="#开启-interface-页面" class="headerlink" title="开启 interface 页面"></a>开启 interface 页面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --config <span class="string">"D:\MongoDB\mongo.conf"</span> --httpinterface</span><br></pre></td></tr></table></figure>
+<p>打开 <a href="http://127.0.0.1:28017" target="_blank" rel="noopener">http://127.0.0.1:28017</a> ,即可打开 interface 页面。</p>
+<p>如果觉得麻烦，可以在配置文件中加上这项配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#http 配置</span><br><span class="line">httpinterface=true</span><br></pre></td></tr></table></figure></p>
+<p>配置完后直接启动，不需要加刚才的选项照样可以开启interface 页面：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --config <span class="string">"D:\MongoDB\mongo.conf"</span></span><br></pre></td></tr></table></figure></p>
+<p>再次打开 <a href="http://127.0.0.1:28017" target="_blank" rel="noopener">http://127.0.0.1:28017</a> ,可以正常访问 interface 页面：</p>
+<h2 id="创建并启动MongoDB服务"><a href="#创建并启动MongoDB服务" class="headerlink" title="创建并启动MongoDB服务"></a>创建并启动MongoDB服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建 MongoDB 服务</span></span><br><span class="line">mongod --config <span class="string">"D:\Mongo\mongo.conf"</span>  --install --serviceName <span class="string">"MongoDB"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 MongoDB 服务</span></span><br><span class="line">net start MongoDB</span><br></pre></td></tr></table></figure>
+<p>在使用 <code>--install --serviceName &quot;MongoDB&quot;</code> 创建服务后，可以在控制面板的本地服务中看到该服务，并且处于未开启状态，所以可以手动开启，也可以使用<code>net start MongoDB</code>开启。</p>
+<h2 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h2><p>将 MongoDB 安装目录下的 bin 文件夹的路径添加到系统环境变量的 path 变量，切记，在加之前在前面加有个分号；和别的环境变量区分。</p>
+<p>添加了环境变量以后，就可以直接输入mongo启动，而不用切换到安装目录下，再输入mongo启动。</p>
+<h2 id="使用-mongo-VUE"><a href="#使用-mongo-VUE" class="headerlink" title="使用 mongo VUE"></a>使用 mongo VUE</h2><h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><ul>
+<li>URL string parser<br>DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.</li>
+</ul>
+<p>大致意思是连接mongodb数据库的链接解析器会在未来移除，要使用新的解析器，通过配置{ useNewUrlParser:true }来连接。</p>
+<p>mongoose.connect(“mongodb://username:password@localhost:27017/dbname”, { useNewUrlParser: true })</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/31/npm install 报错 platform unsupported/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
