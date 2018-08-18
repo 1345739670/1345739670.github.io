@@ -12,7 +12,7 @@
     
     <title>
         
-            exports 和 module.exports 的区别 | 
+            原型的实际应用及原型的插件扩展机制 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -65,18 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="exports 和 module.exports 的区别 | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="原型的实际应用及原型的插件扩展机制 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="8月 16, 2018" />
-        <meta property="article:modified_time" content="8月 16, 2018" />
+        <meta property="article:published_time" content="8月 18, 2018" />
+        <meta property="article:modified_time" content="8月 18, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="exports 和 module.exports 的区别 | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="原型的实际应用及原型的插件扩展机制 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/16/exports 和 module.exports 的区别/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/08/18/原型的实际应用及原型的插件扩展机制/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -110,10 +110,10 @@
         },
         "description": "Hi, nice to meet you"
     },
-    "headline": "exports 和 module.exports 的区别",
-    "url": "http://yoursite.com/2018/08/16/exports 和 module.exports 的区别/index.html",
-    "datePublished": "8月 16, 2018",
-    "dateModified": "8月 16, 2018",
+    "headline": "原型的实际应用及原型的插件扩展机制",
+    "url": "http://yoursite.com/2018/08/18/原型的实际应用及原型的插件扩展机制/index.html",
+    "datePublished": "8月 18, 2018",
+    "dateModified": "8月 18, 2018",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原型的实际应用"><span class="post-toc-number">1.</span> <span class="post-toc-text">原型的实际应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#zepto-如何使用原型"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">zepto 如何使用原型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#jQuery-如何使用原型"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">jQuery 如何使用原型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原型的插件扩展机制"><span class="post-toc-number">2.</span> <span class="post-toc-text">原型的插件扩展机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#zepto-和-jQuery-的扩展机制"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">zepto 和 jQuery 的扩展机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么要把原型方法放在-fn"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">为什么要把原型方法放在 $.fn ?</span></a></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -373,7 +373,7 @@
         
     
             <p class="article-headline-p">
-                exports 和 module.exports 的区别
+                原型的实际应用及原型的插件扩展机制
             </p>
         </div>
 
@@ -392,7 +392,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Mr.Stupid Bird</strong>
-        <span>8月 16, 2018</span>
+        <span>8月 18, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +414,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aUU4kMQwEUO5/6d0DoBmq7EZA8voLMTTJCxKWXfn4d+XzgY2NjY2NjY2Njf0r2R/x8+rnXy7z6dP37yafzvaMjY2NfQP7i3/9n5Zs302Q7w96s2dsbGzse9ibhfPN5SUqP/poz9jY2NjYcUFqkUlJe+BPhY2NjY09ajCSxmZf6rCxsbGx2wHN+y3mxa8NGH5sloaNjY3969mzYf3Pfv0D+TY2Njb2r2S3T778s4UtKVpf7BwbGxv7UHayfDv62XynDXqLAAMbGxv7AvYsuM3LVV7qNviXImxsbOxD2fuhf3soeTAwGyo90IFhY2Nj/0H2LAyIFosvbrahRV66sLGxsc9m54UkH+7nR5YHD/nYazVUwsbGxv6D7PYIklakbTDyAtZ+io2NjX0ne1Ns8t/WDptmIy1sbGzs29j7TcwGTN9xuacoYNjY2Nh/nL0pUe8XngUA7R8gORpsbGzss9kb6ixw/b6o+IF4ABsbG/sI9lNjoFmZfKpRwcbGxr6ZnZecTUxbD/fLI6tTEWxsbOyD2LMCNiwqo9F/WxqxsbGxb2BvysYM0w6kHmiHsLGxsY9mt+P7ZOgTha9lSNBSsbGxse9h581DG+i2I6F24FVc68HGxsY+lD27OpksX4x7yog3aUiiO6fY2NjYR7D3UUEb085C4s0lHmxsbOwb2G3LkVzc2Yz42xFSshNsbGzsU9n1kD04oLYJaa9pPhAPYGNjYx/EzhuGts3YHE0eIT8wVMLGxsY+iN0OmzYxQBvZ5tdDsbGxsW9jb8bx+2s3s+B2th9sbGzss9n5dmdjoFmQ0EbIX+wBGxsb+wJ2UQwW7cfs6k/bAhUFDBsbG/sy9myjswAgf6uOB7CxsbGx44HUJoSYBQkv38LGxsa+gN2O9TdNwuxaT1v2sLGxse9hb4LedpCUH+UsqCiGStjY2NhHsO95sLGxsbGxsbGxsX/N8x/C36/yIUwg1wAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADeUlEQVR42u3awY4iMQwEUP7/p3evK42mp+xKGFZ6OSEE3Z3Hwdip1x/rn/VCgAMHDhw4cODAgQPHB3O84vX188/vfH39fMfku99dZ7cXHDhw4MBxj+OHUlRs/hkleZIpUL4XHDhw4MBxm6MpfnnB+451h/L8+nkvOHDgwIHjEziSxiwve8/3fb7+9CfBgQMHDhyfybErqH1R/A/+d+DAgQMHjmagFhzn5GS7Arwr7Thw4MCB4z0c00DDJ7/+hXwHDhw4cOA4uvro26kB5fL5ceDAgQPHUY68PUtatV3Ll4cecujk+jhw4MCB4x5HMyJMPjnd9pSjeiocOHDgwHGZI3nQpMTmj96H5Jq74MCBAweOsxzPKHkjlEcQphvIcXd/DnDgwIEDxz2OfiS3a9Xyst38LYhaOBw4cODAUXNMS9qu+O0OsXbjwmnQAQcOHDhw3OPog855I3dq5T/huNDiwIEDB45DHNPg2hSuKZnP38KBAwcOHJ/AkTddTZmcRh929z127IQDBw4cOAqO5gZ9eW74mmKMAwcOHDjeydEEF3KUaYHPIwvTZ8CBAwcOHO/hmDZdu+Fdf83kyQ8EGnDgwIEDRxGVS0ZszcFSXsKnJXZatnHgwIEDxw2O3eiteecsUDPoxIEDBw4cNzjyAMG4gB06FkpY89KLAwcOHDhuc0wbuabZmzZpeYtY/Tw4cODAgeMoRx5omDZag0jB8CCqHybiwIEDB47bHLtjpN11Erj8On07hwMHDhw4znIkDdtuzNePBXdN3XSYiAMHDhw4znL0j9hA5MO+fPPjko8DBw4cOI5y7CIIDVxzEDU94hoPB3HgwIEDR82Rh5VPRRaSzU9DDNXPgAMHDhw43sixa6XysEIzTMwjcT8A4cCBAweOaxz9ZvLR3nQ0uQtbRGEIHDhw4MBxmSPZ6rT9y9u5XfnM/wosT+Fw4MCBA0fMMV3TG5+KtTV8g0KLAwcOHDhqjiagNj2ymh4+9QUbBw4cOHD8FkezgbwQ9mTTYeKyo8WBAwcOHIc4psO1XaAtH/DlgYnpwoEDBw4cn8kxfWcXR0iOoPJvDVo4HDhw4MDxFo6krco/s7tvHr+43sLhwIEDB456OHgjXvAMOi3bY2IcOHDgwHGBow809K1XXjjzb0VHXDhw4MCB4yiHhQMHDhw4cODAgQMHjg9bfwEmTBrLH8pD3AAAAABJRU5ErkJggg==">
     
 </ul>
     
@@ -443,7 +443,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=exports 和 module.exports 的区别&url=http://yoursite.com/2018/08/16/exports 和 module.exports 的区别/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=原型的实际应用及原型的插件扩展机制&url=http://yoursite.com/2018/08/18/原型的实际应用及原型的插件扩展机制/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -452,7 +452,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=exports 和 module.exports 的区别&url=http://yoursite.com/2018/08/16/exports 和 module.exports 的区别/index.html&via=Mr.Stupid Bird" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=原型的实际应用及原型的插件扩展机制&url=http://yoursite.com/2018/08/18/原型的实际应用及原型的插件扩展机制/index.html&via=Mr.Stupid Bird" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/16/exports 和 module.exports 的区别/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/18/原型的实际应用及原型的插件扩展机制/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -470,7 +470,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/16/exports 和 module.exports 的区别/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/18/原型的实际应用及原型的插件扩展机制/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -494,23 +494,27 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>ECMAScript的变量值类型共有两种：</p>
-<p>基本类型 (primitive values) ： 包括Undefined, Null, Boolean, Number和String五种基本数据类型；</p>
-<p>引用类型 (reference values) ： 保存在内存中的对象们，不能直接操作，只能通过保存在变量中的地址引用对其进行操作。</p>
-<p><code>exports</code> 和 <code>module.exports</code> 就是 <code>Object</code> 类型，属于引用类型。</p>
-<p>而 <code>exports</code> 其实就是 <code>module.exports</code> 的引用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exports = <span class="built_in">module</span>.exports;</span><br></pre></td></tr></table></figure>
-<p>平时我们可以这样使用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">exports.area = <span class="function"><span class="keyword">function</span> (<span class="params">r</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * r * r;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">exports.circumference = <span class="function"><span class="keyword">function</span> (<span class="params">r</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span> * <span class="built_in">Math</span>.PI * r;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>注意，不能直接将exports变量指向一个值，因为这样等于切断了exports与module.exports的联系。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exports = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;<span class="built_in">console</span>.log(x)&#125;;</span><br></pre></td></tr></table></figure>
-<p>上面这样的写法是无效的，因为 <code>exports</code> 不再指向 <code>module.exports</code> 了。</p>
-<p>下面的写法也是无效的。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">exports.hello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'hello'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="string">'Hello world'</span>;</span><br></pre></td></tr></table></figure>
-<p>上面代码中，hello函数是无法对外输出的，因为module.exports被重新赋值了。</p>
-<p>这意味着，如果一个模块的对外接口，就是一个单一的值，不能使用exports输出，只能使用module.exports输出。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正确的写法</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>)</span>&#123; <span class="built_in">console</span>.log(x);&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 错误的写法</span></span><br><span class="line">exports = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>)</span>&#123; <span class="built_in">console</span>.log(x);&#125;;</span><br></pre></td></tr></table></figure>
-<p>如果觉得，分不清exports与module.exports，可以选择放弃使用exports，只使用module.exports。</p>
+        <h2 id="原型的实际应用"><a href="#原型的实际应用" class="headerlink" title="原型的实际应用"></a>原型的实际应用</h2><h3 id="zepto-如何使用原型"><a href="#zepto-如何使用原型" class="headerlink" title="zepto 如何使用原型"></a>zepto 如何使用原型</h3><p>HTML 部分代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>zepto test 1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>zepto test 2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>zepto test 3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>zepto test in div<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"./my-zepto.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> $p = $(<span class="string">'p'</span>)</span></span><br><span class="line"><span class="javascript">        $p.css(<span class="string">'font-size'</span>, <span class="string">'40px'</span>)</span></span><br><span class="line"><span class="undefined">        alert($p.html())</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> $div1 = $(<span class="string">'#div1'</span>)</span></span><br><span class="line"><span class="javascript">        $div1.css(<span class="string">'color'</span>, <span class="string">'blue'</span>)</span></span><br><span class="line"><span class="undefined">        alert($div1.html())</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>模拟zepto的实现：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">window</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> zepto = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Z</span>(<span class="params">dom, selector</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> i, len = dom ? dom.length : <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">this</span>[i] = dom[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.length = len</span><br><span class="line">        <span class="keyword">this</span>.selector = selector || <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    zepto.Z = <span class="function"><span class="keyword">function</span> (<span class="params">dom, selector</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Z(dom, selector)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    zepto.init = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> slice = <span class="built_in">Array</span>.prototype.slice</span><br><span class="line">        <span class="keyword">var</span> dom = slice.call(<span class="built_in">document</span>.querySelectorAll(selector))</span><br><span class="line">        <span class="keyword">return</span> zepto.Z(dom, selector)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> $ = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> zepto.init(selector)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">window</span>.$ = $</span><br><span class="line"></span><br><span class="line">    $.fn = &#123;</span><br><span class="line">        css: <span class="function"><span class="keyword">function</span> (<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">'css'</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        html: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'这是一个模拟的 html 函数'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Z.prototype = $.fn</span><br><span class="line">&#125;)(<span class="built_in">window</span>)</span><br></pre></td></tr></table></figure></p>
+<p>在上面的代码中定义一个自执行函数，防止全局污染，只通过 <code>$</code> 暴露给全局。</p>
+<p>通过 <code>$</code> 变量的选择器函数，传入选择器，再到 <code>zepto.init</code> 进行对选择到 dom 元素的类数组使用 <code>slicew</code> 方法进行数组化，再到 <code>zepto.Z</code> 中调用 <code>Z</code> 构造函数，将 查询到的 dom 元素类数组结果集添加到实例的属性，并添加 <code>length</code> 属性和 <code>selector</code>属性。将封装好的方法放入 <code>$.fn</code> 对象之中，并将 <code>$.fn</code> 对象赋值给 <code>Z.prototype</code> ，通过这样的方式，每一个选择器返回的实例都会有封装好的方法。</p>
+<h3 id="jQuery-如何使用原型"><a href="#jQuery-如何使用原型" class="headerlink" title="jQuery 如何使用原型"></a>jQuery 如何使用原型</h3><p>HTML 部分：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>jquery test 1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>jquery test 2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>jquery test 3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>jquery test in div<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"./my-jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> $p = $(<span class="string">'p'</span>)</span></span><br><span class="line"><span class="javascript">        $p.css(<span class="string">'font-size'</span>, <span class="string">'40px'</span>)</span></span><br><span class="line"><span class="undefined">        alert($p.html())</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> $div1 = $(<span class="string">'#div1'</span>)</span></span><br><span class="line"><span class="javascript">        $div1.css(<span class="string">'color'</span>, <span class="string">'blue'</span>)</span></span><br><span class="line"><span class="undefined">        alert($div1.html())</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">window</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> jQuery = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> jQuery.fn.init(selector)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    jQuery.fn = &#123;</span><br><span class="line">        css: <span class="function"><span class="keyword">function</span> (<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">'css'</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        html: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'html'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> init = jQuery.fn.init = <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> slice = <span class="built_in">Array</span>.prototype.slice</span><br><span class="line">        <span class="keyword">var</span> dom = slice.call(<span class="built_in">document</span>.querySelectorAll(selector))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> i, len = dom ? dom.length : <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">this</span>[i] = dom[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.length = len</span><br><span class="line">        <span class="keyword">this</span>.selector = selector || <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    init.prototype = jQuery.fn</span><br><span class="line"></span><br><span class="line">    <span class="built_in">window</span>.$ = jQuery</span><br><span class="line"></span><br><span class="line">&#125;)(<span class="built_in">window</span>)</span><br></pre></td></tr></table></figure>
+<p>与 zepto 类似。</p>
+<p>自执行函数，防止全局污染，只通过 <code>$</code> 暴露给全局。</p>
+<p>通过构造函数<code>jQuery.fn.init</code>实例化对象，再通过给 <code>jQuery.fn</code> 对象添加属性，再赋值给构造函数 <code>init</code> 的 <code>prototype</code> 的形式添加原型方法。</p>
+<h2 id="原型的插件扩展机制"><a href="#原型的插件扩展机制" class="headerlink" title="原型的插件扩展机制"></a>原型的插件扩展机制</h2><h3 id="zepto-和-jQuery-的扩展机制"><a href="#zepto-和-jQuery-的扩展机制" class="headerlink" title="zepto 和 jQuery 的扩展机制"></a>zepto 和 jQuery 的扩展机制</h3><p>在 zepto 和 jQuery 中，都有一样的插件扩展机制：将扩展的方法放在 <code>$.fn</code> 下，再赋值给构造函数的 <code>prototype</code> 难道不可以直接将 <code>$.fn</code> 对象里的内容赋值给构造函数的 <code>prototype</code> 吗？为什么要先放在放在 <code>$.fn</code> 下，再赋值给构造函数的 <code>prototype</code> 。这是不是有点多此一举？</p>
+<p>其实并非多此一举。</p>
+<h3 id="为什么要把原型方法放在-fn"><a href="#为什么要把原型方法放在-fn" class="headerlink" title="为什么要把原型方法放在 $.fn ?"></a>为什么要把原型方法放在 <code>$.fn</code> ?</h3><p>其他的 jQuery 插件是怎么添加方法的呢？</p>
+<p>下面是一个简单的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.fn.geuNodeName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>],nodeName</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为什么扩展方法并不是直接添加到构造函数的 <code>prototype</code> 上，而是添加到 <code>$.fn</code> 上呢。</p>
+<p>一开始插件就是自执行函数，是封闭的作用域，只对外暴露了 <code>$</code> 对象，所以只能通过 <code>$</code> 来添加方法。</p>
+<p>这样做的好处就是：</p>
+<ul>
+<li>只有 $ 会暴露在 windows 全局变量中</li>
+<li>将插件扩展统一到 $.fn.xxx 这一接口，方便使用。</li>
+</ul>
 
     
 
@@ -530,7 +534,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/18/原型的实际应用及原型的插件扩展机制/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/08/18/jQuery的deferred对象/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -544,7 +548,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/11/自我解惑之 DOM 中的 attribute 和 property 的区别/" id="post_nav-older" class="next-content">
+        <a href="/2018/08/16/exports 和 module.exports 的区别/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
