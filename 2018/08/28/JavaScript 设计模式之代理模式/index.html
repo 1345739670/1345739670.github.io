@@ -12,7 +12,7 @@
     
     <title>
         
-            Vue 项目的真机联调 | 
+            JavaScript 设计模式之代理模式 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -65,18 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Vue 项目的真机联调 | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="JavaScript 设计模式之代理模式 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="7月 29, 2018" />
-        <meta property="article:modified_time" content="7月 29, 2018" />
+        <meta property="article:published_time" content="8月 28, 2018" />
+        <meta property="article:modified_time" content="8月 28, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Vue 项目的真机联调 | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="JavaScript 设计模式之代理模式 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/07/29/Vue 项目的真机联调/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -110,10 +110,10 @@
         },
         "description": "Hi, nice to meet you"
     },
-    "headline": "Vue 项目的真机联调",
-    "url": "http://yoursite.com/2018/07/29/Vue 项目的真机联调/index.html",
-    "datePublished": "7月 29, 2018",
-    "dateModified": "7月 29, 2018",
+    "headline": "JavaScript 设计模式之代理模式",
+    "url": "http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html",
+    "datePublished": "8月 28, 2018",
+    "dateModified": "8月 28, 2018",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">例子</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#演示"><span class="post-toc-number">2.</span> <span class="post-toc-text">演示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#场景"><span class="post-toc-number">3.</span> <span class="post-toc-text">场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#网页事件代理"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">网页事件代理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#jQuery-proxy"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">jQuery $.proxy</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-proxy"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">ES6 proxy</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计原则验证"><span class="post-toc-number">4.</span> <span class="post-toc-text">设计原则验证</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -373,7 +373,7 @@
         
     
             <p class="article-headline-p">
-                Vue 项目的真机联调
+                JavaScript 设计模式之代理模式
             </p>
         </div>
 
@@ -392,7 +392,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Mr.Stupid Bird</strong>
-        <span>7月 29, 2018</span>
+        <span>8月 28, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +414,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC00lEQVR42u3a0U7rMBAE0P7/T19eka7azqxTlNonT4iGxMdILLvjx78jrwc2NjY2NjY2Njb2LdmP+Hr6uF+f/n9/8vWz9SRvydeMjY2NvTf7zZ/+J4t485oA0JKW1oyNjY19ADt5TVLM8u1oC+RszdjY2NjYbbMxa2zaO7GxsbGxP1fAXm9Q8v3ZW7CxsbGxZ695TX39nK+ZpWFjY2Pfnp03D/f5+k/zbWxsbOwbs9trvZFIjuwkgXG9cmxsbOxN2W0b0LYWs3fNouI3oyhsbGzsA9gzwErhWQke8pVgY2Njn8Bujz/mgWseA688ObkTGxsbe1f2+vAoj37zYpNv0/DIDjY2NvZG7Lbw5IuYtS7t84s1YGNjYx/Gfr0FKwWsDQNycB30YmNjY2/Ebv/dbwf0eWmclcnoF4aNjY29NTt/dFtCZgVvZdProRI2Njb2Fuz8Ne3VRsj1kco8isDGxsbelD1rS5L7k0+vGmm9XjM2Njb2CexZ0Js3Ie1WzuKHIujFxsbGPow9i12TYrZ+VKgYTmFjY2Nvyk7i0pUitDIqWjniU+fb2NjY2F/LzuPS/GjOytNmhy+jtWFjY2Nvzc5j1yRSXS+Qnyhj2NjY2Luy84IxC3RXoohkDdjY2NjY7di9bTDyUVG+6XlEgY2NjX0Ce2XRs/KTb9/Fm46NjY19GHv9OM61A6a2fbr4yA42Njb2l7Bn+JUx0yd+9un92NjY2MewZyFBuzVteWvj3rqAYWNjY38tu73WF5GT2jJWtCLY2NjYG7FnRxvzkHW9BLYbV8QD2NjY2Bux2wg22bhoZB8fo5yNpbCxsbFPY7eNxGyQlG/irPkZ5tvY2NjYB7NnEWw93I/vrFMRbGxs7CPZbeFJBv2z7chbGmxsbOwT2MlQafaddnOvGmZhY2Njn8OeHb5pj93kEW/bxkQRMjY2Nvam7HMubGxsbGxsbGxs7NtcP84He+41z+rMAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzklEQVR42u3aQZLbMAwEQP//08kDtswMAKXWJlonHySazQsKGL7+rHxe2NjY2NjY2NjY2B/JfsXPz/ffrXBe+R+be/NOsvL5v7CxsbHvZudbSRjvjiDZdHIQvePDxsbG3sA+l6Lz++c182/PX/X2jI2NjY2dl5C8dcnfz48PGxsbG/upAjYnVcsbNjY2NnZvZD+PGc4rzPeDjY2NvYfd2+7v/v6FfBsbGxv7I9m9pzo8yi/x5HFvec/Y2NjYl7Lzzc1j3bwU5S1KPpDCxsbG3sDuXaOpRsLV2GCyH2xsbOwN7Goxy4fyyXCqGhLnjU1hqISNjY395ez8s14YnAe356PJo99mKoKNjY39teze4CZvCarDoB4saoGwsbGxF7Dz0lUd9OSlqxdONIdK2NjY2Few8zF9PtCprtY7mnLDg42Njb2AXY1dexcoq8FAb2/Y2NjYe9j5gH7SlkwOJW9vsLGxsbHLC8Vf5aOiXlGMWhpsbGzsq9m9YLW63XydSahQCHqxsbGxr2CXP04i1fiyzmSoVL5ahI2NjX01uxcDVA+iF0hM9oaNjY29gX3e1mSolDcq+YBp0sZgY2Nj38qulpy8Sage3yQwGF2jx8bGxv5ydi+yrQ56ni1m+TvY2NjYG9jVpfNIuNrGJP9bHWBhY2Nj72FXt/7UZc3etcteSICNjY29gT25HDlpEqpjqeYQChsbG/tq9mRIVC0/1dg4CRWiYomNjY29hn3Gz2OAalsyebCxsbE3sKtP7wjyEf98jFW4soONjY19BbtaDKpXaubF6XxYSTCAjY2NvYHdK1q9yz2ToxwVNmxsbOwF7Gr56bUu1aF/c4SEjY2NjT1oA5LIoUrNx1XlVAQbGxt7Gfv/BQPnI6he9MHGxsbeyX5g6XF4kO+tfKkIGxsb+2r2POh9dpCUf5tf3MHGxsa+lb3nwcbGxsbGxsbGxv6Y5y+Emz9xUK0v8wAAAABJRU5ErkJggg==">
     
 </ul>
     
@@ -443,7 +443,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Vue 项目的真机联调&url=http://yoursite.com/2018/07/29/Vue 项目的真机联调/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JavaScript 设计模式之代理模式&url=http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -452,7 +452,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Vue 项目的真机联调&url=http://yoursite.com/2018/07/29/Vue 项目的真机联调/index.html&via=Mr.Stupid Bird" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JavaScript 设计模式之代理模式&url=http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html&via=Mr.Stupid Bird" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/07/29/Vue 项目的真机联调/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -470,7 +470,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/07/29/Vue 项目的真机联调/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -494,18 +494,25 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <ol>
-<li><p>查看内网IP地址<br>在命令行中输入命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Windows:</span></span><br><span class="line">ipconfig/all</span><br><span class="line"><span class="comment"># Mac:</span></span><br><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改 webpack 内置的 devServer<br>方法一：<br>修改 package.json 中的命令</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 修改前的:</span><br><span class="line">"dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span><br><span class="line">// 修改后的:</span><br><span class="line">"dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js"</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>方法二：<br>修改 config 目录下的 index.js 文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">host: <span class="string">'0.0.0.0'</span></span><br></pre></td></tr></table></figure></p>
-<ol start="3">
-<li>真机调试<br>打开浏览器或手机<br>输入以下地址并访问：<br>将<code>http://localhost:8080</code>中的<code>localhost</code>改为内网IP地址：<code>http://YourIntranetIPAddress:8080</code></li>
-</ol>
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>使用者无权访问目标对象</li>
+<li>中间加代理，通过代理做授权和控制</li>
+</ul>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
+<li>科学上网</li>
+<li>明星经纪人</li>
+</ul>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RealImg</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(fileName) &#123;</span><br><span class="line">        <span class="keyword">this</span>.fileName = fileName</span><br><span class="line">        <span class="comment">// 模拟初始化即从硬盘中加载，模拟</span></span><br><span class="line">        <span class="keyword">this</span>.loadFromeDisk()</span><br><span class="line">    &#125;</span><br><span class="line">    display() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'display...'</span> + <span class="keyword">this</span>.fileName);</span><br><span class="line">    &#125;</span><br><span class="line">    loadFromeDisk() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'loadFromeDisk...'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProxyImg</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(fileName) &#123;</span><br><span class="line">        <span class="keyword">this</span>.realImg = <span class="keyword">new</span> RealImg(fileName)</span><br><span class="line">    &#125;</span><br><span class="line">    display() &#123;</span><br><span class="line">        <span class="keyword">this</span>.realImg.display()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">let</span> client = <span class="keyword">new</span> ProxyImg(<span class="string">'1.png'</span>)</span><br><span class="line">client.display()</span><br></pre></td></tr></table></figure>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><h3 id="网页事件代理"><a href="#网页事件代理" class="headerlink" title="网页事件代理"></a>网页事件代理</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>)</span></span><br><span class="line"><span class="javascript">        div1.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> target = e.target</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (target.nodeName === <span class="string">'A'</span>) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(target.innerHTML);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="jQuery-proxy"><a href="#jQuery-proxy" class="headerlink" title="jQuery $.proxy"></a>jQuery $.proxy</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// this 符合预期</span></span><br><span class="line">    $(<span class="keyword">this</span>).addClass(<span class="string">'red'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">$(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// this 不符合预期</span></span><br><span class="line">        $(<span class="keyword">this</span>).addClass(<span class="string">'red'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>通常我们这样解决：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// this 符合预期</span></span><br><span class="line">        $(_this).addClass(<span class="string">'red'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>虽说箭头函数也可以解决。但是总有不适合用箭头函数的情况，这时候推荐用 $.proxy 解决，这样就少定义一个变量。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout($.proxy(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// this 符合预期</span></span><br><span class="line">        $(<span class="keyword">this</span>).addClass(<span class="string">'red'</span>)</span><br><span class="line">    &#125;, <span class="keyword">this</span>), <span class="number">1000</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="ES6-proxy"><a href="#ES6-proxy" class="headerlink" title="ES6 proxy"></a>ES6 proxy</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 明星</span></span><br><span class="line"><span class="keyword">let</span> star = &#123;</span><br><span class="line">    name: <span class="string">'张XX'</span>,</span><br><span class="line">    age: <span class="number">25</span>,</span><br><span class="line">    phone: <span class="string">'13910733521'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 经纪人</span></span><br><span class="line"><span class="keyword">let</span> agent = <span class="keyword">new</span> <span class="built_in">Proxy</span>(star, &#123;</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span> (<span class="params">target, key</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (key === <span class="string">'phone'</span>) &#123;</span><br><span class="line">            <span class="comment">// 返回经纪人自己的手机号</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">'18611112222'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (key === <span class="string">'price'</span>) &#123;</span><br><span class="line">            <span class="comment">// 明星不报价，经纪人报价</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">120000</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> target[key]</span><br><span class="line">    &#125;,</span><br><span class="line">    set: <span class="function"><span class="keyword">function</span> (<span class="params">target, key, val</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (key === <span class="string">'customPrice'</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (val &lt; <span class="number">100000</span>) &#123;</span><br><span class="line">                <span class="comment">// 最低 10w</span></span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'价格太低'</span>)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                target[key] = val</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主办方</span></span><br><span class="line"><span class="built_in">console</span>.log(agent.name)</span><br><span class="line"><span class="built_in">console</span>.log(agent.age)</span><br><span class="line"><span class="built_in">console</span>.log(agent.phone)</span><br><span class="line"><span class="built_in">console</span>.log(agent.price)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 想自己提供报价（砍价，或者高价争抢）</span></span><br><span class="line">agent.customPrice = <span class="number">150000</span></span><br><span class="line"><span class="comment">// agent.customPrice = 90000  // 报错：价格太低</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'customPrice'</span>, agent.customPrice)</span><br></pre></td></tr></table></figure>
+<h2 id="设计原则验证"><a href="#设计原则验证" class="headerlink" title="设计原则验证"></a>设计原则验证</h2><ul>
+<li>代理类和目标类分离，隔离开目标类和使用类</li>
+<li>符合开放封闭原则</li>
+</ul>
 
     
 
@@ -525,21 +532,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/07/29/暑假日志/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/05/04/自我解惑之单线程/" id="post_nav-older" class="next-content">
+        <a href="/2018/08/27/JavaScript 设计模式之装饰器模式/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
