@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2018/5 | 
+            【尝鲜】基于 Parcel 的零配置 Vue 开发模板 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/5 | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="【尝鲜】基于 Parcel 的零配置 Vue 开发模板 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="9月 01, 2018" />
+        <meta property="article:modified_time" content="9月 01, 2018" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2018/5 | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="【尝鲜】基于 Parcel 的零配置 Vue 开发模板 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2018/05/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/09/01/尝试 parcel 配置 Vue/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Stupid Bird&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Mr.Stupid Bird",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "【尝鲜】基于 Parcel 的零配置 Vue 开发模板",
+    "url": "http://yoursite.com/2018/09/01/尝试 parcel 配置 Vue/index.html",
+    "datePublished": "9月 01, 2018",
+    "dateModified": "9月 01, 2018",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -275,95 +308,253 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/thumbnails/JavaScript.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/05/04/自我解惑之单线程/">自我解惑之单线程</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            JavaScript是单线程。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/05/04/自我解惑之单线程/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>5月 04, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/学习笔记/">学习笔记</a>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
+        </a>
     </div>
-</div>
+    -->
 
-            
-            
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#初始化"><span class="post-toc-number">1.</span> <span class="post-toc-text">初始化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#转换"><span class="post-toc-number">2.</span> <span class="post-toc-text">转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Babel"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Babel</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PostCSS"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">PostCSS</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-package-json"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置 package.json</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置-gitignore"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置 .gitignore</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">开始使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开发调试"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">开发调试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#正式构建"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">正式构建</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
         
-    
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                【尝鲜】基于 Parcel 的零配置 Vue 开发模板
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avater.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mr.Stupid Bird</strong>
+        <span>9月 01, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2UlEQVR42u3a0Y4TMQwF0P7/T8MrEjS9tgMdkjNPq106yUklrmzn9ePK54WNjY2NjY2NjY39SPYrfn7997+/Yf2bdyu++836PdU9Y2NjY9/A/vBff8BY//zur+vDXbOre8bGxsa+gZ2E1mS761XWITfZMzY2NjZ2HkVJqbD+VHI02NjY2Ni72MnWk2bQ5M3Y2NjY2NUGTVJI5DFWXfdrvTRsbGzsx7N7g97v/vy1+TY2Njb2w9jzp3fRZ++wOdonNjY29qHsZHP5ULbX0M9bUR+KjUkvDRsbG/sgdvWiTD4YqB53slb+JWFjY2Ofyp6EShJ7661PrnLmXwM2Njb22ezeMKAaLRNMdZhRaCphY2NjH8HOR6rvFp6ESm88UI1YbGxs7BvY+WJ5cdIbFewaJGNjY2Pfw86XrIZNuVQoXrWsroWNjY19A3tCSgqMvLVUHUJEO8fGxsY+lP3hmsum4UH+hnwIkVCxsbGxb2D3NrEOv10NpqjAyNfCxsbGPpSdFA/JwvOCZPKGKFCxsbGxD2WPrjMORrN7BwPJ6AIbGxv7VHY1hHphVr1wk18kKgQhNjY29tHs3mA1P4Jee6gXh6MKDBsbG/u/ZfciJ2dULwBV35yEIjY2NvYN7ElB0vvspBSpHjc2Njb2qex8ENtr61cDsjfELZci2NjY2Aex1xudN3cmRUh+oFG5go2NjX0oO1+mGjBJgCUFxjxQsbGxsc9mVwuMauz1YNVjxcbGxr6ZvXcr1WhMGJMHGxsb+wZ2rxmUh18+fqiWLuWvARsbG/tQdjUMqi2n6rWe+VAZGxsb+052L7Q2XKMJ3pAfx4eDwMbGxr6AnRcGeVuqNyqeRyw2NjY29q4R7984vuRTf3g/NjY2Nnar5Og1nqLSorhPbGxs7BvYk6ZSL1R6x5cfGTY2NvY97F7LJi8Y8iFB8zrOv5lvY2NjYz+Sfc+DjY2NjY2NjY2N/ZjnJwOGmt2ZTLrjAAAAAElFTkSuQmCC">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=【尝鲜】基于 Parcel 的零配置 Vue 开发模板&url=http://yoursite.com/2018/09/01/尝试 parcel 配置 Vue/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=【尝鲜】基于 Parcel 的零配置 Vue 开发模板&url=http://yoursite.com/2018/09/01/尝试 parcel 配置 Vue/index.html&via=Mr.Stupid Bird" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/01/尝试 parcel 配置 Vue/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/01/尝试 parcel 配置 Vue/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>随着 webpack 越发复杂臃肿，Parcel 横空出世。</p>
+<p>作为一个有追求的程序员，怎能不尝尝鲜呢？</p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br><span class="line">npm install --save vue</span><br><span class="line">npm install --save-dev parcel-bundler</span><br></pre></td></tr></table></figure>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><p>许多打包工具比如 webpack 需要用户安装和配置插件来转换资源，Parcel 支持许多开箱即用的转换器和内置的编译器。</p>
+<p>Parcel 会在模块中找到配置文件 (例如 .babelrc ，.postcssrc) 时会自动运行并进行转换。</p>
+<h3 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h3><p>这一步可省略：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-preset-env --save-dev</span><br></pre></td></tr></table></figure>
+<p>根目录配置 <code>.babelrc</code> ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"presets"</span>: [<span class="string">"env"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PostCSS"><a href="#PostCSS" class="headerlink" title="PostCSS"></a>PostCSS</h3><p>PostCSS 是一个使用插件转换 CSS 的工具，例如 autoprefixer，cssnext 以及 CSS Modules 。你可以使用这些名称之一创建配置，从而达到使用 Parcel 配置 PostCSS 的目的： .postcssrc (JSON)，.postcssrc.js，或 postcss.config.js</p>
+<p>这一步可省略：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install postcss-modules autoprefixer --save-dev</span><br></pre></td></tr></table></figure></p>
+<p>创建一个 .postcssrc 文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"modules"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"plugins"</span>: &#123;</span><br><span class="line">    <span class="string">"autoprefixer"</span>: &#123;</span><br><span class="line">      <span class="string">"grid"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>“modules”: true 首页的样式会失效</p>
+<h2 id="配置-package-json"><a href="#配置-package-json" class="headerlink" title="配置 package.json"></a>配置 package.json</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"npm run dev"</span>,</span><br><span class="line">    <span class="string">"dev"</span>: <span class="string">"parcel index.html -p 2333 --open"</span>,</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"parcel build index.html --public-url ./ --no-cache"</span>,</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>-p 2333 设置端口号为 2333</li>
+<li>–open 自动打开浏览器</li>
+<li>–public-url ./ 设置要提供服务的公共 URL(./ 也就是设置为当前 dist 目录下)</li>
+<li>–no-cache 禁用文件系统缓存</li>
+</ul>
+<h2 id="配置-gitignore"><a href="#配置-gitignore" class="headerlink" title="配置 .gitignore"></a>配置 .gitignore</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">.cache</span><br><span class="line">node_modules/</span><br><span class="line">/dist/</span><br><span class="line">npm-debug.log*</span><br><span class="line">yarn-debug.log*</span><br><span class="line">yarn-error.log*</span><br><span class="line"></span><br><span class="line"># Editor directories and files</span><br><span class="line">.idea</span><br><span class="line">.vscode</span><br><span class="line">*.suo</span><br><span class="line">*.ntvs*</span><br><span class="line">*.njsproj</span><br><span class="line">*.sln</span><br></pre></td></tr></table></figure>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><h3 id="开发调试"><a href="#开发调试" class="headerlink" title="开发调试"></a>开发调试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<h3 id="正式构建"><a href="#正式构建" class="headerlink" title="正式构建"></a>正式构建</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/08/30/JavaScript 设计模式之其他设计模式/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
