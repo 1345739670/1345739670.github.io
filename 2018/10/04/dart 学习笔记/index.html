@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2018/7 | 
+            Dart 学习笔记 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/7 | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="Dart 学习笔记 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="10月 04, 2018" />
+        <meta property="article:modified_time" content="10月 04, 2018" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2018/7 | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="Dart 学习笔记 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2018/07/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/04/dart 学习笔记/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Stupid Bird&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Mr.Stupid Bird",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "Dart 学习笔记",
+    "url": "http://yoursite.com/2018/10/04/dart 学习笔记/index.html",
+    "datePublished": "10月 04, 2018",
+    "dateModified": "10月 04, 2018",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -275,343 +308,235 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本语法"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#变量与常量"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">变量与常量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#变量"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常量"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">常量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数值型-Number"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">数值型-Number</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串-String"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">字符串-String</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#布尔型-Boolean"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">布尔型-Boolean</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列表-List"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">列表-List</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#键值对-Map"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">键值对-Map</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Runes"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">Runes</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Symbols"><span class="post-toc-number">1.2.7.</span> <span class="post-toc-text">Symbols</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/31/npm install 报错 platform unsupported/">npm install 报错 platform unsupported</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            node.js 日常报错。
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/31/npm install 报错 platform unsupported/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>7月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/31/解决 .gitignore 添加后无效/">解决 .gitignore 添加后无效</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            解决 .gitignore 添加后无效
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/31/解决 .gitignore 添加后无效/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>7月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/31/Git 新建远程仓库并关联本地项目/">Git 新建远程仓库并关联本地项目</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            经常这么做，所以记录一下工作流程。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/31/Git 新建远程仓库并关联本地项目/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>7月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/29/暑假日志/">暑假日志</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            日常记录。
-
-7.29
-
-
-axios 的基本用法
-搭建 takeaw...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/29/暑假日志/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>7月 29, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/29/Vue 项目的真机联调/">Vue 项目的真机联调</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-查看内网IP地址在命令行中输入命令：
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/29/Vue 项目的真机联调/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>7月 29, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Dart 学习笔记
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avater.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mr.Stupid Bird</strong>
+        <span>10月 04, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXElEQVR42u3aQW7DMAwEwPz/0+0DgrhLUmbSYHwqCtXW6CCxKz5+vvp54OHh4eHh4eHhfRjvET/P41+94dX7k99P5oaHh4e3yftjqw0mEW3ZL0Y+L9Zkbnh4eHibvOvDIBlTPTBOfRcPDw/vk3nXxW5SHOfvwcPDw/sm3jU7L47x8PDw/jsv+Yc/H18NKa4XaylrwcPDw4t51QuwzZ/fcL+Hh4eHd8nrPdXAoncZ1pwbHh4e3s28amQwmWIe+PYiDzw8PLxN3h1TnzcH5OPx8PDw9nlVahQKFFu1qt8d3e/h4eHhDXjJZ+YhbPKtSUsWHh4e3nt5Z9sFehddk2gDDw8P727eHNYbeSCuxcPDw3sTL4lQrwvlx/jJr8GiRcHDw8Nb582Pgd41WC/qbYYReHh4eANe75Ipv0I7FfgWmhjw8PDw1nn5RKuXW9V3VgMLPDw8vH1edULVIGOyoIUxeHh4eDfzqhdOP4eeQhPVPGvBw8PDO8rrNVT1SuQkwphEIXh4eHg7vOpGPGkp6LUaHGgdwMPDwzvK67VAVTf0vCyuFtZ4eHh4+7zeP//VcHYSVeSxLx4eHt4OLy9nqxt0LyauFtlRjIuHh4d3lHdqy+4tULLRVw8ePDw8vLt5k+24ysvD38mBhIeHh7fDy0vhpEROgtr5wVAII/Dw8PBu402Chrx0zg+V/NoMDw8P7/N5yeer002+uHQw4OHh4R3l9QKIvO3gwDLh4eHhLfKqYUS1RaC3fHkbFh4eHt4mr3oBNimyJ0Vz9Fd4eHh4N/O+78HDw8PDw8PDw/uA5xdCgb+D92/5SQAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Dart 学习笔记&url=http://yoursite.com/2018/10/04/dart 学习笔记/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Dart 学习笔记&url=http://yoursite.com/2018/10/04/dart 学习笔记/index.html&via=Mr.Stupid Bird" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/04/dart 学习笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/04/dart 学习笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>使用 <code>var</code> 声明变量，可赋予不同类型的值。</p>
+<p>未初始化时，默认值为 <code>null</code> 。</p>
+<p>使用 <code>final</code> 声明一个只能赋值一次的变量。</p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>使用 <code>const</code> 声明常量。</p>
+<p>使用 <code>const</code> 声明的必须是编译期常量。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数值型-Number"><a href="#数值型-Number" class="headerlink" title="数值型-Number"></a>数值型-Number</h3><h3 id="字符串-String"><a href="#字符串-String" class="headerlink" title="字符串-String"></a>字符串-String</h3><h3 id="布尔型-Boolean"><a href="#布尔型-Boolean" class="headerlink" title="布尔型-Boolean"></a>布尔型-Boolean</h3><h3 id="列表-List"><a href="#列表-List" class="headerlink" title="列表-List"></a>列表-List</h3><h3 id="键值对-Map"><a href="#键值对-Map" class="headerlink" title="键值对-Map"></a>键值对-Map</h3><h3 id="Runes"><a href="#Runes" class="headerlink" title="Runes"></a>Runes</h3><h3 id="Symbols"><a href="#Symbols" class="headerlink" title="Symbols"></a>Symbols</h3>
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/30/Web-security-XSS/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
