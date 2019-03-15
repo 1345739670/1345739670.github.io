@@ -12,7 +12,7 @@
     
     <title>
         
-            JavaScript 设计模式之代理模式 | 
+            深入理解 Object.create | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -65,18 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="JavaScript 设计模式之代理模式 | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="深入理解 Object.create | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="8月 28, 2018" />
-        <meta property="article:modified_time" content="8月 28, 2018" />
+        <meta property="article:published_time" content="3月 15, 2019" />
+        <meta property="article:modified_time" content="3月 15, 2019" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="JavaScript 设计模式之代理模式 | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="深入理解 Object.create | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2019/03/15/深入理解-Object-create/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -110,10 +110,10 @@
         },
         "description": "Hi, nice to meet you"
     },
-    "headline": "JavaScript 设计模式之代理模式",
-    "url": "http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html",
-    "datePublished": "8月 28, 2018",
-    "dateModified": "8月 28, 2018",
+    "headline": "深入理解 Object.create",
+    "url": "http://yoursite.com/2019/03/15/深入理解-Object-create/index.html",
+    "datePublished": "3月 15, 2019",
+    "dateModified": "3月 15, 2019",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">例子</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#演示"><span class="post-toc-number">2.</span> <span class="post-toc-text">演示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#场景"><span class="post-toc-number">3.</span> <span class="post-toc-text">场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#网页事件代理"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">网页事件代理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#jQuery-proxy"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">jQuery $.proxy</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-proxy"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">ES6 proxy</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计原则验证"><span class="post-toc-number">4.</span> <span class="post-toc-text">设计原则验证</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法"><span class="post-toc-number">1.</span> <span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本质"><span class="post-toc-number">2.</span> <span class="post-toc-text">本质</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -373,7 +373,7 @@
         
     
             <p class="article-headline-p">
-                JavaScript 设计模式之代理模式
+                深入理解 Object.create
             </p>
         </div>
 
@@ -392,7 +392,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Mr.Stupid Bird</strong>
-        <span>8月 28, 2018</span>
+        <span>3月 15, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +414,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzklEQVR42u3aQZLbMAwEQP//08kDtswMAKXWJlonHySazQsKGL7+rHxe2NjY2NjY2NjY2B/JfsXPz/ffrXBe+R+be/NOsvL5v7CxsbHvZudbSRjvjiDZdHIQvePDxsbG3sA+l6Lz++c182/PX/X2jI2NjY2dl5C8dcnfz48PGxsbG/upAjYnVcsbNjY2NnZvZD+PGc4rzPeDjY2NvYfd2+7v/v6FfBsbGxv7I9m9pzo8yi/x5HFvec/Y2NjYl7Lzzc1j3bwU5S1KPpDCxsbG3sDuXaOpRsLV2GCyH2xsbOwN7Goxy4fyyXCqGhLnjU1hqISNjY395ez8s14YnAe356PJo99mKoKNjY39teze4CZvCarDoB4saoGwsbGxF7Dz0lUd9OSlqxdONIdK2NjY2Few8zF9PtCprtY7mnLDg42Njb2AXY1dexcoq8FAb2/Y2NjYe9j5gH7SlkwOJW9vsLGxsbHLC8Vf5aOiXlGMWhpsbGzsq9m9YLW63XydSahQCHqxsbGxr2CXP04i1fiyzmSoVL5ahI2NjX01uxcDVA+iF0hM9oaNjY29gX3e1mSolDcq+YBp0sZgY2Nj38qulpy8Sage3yQwGF2jx8bGxv5ydi+yrQ56ni1m+TvY2NjYG9jVpfNIuNrGJP9bHWBhY2Nj72FXt/7UZc3etcteSICNjY29gT25HDlpEqpjqeYQChsbG/tq9mRIVC0/1dg4CRWiYomNjY29hn3Gz2OAalsyebCxsbE3sKtP7wjyEf98jFW4soONjY19BbtaDKpXaubF6XxYSTCAjY2NvYHdK1q9yz2ToxwVNmxsbOwF7Gr56bUu1aF/c4SEjY2NjT1oA5LIoUrNx1XlVAQbGxt7Gfv/BQPnI6he9MHGxsbeyX5g6XF4kO+tfKkIGxsb+2r2POh9dpCUf5tf3MHGxsa+lb3nwcbGxsbGxsbGxv6Y5y+Emz9xUK0v8wAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACy0lEQVR42u3aQZIjIQwEQP//0zvXjdhou1R07LQhOflgQIkPMhKvP0eOFzY2NjY2NjY2NvYj2a94fFj0r+9M516tkK+fxIyNjY29NzsP6P2RdbAr5NX6XczY2NjYJ7CTbZLUksz6d8eVI0uOBhsbGxu7w1xeDIZJayVmbGxsbOwkeaxgpmUsbGxsbOyVotLVBiuBJnN/uZaGjY2N/Xh23jR9zuf/2t/GxsbGfjB7OrpC/yC45ac/l5FjY2Njb8rOE8O0DXDXFSUvQn3YCxsbG3trdt6ITdoA+QrTUlHeKsbGxsY+jZ2U/pOjmc7Kj69rKmNjY2Ofye7awNOmwrTFO73qYGNjY5/DTnjTEk+XYPI1y1IUNjY29qbs9cTTXVHyGLoiFDY2NvZp7K7MlF9pulZEdwTjohI2Njb2l7O75zXdpaUsBg1bFNjY2NinsfNrwPsQ8wS2Xqiapi5sbGzsE9hdirqrDZC3nKc/ADY2NvZp7GnrND+sfFb3TKds9GJjY2NvwZ5OXikzTdPhKxhloxcbGxt7I3YeVv58Z3qR6MDjg8DGxsbelL1eWkowSaDrqe5DzNjY2NibsrvQ34eSP+jsvtk1p7GxsbF3ZSdbdu2E6aXi/frTHyPK29jY2NibsvOwyoZr9dznhtiwsbGxN2VPn+NM01UC7tJYXpDCxsbGPoGd/OnvLi0dYCWZXe6LjY2NfRh72oidNmXzS0uyY/RTYWNjYx/AnqaQ/ICmabJLV2UCw8bGxv5y9kpiWGkeJC2BvOw1LiphY2Njb8TukkFXpk8OqPuMjY2NjX1X0hq0XYNZ+QUm+iY2Njb2Aex7S0gr5aq7BjY2NjZ299d//RqTHMf4mRE2NjY2dnV1WW8VdLtjY2Njn8nOGdPiUVcSWmldYGNjY5/GzpfuSk75g578oG8oKmFjY2NvwT5nYGNjY2NjY2NjYz9m/ABKSjQ2yVSn0QAAAABJRU5ErkJggg==">
     
 </ul>
     
@@ -443,7 +443,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JavaScript 设计模式之代理模式&url=http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=深入理解 Object.create&url=http://yoursite.com/2019/03/15/深入理解-Object-create/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -452,7 +452,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JavaScript 设计模式之代理模式&url=http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html&via=Mr.Stupid Bird" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=深入理解 Object.create&url=http://yoursite.com/2019/03/15/深入理解-Object-create/index.html&via=Mr.Stupid Bird" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/15/深入理解-Object-create/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -470,7 +470,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/28/JavaScript 设计模式之代理模式/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/15/深入理解-Object-create/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -494,25 +494,26 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>使用者无权访问目标对象</li>
-<li>中间加代理，通过代理做授权和控制</li>
+        <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">Object</span>.create(proto, [propertiesObject])</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><p>参数：</p>
+<p>  <code>proto</code> 新创建对象的原型对象。</p>
+<p>  <code>propertiesObject</code> 可选。如果没有指定为 undefined，则是要添加到新创建对象的可枚举属性（即其自身定义的属性，而不是其原型链上的枚举属性）对象的属性描述符以及相应的属性名称。这些属性对应 <code>Object.defineProperties()</code> 的第二个参数。</p>
+</li>
+<li><p>返回值: </p>
+<p>  一个新对象，带着指定的原型对象和属性。</p>
+</li>
 </ul>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
-<li>科学上网</li>
-<li>明星经纪人</li>
-</ul>
-<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RealImg</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(fileName) &#123;</span><br><span class="line">        <span class="keyword">this</span>.fileName = fileName</span><br><span class="line">        <span class="comment">// 模拟初始化即从硬盘中加载，模拟</span></span><br><span class="line">        <span class="keyword">this</span>.loadFromeDisk()</span><br><span class="line">    &#125;</span><br><span class="line">    display() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'display...'</span> + <span class="keyword">this</span>.fileName);</span><br><span class="line">    &#125;</span><br><span class="line">    loadFromeDisk() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'loadFromeDisk...'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProxyImg</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(fileName) &#123;</span><br><span class="line">        <span class="keyword">this</span>.realImg = <span class="keyword">new</span> RealImg(fileName)</span><br><span class="line">    &#125;</span><br><span class="line">    display() &#123;</span><br><span class="line">        <span class="keyword">this</span>.realImg.display()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">let</span> client = <span class="keyword">new</span> ProxyImg(<span class="string">'1.png'</span>)</span><br><span class="line">client.display()</span><br></pre></td></tr></table></figure>
-<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><h3 id="网页事件代理"><a href="#网页事件代理" class="headerlink" title="网页事件代理"></a>网页事件代理</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>)</span></span><br><span class="line"><span class="javascript">        div1.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> target = e.target</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (target.nodeName === <span class="string">'A'</span>) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(target.innerHTML);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="jQuery-proxy"><a href="#jQuery-proxy" class="headerlink" title="jQuery $.proxy"></a>jQuery $.proxy</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// this 符合预期</span></span><br><span class="line">    $(<span class="keyword">this</span>).addClass(<span class="string">'red'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">$(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// this 不符合预期</span></span><br><span class="line">        $(<span class="keyword">this</span>).addClass(<span class="string">'red'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>通常我们这样解决：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// this 符合预期</span></span><br><span class="line">        $(_this).addClass(<span class="string">'red'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>虽说箭头函数也可以解决。但是总有不适合用箭头函数的情况，这时候推荐用 $.proxy 解决，这样就少定义一个变量。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout($.proxy(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// this 符合预期</span></span><br><span class="line">        $(<span class="keyword">this</span>).addClass(<span class="string">'red'</span>)</span><br><span class="line">    &#125;, <span class="keyword">this</span>), <span class="number">1000</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h3 id="ES6-proxy"><a href="#ES6-proxy" class="headerlink" title="ES6 proxy"></a>ES6 proxy</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 明星</span></span><br><span class="line"><span class="keyword">let</span> star = &#123;</span><br><span class="line">    name: <span class="string">'张XX'</span>,</span><br><span class="line">    age: <span class="number">25</span>,</span><br><span class="line">    phone: <span class="string">'13910733521'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 经纪人</span></span><br><span class="line"><span class="keyword">let</span> agent = <span class="keyword">new</span> <span class="built_in">Proxy</span>(star, &#123;</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span> (<span class="params">target, key</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (key === <span class="string">'phone'</span>) &#123;</span><br><span class="line">            <span class="comment">// 返回经纪人自己的手机号</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">'18611112222'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (key === <span class="string">'price'</span>) &#123;</span><br><span class="line">            <span class="comment">// 明星不报价，经纪人报价</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">120000</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> target[key]</span><br><span class="line">    &#125;,</span><br><span class="line">    set: <span class="function"><span class="keyword">function</span> (<span class="params">target, key, val</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (key === <span class="string">'customPrice'</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (val &lt; <span class="number">100000</span>) &#123;</span><br><span class="line">                <span class="comment">// 最低 10w</span></span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'价格太低'</span>)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                target[key] = val</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主办方</span></span><br><span class="line"><span class="built_in">console</span>.log(agent.name)</span><br><span class="line"><span class="built_in">console</span>.log(agent.age)</span><br><span class="line"><span class="built_in">console</span>.log(agent.phone)</span><br><span class="line"><span class="built_in">console</span>.log(agent.price)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 想自己提供报价（砍价，或者高价争抢）</span></span><br><span class="line">agent.customPrice = <span class="number">150000</span></span><br><span class="line"><span class="comment">// agent.customPrice = 90000  // 报错：价格太低</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'customPrice'</span>, agent.customPrice)</span><br></pre></td></tr></table></figure>
-<h2 id="设计原则验证"><a href="#设计原则验证" class="headerlink" title="设计原则验证"></a>设计原则验证</h2><ul>
-<li>代理类和目标类分离，隔离开目标类和使用类</li>
-<li>符合开放封闭原则</li>
-</ul>
+<h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><p>我在复习继承的时候，发现寄生组合式继承和阮一峰老师的利用空对象作为中介的继承方式十分相似，简直是一模一样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 寄生组合式继承</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span>(<span class="params">subType, superType</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> prototype = <span class="built_in">Object</span>.create(superType.prototype); <span class="comment">// 创建对象，创建父类原型的一个副本</span></span><br><span class="line">  prototype.constructor = subType;                    <span class="comment">// 增强对象，弥补因重写原型而失去的默认的constructor 属性</span></span><br><span class="line">  subType.prototype = prototype;                      <span class="comment">// 指定对象，将新创建的对象赋值给子类的原型</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 利用空对象作为中介</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">    F.prototype = Parent.prototype;</span><br><span class="line">    Child.prototype = <span class="keyword">new</span> F();</span><br><span class="line">    Child.prototype.constructor = Child;</span><br><span class="line">    Child.uber = Parent.prototype;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不难发现，他们都是用一个以父类的原型为原型的对象作为子类的原型。</p>
+<p>去查了一下 <code>Object.create</code> 的 Polyfill，果不其然：</p>
+<p>Polyfill最核心的部分：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">F.prototype = proto;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> F();</span><br></pre></td></tr></table></figure>
+<p><code>Object.create</code> 方法的实质是新建一个空的构造函数<code>F</code>，然后让<code>F.prototype</code>属性指向参数对象<code>obj</code>，最后返回一个<code>F</code>的实例，从而实现让该实例继承<code>obj</code>的属性。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="noopener">Object.create() - JavaScript | MDN</a><br><a href="https://juejin.im/post/5a9ce60b6fb9a028cc60b69c" target="_blank" rel="noopener">一个新对象，带着指定的原型对象和属性</a></p>
 
     
 
@@ -532,21 +533,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/28/JavaScript 设计模式之外观模式/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/27/JavaScript 设计模式之装饰器模式/" id="post_nav-older" class="next-content">
+        <a href="/2019/03/12/【自我解惑】constructor/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
