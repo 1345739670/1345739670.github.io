@@ -12,7 +12,7 @@
     
     <title>
         
-            构造函数与new命令 | 
+            【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -65,18 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="构造函数与new命令 | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     <meta property="og:article:tag" content="JavaScript"> 
 
     
-        <meta property="article:published_time" content="4月 11, 2018" />
-        <meta property="article:modified_time" content="4月 12, 2018" />
+        <meta property="article:published_time" content="3月 19, 2019" />
+        <meta property="article:modified_time" content="3月 19, 2019" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="构造函数与new命令 | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/04/11/构造函数与 new 命令/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2019/03/19/【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -110,10 +110,10 @@
         },
         "description": "Hi, nice to meet you"
     },
-    "headline": "构造函数与new命令",
-    "url": "http://yoursite.com/2018/04/11/构造函数与 new 命令/index.html",
-    "datePublished": "4月 11, 2018",
-    "dateModified": "4月 12, 2018",
+    "headline": "【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别",
+    "url": "http://yoursite.com/2019/03/19/【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别/index.html",
+    "datePublished": "3月 19, 2019",
+    "dateModified": "3月 19, 2019",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构造函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">构造函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简述构造函数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简述构造函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重新定义JavaScript中的构造函数"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">重新定义JavaScript中的构造函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#new-命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">new 命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#new命令的原理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">new命令的原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推荐写法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">推荐写法</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#堆和栈"><span class="post-toc-number">1.</span> <span class="post-toc-text">堆和栈</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本数据类型"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">基本数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引用类型"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">引用类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传值与传址"><span class="post-toc-number">3.</span> <span class="post-toc-text">传值与传址</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#赋值（Copy）"><span class="post-toc-number">4.</span> <span class="post-toc-text">赋值（Copy）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浅拷贝（Shallow-Copy）"><span class="post-toc-number">5.</span> <span class="post-toc-text">浅拷贝（Shallow Copy）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浅拷贝使用场景"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">浅拷贝使用场景</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#深拷贝（Deep-Copy）"><span class="post-toc-number">6.</span> <span class="post-toc-text">深拷贝（Deep Copy）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSON-parse-JSON-stringify-object"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">JSON.parse(JSON.stringify(object))</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">7.</span> <span class="post-toc-text">总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#赋值和浅拷贝的区别"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">赋值和浅拷贝的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">8.</span> <span class="post-toc-text">参考</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -364,7 +364,7 @@
         <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/thumbnails/JavaScript.jpg)">
     
             <p class="article-headline-p">
-                构造函数与new命令
+                【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别
             </p>
         </div>
 
@@ -383,7 +383,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Mr.Stupid Bird</strong>
-        <span>4月 11, 2018</span>
+        <span>3月 19, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -405,7 +405,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC4UlEQVR42u3aQXbbMAwEUN//0u0BWsszoNtI5NdKz3EkfmaBDMDXryOvFzY2NjY2NjY2NvYt2a/4evf9v7wg+M673/rz/t1P8zVjY2Njn8BuF3S9xOuNyDc935TrNWNjY2Ofw74uWvlmrWxT+/ZizdjY2NjYZWC4Ll1JgLmOOtjY2NjY6wUsDxJt46mNJdjY2NjYbYMmiQ3XgWT2xh/rpWFjY2Pfnt0Oeu9w/wPzbWxsbOxbstsrb/d/6/O8aH1YOTY2Nvam7GQom5SxJGzkkWZlLFEfvsTGxsZ+ODsfss4O3yQbOitR7XACGxsbe1d2u7i85MyemYwTZpuFjY2NvTc7Z6zEjFnrP18tNjY2NnbSsmk/WWk/5QFm2EvDxsbG3oLdtpZWGkBt4UzwRSjCxsbG3po9PM4YH4hst6NtM0XDYGxsbOwj2W1TfhZR2lI3XAk2Njb2puy2CM2KVttCmh3T/PAWbGxs7E3Zbato5RjlbHy7MirGxsbGPo29gpw1ffKnvUYXNjY29mnslRiQF6S8/bRSDusogo2Njf1wdnL4sv7Xf6EtlYecL0xFsLGxsR/OzgeobUHKI8SsfCZtLGxsbOxz2Pl9GzZaWNveykcd2NjY2Luy2/jRBpI2QrTls9gIbGxs7K3ZSXiYjQTaha5Eow/fx8bGxt6a3R7BWS9ISZlcP6yJjY2NfRq7flDZ6FkfKuSlt0hg2NjY2A9nz6JCwpgdgm//GF+YimBjY2M/nJ23lmYF5lsxIz/0MxwPYGNjY2/Hzv/db2F5wctDy7CphI2Njb0Fuw0JSXRpD3Su30dbjI2Njb01O2/iJ4cyk2L2taZ/PJDAxsbGPoHdNmva8jYD502lD6vFxsbGxl4Y5a7A1teGjY2NjZ0/uo0ryahgZaiAjY2NfRo7eU2Lb5v4eaPqv44HsLGxsW/Png1620LVDoxn6/znR3awsbGxb8Y+58LGxsbGxsbGxsa+zfUbJk2mGE+dTO4AAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEIUlEQVR42u3aW3LbMBAEQN//0s4BHFEzu3QiQY0vlS2TRNNV2NfXtxWsLwSYMGHChAmThQkTJkwvz/QVr5/f/3mdv9zswc+fPOKPOyZPe32FfI+YMGHChOk8pvyhH/225cuB8rs/uuNsj5gwYcKE6Tym6yAgP7Cvt5GHEfmV26eN/goTJkyYMH0kU/4QSYLdhhT55zx5xoQJEyZMmNqSa3K0z1aSeGPChAkTJkybAujsOM9Lt20zdV+kxoQJEyZMn8DUDu684+f/MN+ECRMmTJhegKldebqbp6abgCBphQ53igkTJkyYjmBKRmpmbcgniWXJN2thFsf/rEKACRMmTJhenmlzoCbEebF1Fjokd8yHkDBhwoQJ0ycwtQXTa9xoRGbR8myDj+I6mDBhwoTpOKbNgE573LZl5VkJeAaNCRMmTJjOY2ofZVN4bQOOTZDR/itgwoQJE6azmfY3vi7a5sXcPFVum5RFwxUTJkyYMB3BtB8VnaW4d42fzsrBN883YcKECROmN2GalVDbwdBZM7J9kfn3H1JiwoQJE6YjmNrtff/aalPlWUBQhAiYMGHChOkgprxV+Rspazt804YgwyI1JkyYMGE6iClpGd6VUiZ3/L0i7w2pLyZMmDBhekOmu1LQ62N7f5f2yqtXggkTJkyYjmBKNjBLLPOjuh0SalPo2fgRJkyYMGE6j6ktid5but2HDpvXUwQEmDBhwoTprZhasut0dIN7zZfQ5NePdoQJEyZMmI5jmm14OBZTBgSbVztro2LChAkTpjOYkoMzaS62wcSsfLxJmPNRJEyYMGHC9AlMyWP9+zZkcZzHQz+rWjgmTJgwYXoTpuRm+4feNCmT326KwpgwYcKE6WympISa37gdlGm3MWu1ttCYMGHChOkMptloy2ZAZ1Pk3Tdii+AGEyZMmDAdwZQ/3OxgvvfAbiHalBgTJkyYMJ3K1IYCeZm1TafbYGKTYD/5OSZMmDBh+himZMN54XXWsGw/b5JeTJgwYcL0CUzttmeNyTZEyMvKEcSs64sJEyZMmN6WaXbE5qFDW0TeNCw3/wqYMGHChOkkpjytnTUsN2M6s+JyXg5+8u+CCRMmTJgOYsrTxbvg6jGadRDQFogxYcKECdMZTL9RYG3T1La4nB/w7evHhAkTJkznMbUr316SACfXb4vRs9eDCRMmTJhOZZoVYYsEcj0Y1F5tg4gJEyZMmE5lylubs3ChHQnKE+xNuv7km5gwYcKE6Tim2TBNO1jTBiIJyuaamDBhwoQJUzLEMwOdBRbt4E7ytJgwYcKECdMsYW6LsHkK3cK1WJgwYcKE6Tymtsg7SyzbRLe9Y042DAgwYcKECdMbMu1Lou3DJUFG27zMC8RRmxMTJkyYMB3BZEUBgYUJEyZMmDBhsjBhwvQq6w9UlXHhyGFclAAAAABJRU5ErkJggg==">
     
 </ul>
     
@@ -434,7 +434,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=构造函数与new命令&url=http://yoursite.com/2018/04/11/构造函数与 new 命令/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别&url=http://yoursite.com/2019/03/19/【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -443,7 +443,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=构造函数与new命令&url=http://yoursite.com/2018/04/11/构造函数与 new 命令/index.html&via=Mr.Stupid Bird" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别&url=http://yoursite.com/2019/03/19/【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别/index.html&via=Mr.Stupid Bird" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -452,7 +452,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/11/构造函数与 new 命令/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/19/【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/11/构造函数与 new 命令/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/19/【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -485,39 +485,137 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>重新定义JavaScript中的构造函数。</p>
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><h3 id="简述构造函数"><a href="#简述构造函数" class="headerlink" title="简述构造函数"></a>简述构造函数</h3><p>JavaScript是一门面向对象语言。</p>
-<p>典型的面向对象编程语言（比如 C++ 和 Java），都有“类”（class）这个概念。所谓“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript 语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。</p>
-<p>在JavaScript中，构造函数就是生成对象的模板。所谓”构造函数”，就是专门用来生成实例对象的函数。它就是对象的模板，描述实例对象的基本结构。一个构造函数，可以生成多个实例对象，这些实例对象都有相同的结构。</p>
-<p>构造函数有两个特点:</p>
+        <h2 id="堆和栈"><a href="#堆和栈" class="headerlink" title="堆和栈"></a>堆和栈</h2><p>堆和栈都是内存中划分出来用来存储的区域。</p>
+<p>栈（stack）为自动分配的内存空间，它由系统自动释放；<br>堆（heap）则是动态分配的内存，大小不定也不会自动释放。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>JavaScript 分为两种数据类型</p>
+<ul>
+<li>基本数据类型<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>null</li>
+<li>undefind</li>
+</ul>
+</li>
+<li>引用类型<ul>
+<li>Object</li>
+<li>Function</li>
+<li>Array</li>
+</ul>
+</li>
+</ul>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>基本数据类型有以下特点：</p>
 <ol>
-<li>函数体内部使用了<code>this</code>关键字，代表了所要生成的对象实例。</li>
-<li>生成对象的时候，必须使用new命令。</li>
+<li>基本数据类型存放在堆中</li>
 </ol>
-<h3 id="重新定义JavaScript中的构造函数"><a href="#重新定义JavaScript中的构造函数" class="headerlink" title="重新定义JavaScript中的构造函数"></a>重新定义JavaScript中的构造函数</h3><p>在传统的面向类的语言中，“构造函数”是类的特殊方法，使用<code>new</code>操作符初始化类时会调用类中的构造函数。</p>
-<p>而在JavaScript中，<strong>构造函数只是一些使用<code>new</code>操作符时被调用的函数。</strong></p>
-<p>函数本身并不是构造函数，可如果在函数调用前面加上<code>new</code>关键字，就会把这个函数调用变成一个“构造函数调用”。</p>
-<p>可以这么说：实际上并不存在所谓的“构造函数”，只有对函数的“构造调用”。</p>
-<h2 id="new-命令"><a href="#new-命令" class="headerlink" title="new 命令"></a>new 命令</h2><p>正是因为JavaScript中，构造函数只是一些使用<code>new</code>操作符时被调用的函数，所以包括内置对象函数（Number(…)…等）在内的所有函数都可以用<code>new</code>调用。</p>
-<h3 id="new命令的原理"><a href="#new命令的原理" class="headerlink" title="new命令的原理"></a>new命令的原理</h3><p>当使用<code>new</code>调用函数时，后面的函数会自动依次执行以下操作：</p>
-<ol>
-<li>创建一个新的空对象，作为要返回的实例。</li>
-<li>[[prototype]]连接。即将空对象的原型，指向构造函数的<code>prototype</code>属性。</li>
-<li>将空对象绑定到函数内部的<code>this</code>。</li>
-<li>执行函数内部代码。如果函数没有返回其他对象，那么函数自动返回这个新对象。</li>
+<p>存放在栈内存中的简单数据段，数据大小确定，内存空间大小可以分配，是直接按值存放的，所以可以直接访问。</p>
+<ol start="2">
+<li>基本数据类型值不可变<blockquote>
+<p>javascript中的原始值（undefined、null、布尔值、数字和字符串）与对象（包括数组和函数）有着根本区别。原始值是不可更改的：任何方法都无法更改（或“突变”）一个原始值。对数字和布尔值来说显然如此 —— 改变数字的值本身就说不通，而对字符串来说就不那么明显了，因为字符串看起来像由字符组成的数组，我们期望可以通过指定索引来假改字符串中的字符。实际上，javascript 是禁止这样做的。字符串中所有的方法看上去返回了一个修改后的字符串，实际上返回的是一个</p>
+</blockquote>
+</li>
 </ol>
-<p>说一下第4步。</p>
-<p>如果构造函数内部有<code>return</code>语句，而且<code>return</code>后面一个对象，<code>new</code>命令会返回<code>return</code>语句指定的对象；否则，就会不管return语句，返回this对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 推荐的写法</span></span><br><span class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle();</span><br><span class="line"><span class="comment">// 不推荐的写法</span></span><br><span class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle;</span><br></pre></td></tr></table></figure>
-<p>上面的代码，由于return返回的是数值，而不是对象，所以<code>new</code>命令就会忽略这个<code>return</code>语句，返回“构造”后的<code>this</code>对象。</p>
-<p>但，如果return返回一个对象，哪怕与<code>this</code>无关，<code>new</code>都会返回这个对象，而不是<code>this</code>“构造”的形象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Vehicle = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.price = <span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">price</span>: <span class="number">2000</span> &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">(<span class="keyword">new</span> Vehicle()).price</span><br><span class="line"><span class="comment">// 2000</span></span><br></pre></td></tr></table></figure>
-<p>前面提到构造函数的一个特点是：“使用了<code>this</code>关键字，代表了所要生成的对象实例”，为什么呢？</p>
-<p>因为，如果对普通函数（内部没有this关键字的函数）使用new命令，则会返回一个空对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMessage</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'this is a message'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> msg = <span class="keyword">new</span> getMessage();</span><br><span class="line"></span><br><span class="line">msg <span class="comment">// &#123;&#125;</span></span><br><span class="line"><span class="keyword">typeof</span> msg <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
-<p>上面的代码中，<code>getMessage</code>函数内部没有<code>this</code>，并<code>return</code>一个字符串。当<code>new</code>命令调用对象的时候，执行<code>new</code>命令的4个步骤：创建了一个空对象，并进行[[prototype]]连接，由于没有this，忽略第3步，新对象没有属性，为空对象。<code>return</code>语句返回的是字符串，所以new命令就忽略了该语句，并返回创建的对象。</p>
-<h3 id="推荐写法"><a href="#推荐写法" class="headerlink" title="推荐写法"></a>推荐写法</h3><p><code>new</code>命令本身就可以执行构造函数，所以后面的构造函数可以带括号，也可以不带括号。下面两行代码是等价的，但是为了表示这里是函数调用，推荐使用括号。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 推荐的写法</span></span><br><span class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle();</span><br><span class="line"><span class="comment">// 不推荐的写法</span></span><br><span class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle;</span><br></pre></td></tr></table></figure>
+<p>基本数据类型的值是不可变的，动态修改了基本数据类型的值，它的原始值也是不会改变的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"abc"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str[<span class="number">1</span>]=<span class="string">"f"</span>); <span class="comment">// f</span></span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>基本类型的比较是值的比较</li>
+</ol>
+<p>基本类型的比较是值的比较，只要它们的值相等就认为他们是相等的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"abc"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str[<span class="number">1</span>]=<span class="string">"f"</span>); <span class="comment">// f</span></span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// abc</span></span><br></pre></td></tr></table></figure></p>
+<p>比较的时候最好使用严格等，因为 == 是会进行类型转换的，比如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a == b);<span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><ol>
+<li>引用类型存放在堆中</li>
+</ol>
+<p>引用类型（object）是存放在堆内存中的，变量实际上是一个存放在栈内存的指针，这个指针指向堆内存中的地址。每个空间大小不一样，要根据情况开进行特定的分配。</p>
+<ol start="2">
+<li>引用类型值可变</li>
+</ol>
+<p>引用类型是可以直接改变其值的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a[<span class="number">1</span>] = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="number">1</span>]); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>引用类型的比较是引用的比较</li>
+</ol>
+<p>每次我们对 js 中的引用类型进行操作的时候，都是操作其对象的引用（保存在栈内存中的指针），所以比较两个引用类型，是看其的引用是否指向同一个对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a[<span class="number">1</span>] = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a[<span class="number">1</span>]); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<p>虽然变量 a 和变量 b 都是表示一个内容为 1，2，3 的数组，但是其在内存中的位置不一样，也就是说变量 a 和变量 b 指向的不是同一个对象，所以他们是不相等的。</p>
+<h2 id="传值与传址"><a href="#传值与传址" class="headerlink" title="传值与传址"></a>传值与传址</h2><p>进行赋值操作的时候，基本数据类型的赋值（=）是在内存中新开辟一段栈内存，然后再把再将值赋值到新的栈中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line"></span><br><span class="line">a ++ ;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 11</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure></p>
+<p>引用类型的赋值是传址。只是改变指针的指向，例如，也就是说引用类型的赋值是对象保存在栈中的地址的赋值，这样的话两个变量就指向同一个对象，因此两者之间操作互相有影响。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;; <span class="comment">// a保存了一个空对象的实例</span></span><br><span class="line"><span class="keyword">var</span> b = a;  <span class="comment">// a和b都指向了这个空对象</span></span><br><span class="line"></span><br><span class="line">a.name = <span class="string">'jozo'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.name); <span class="comment">// 'jozo'</span></span><br><span class="line"><span class="built_in">console</span>.log(b.name); <span class="comment">// 'jozo'</span></span><br><span class="line"></span><br><span class="line">b.age = <span class="number">22</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b.age);<span class="comment">// 22</span></span><br><span class="line"><span class="built_in">console</span>.log(a.age);<span class="comment">// 22</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a == b);<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="赋值（Copy）"><a href="#赋值（Copy）" class="headerlink" title="赋值（Copy）"></a>赋值（Copy）</h2><p>赋值是将某一数值或对象赋给某个变量的过程，分为下面 2 部分</p>
+<ul>
+<li>基本数据类型：赋值，赋值之后两个变量互不影响</li>
+<li>引用数据类型：赋址，两个变量具有相同的引用，指向同一个对象，相互之间有影响</li>
+</ul>
+<h2 id="浅拷贝（Shallow-Copy）"><a href="#浅拷贝（Shallow-Copy）" class="headerlink" title="浅拷贝（Shallow Copy）"></a>浅拷贝（Shallow Copy）</h2><p>创建一个新对象，这个对象有着原始对象属性值的一份精确拷贝。如果属性是基本类型，拷贝的就是基本类型的值，如果属性是引用类型，拷贝的就是内存地址 ，所以如果其中一个对象改变了这个地址，就会影响到另一个对象。</p>
+<p>简单来说可以理解为浅拷贝只解决了第一层的问题，拷贝第一层的基本类型值，以及第一层的引用类型地址。</p>
+<h3 id="浅拷贝使用场景"><a href="#浅拷贝使用场景" class="headerlink" title="浅拷贝使用场景"></a>浅拷贝使用场景</h3><ul>
+<li><p>Object.assign()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">    name: <span class="string">"xiaoming"</span>,</span><br><span class="line">    parents: &#123;</span><br><span class="line">        father: <span class="string">"daming"</span>,</span><br><span class="line">        mother: <span class="string">"dahua"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">Object</span>.assign(&#123;&#125;, a);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">// 	name: "xiaoming",</span></span><br><span class="line"><span class="comment">// 	book: &#123;title: "daming", price: "dahua"&#125;</span></span><br><span class="line"><span class="comment">// &#125; </span></span><br><span class="line"></span><br><span class="line">b.name = <span class="string">"zhou"</span>;</span><br><span class="line">b.parents.mother = <span class="string">"niuniu"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">// 	name: "xiaoming",</span></span><br><span class="line"><span class="comment">// 	book: &#123;title: "daming", price: "niuniu"&#125;</span></span><br><span class="line"><span class="comment">// &#125; </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">// 	name: "zhou",</span></span><br><span class="line"><span class="comment">// 	book: &#123;title: "daming", price: "niuniu"&#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>展开语法 <code>Spread</code></p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    foo: <span class="string">'bar'</span>,</span><br><span class="line">    o: &#123;</span><br><span class="line">        a: <span class="string">'a'</span>,</span><br><span class="line">        b: <span class="string">'b'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> clonedObj = &#123; ...obj1 &#125;;</span><br><span class="line">clonedObj.o.foo = <span class="string">'foo'</span>;</span><br><span class="line">clonedObj.o.a = <span class="string">'aa'</span>;</span><br><span class="line">obj1.o.foo <span class="comment">// bar</span></span><br><span class="line">obj1.o.a <span class="comment">// aa</span></span><br></pre></td></tr></table></figure>
+<p>展开语法和 <code>Object.assign()</code> 行为一致, 执行的都是浅拷贝(只遍历一层)。</p>
+<ul>
+<li>Array.prototype.slice()</li>
+</ul>
+<p>slice() 方法返回一个新的数组对象，这一对象是一个由 begin和 end（不包括end）决定的原数组的浅拷贝。原始数组不会被改变。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">0</span>, <span class="string">"1"</span>, [<span class="number">2</span>, <span class="number">3</span>]];</span><br><span class="line"><span class="keyword">let</span> b = a.slice(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="comment">// ["1", [2, 3]]</span></span><br><span class="line"></span><br><span class="line">a[<span class="number">1</span>] = <span class="string">"99"</span>;</span><br><span class="line">a[<span class="number">2</span>][<span class="number">0</span>] = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="comment">// [0, "99", [4, 3]]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="comment">//  ["1", [4, 3]]</span></span><br></pre></td></tr></table></figure>
+<p>说明 <code>slice()</code> 方法是浅拷贝，相应的还有 <code>concat</code> 等，在工作中面对复杂数组结构要额外注意。</p>
+<h2 id="深拷贝（Deep-Copy）"><a href="#深拷贝（Deep-Copy）" class="headerlink" title="深拷贝（Deep Copy）"></a>深拷贝（Deep Copy）</h2><p>深拷贝会拷贝所有的属性，并拷贝属性指向的动态分配的内存。当对象和它所引用的对象一起拷贝时即发生深拷贝。深拷贝相比于浅拷贝速度较慢并且花销较大。拷贝前后两个对象互不影响。</p>
+<h3 id="JSON-parse-JSON-stringify-object"><a href="#JSON-parse-JSON-stringify-object" class="headerlink" title="JSON.parse(JSON.stringify(object))"></a>JSON.parse(JSON.stringify(object))</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">    name: <span class="string">"xiaoming"</span>,</span><br><span class="line">    parents: &#123;</span><br><span class="line">        father: <span class="string">"daming"</span>,</span><br><span class="line">        mother: <span class="string">"dahua"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    list: [<span class="number">0</span>, <span class="string">"1"</span>, [<span class="number">2</span>, <span class="number">3</span>]],</span><br><span class="line">    a: <span class="literal">undefined</span>,</span><br><span class="line">    fn: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="string">'123'</span>)&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(a));</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">// 	name: "xiaoming",</span></span><br><span class="line"><span class="comment">// 	parents: &#123;father: "daming", mother: "dahua"&#125;,</span></span><br><span class="line"><span class="comment">//  list = [0, "1", [2, 3]]</span></span><br><span class="line"><span class="comment">// &#125; </span></span><br><span class="line"></span><br><span class="line">a.name = <span class="string">"zhou"</span>;</span><br><span class="line">a.parents.father = <span class="string">"dazhou"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">// 	name: "zhou",</span></span><br><span class="line"><span class="comment">// 	parents: &#123;father: "dazhou", mother: "dahua"&#125;,</span></span><br><span class="line"><span class="comment">//  list = [0, "1", [2, 3]]</span></span><br><span class="line"><span class="comment">// &#125; </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">// 	name: "xiaoming",</span></span><br><span class="line"><span class="comment">// 	parents: &#123;father: "daming", mother: "dahua"&#125;,</span></span><br><span class="line"><span class="comment">//  list = [0, "1", [2, 3]]</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+<p>但是该方法有以下几个问题。</p>
+<ul>
+<li>会忽略 <code>undefined</code></li>
+<li>会忽略 <code>symbol</code></li>
+<li>不能序列化函数</li>
+<li>能解决循环引用的对象</li>
+<li>不能正确处理<code>new Date()</code></li>
+<li>不能处理正则</li>
+</ul>
+<p><code>undefined</code>、<code>symbol</code> 和函数这三种情况，会直接忽略。</p>
+<p>除了上面介绍的深拷贝方法，常用的还有<code>jQuery.extend()</code>和 <code>lodash.cloneDeep()</code>.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>–</th>
+<th>和原数据是否指向同一对象</th>
+<th>第一层数据为基本数据类型</th>
+<th>第一层数据为基本数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 赋值</td>
+<td>是</td>
+<td>改变会使原数据一同改变</td>
+<td>改变会使原数据一同改变</td>
+<td></td>
+</tr>
+<tr>
+<td> 浅拷贝</td>
+<td>否</td>
+<td>改变不会使原数据一同改变</td>
+<td>改变会使原数据一同改变</td>
+<td></td>
+</tr>
+<tr>
+<td> 深拷贝</td>
+<td>否</td>
+<td>改变不会使原数据一同改变</td>
+<td>改变不会使原数据一同改变</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="赋值和浅拷贝的区别"><a href="#赋值和浅拷贝的区别" class="headerlink" title="赋值和浅拷贝的区别"></a>赋值和浅拷贝的区别</h3><p>对于基本数据类型，赋值和浅拷贝并无区别。</p>
+<p>但是对于引用类型，两者有所区别。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    <span class="string">'name'</span> : <span class="string">'zhangsan'</span>,</span><br><span class="line">    <span class="string">'age'</span> :  <span class="string">'18'</span>,</span><br><span class="line">    <span class="string">'language'</span> : [<span class="number">1</span>,[<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>]],</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj3 = shallowCopy(obj1);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shallowCopy</span>(<span class="params">src</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> dst = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> prop <span class="keyword">in</span> src) &#123;</span><br><span class="line">        <span class="keyword">if</span> (src.hasOwnProperty(prop)) &#123;</span><br><span class="line">            dst[prop] = src[prop];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dst;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj2.name = <span class="string">"lisi"</span>;</span><br><span class="line">obj3.age = <span class="string">"20"</span>;</span><br><span class="line"></span><br><span class="line">obj2.language[<span class="number">1</span>] = [<span class="string">"二"</span>,<span class="string">"三"</span>];</span><br><span class="line">obj3.language[<span class="number">2</span>] = [<span class="string">"四"</span>,<span class="string">"五"</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1);  </span><br><span class="line"><span class="comment">//obj1 = &#123;</span></span><br><span class="line"><span class="comment">//    'name' : 'lisi',</span></span><br><span class="line"><span class="comment">//    'age' :  '18',</span></span><br><span class="line"><span class="comment">//    'language' : [1,["二","三"],["四","五"]],</span></span><br><span class="line"><span class="comment">//&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj2);</span><br><span class="line"><span class="comment">//obj2 = &#123;</span></span><br><span class="line"><span class="comment">//    'name' : 'lisi',</span></span><br><span class="line"><span class="comment">//    'age' :  '18',</span></span><br><span class="line"><span class="comment">//    'language' : [1,["二","三"],["四","五"]],</span></span><br><span class="line"><span class="comment">//&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj3);</span><br><span class="line"><span class="comment">//obj3 = &#123;</span></span><br><span class="line"><span class="comment">//    'name' : 'zhangsan',</span></span><br><span class="line"><span class="comment">//    'age' :  '20',</span></span><br><span class="line"><span class="comment">//    'language' : [1,["二","三"],["四","五"]],</span></span><br><span class="line"><span class="comment">//&#125;;</span></span><br></pre></td></tr></table></figure>
+<p><code>obj2</code> 是赋值的对象。<code>obj3</code> 是浅拷贝的对象。</p>
+<p>被赋值的变量（obj2）和源数据指向同一个对象。即使修改的是引用类型中的属性是基本数据类型，源数据也会被改变。因为他们指向的是同一对象。</p>
+<p>而浅拷贝只复制一层对象的属性，并不包括对象里面的引用类型的数据。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://juejin.im/post/5c20509bf265da611b585bec" target="_blank" rel="noopener">【进阶4-1期】详细解析赋值、浅拷贝和深拷贝的区别</a><br><a href="http://www.alloyteam.com/2017/08/12978/" target="_blank" rel="noopener">深拷贝与浅拷贝的实现（一）</a><br><a href="https://juejin.im/post/59ac1c4ef265da248e75892b" target="_blank" rel="noopener">js 深拷贝 vs 浅拷贝</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank" rel="noopener">展开语法 - JavaScript | MDN</a>_</p>
+
     
 
     
@@ -536,21 +634,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/05/04/自我解惑之单线程/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/04/08/经典闭包面试题/" id="post_nav-older" class="next-content">
+        <a href="/2019/03/17/JavaScript面向对象编程（二）：继承/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
