@@ -12,7 +12,7 @@
     
     <title>
         
-            初识 hybrid | 
+            AJAX 总结 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Mr.Stupid Bird">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",JavaScript">
 
     <!-- Site Verification -->
     
@@ -65,18 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="初识 hybrid | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="AJAX 总结 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="JavaScript"> 
 
     
-        <meta property="article:published_time" content="8月 25, 2018" />
-        <meta property="article:modified_time" content="8月 25, 2018" />
+        <meta property="article:published_time" content="4月 04, 2019" />
+        <meta property="article:modified_time" content="4月 04, 2019" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="初识 hybrid | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="AJAX 总结 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/25/初识 hybrid/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2019/04/04/AJAX-总结/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -110,10 +110,10 @@
         },
         "description": "Hi, nice to meet you"
     },
-    "headline": "初识 hybrid",
-    "url": "http://yoursite.com/2018/08/25/初识 hybrid/index.html",
-    "datePublished": "8月 25, 2018",
-    "dateModified": "8月 25, 2018",
+    "headline": "AJAX 总结",
+    "url": "http://yoursite.com/2019/04/04/AJAX-总结/index.html",
+    "datePublished": "4月 04, 2019",
+    "dateModified": "4月 04, 2019",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hybrid-是什么，为何用-hybrid？"><span class="post-toc-number">1.</span> <span class="post-toc-text">hybrid 是什么，为何用 hybrid？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hybrid存在价值："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">hybrid存在价值：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#webview"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">webview</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#file-协议"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">file 协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用场景"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">使用场景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hybrid-具体实现"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">hybrid 具体实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍一下-hybrid-更新和上线的流程"><span class="post-toc-number">2.</span> <span class="post-toc-text">介绍一下 hybrid 更新和上线的流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hybrid-和-H5-的主要区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">hybrid 和 H5 的主要区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前端-JS-和客户端如何通讯？（这里还是不太懂）"><span class="post-toc-number">4.</span> <span class="post-toc-text">前端 JS 和客户端如何通讯？（这里还是不太懂）</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XMLHttpRequest"><span class="post-toc-number">2.</span> <span class="post-toc-text">XMLHttpRequest</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XMLHttpRequest-的实例属性"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">XMLHttpRequest 的实例属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-readyState"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">XMLHttpRequest.readyState</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-onreadystatechange"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">XMLHttpRequest.onreadystatechange</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-response"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">XMLHttpRequest.response</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-responseType"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">XMLHttpRequest.responseType</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-responseText"><span class="post-toc-number">2.1.5.</span> <span class="post-toc-text">XMLHttpRequest.responseText</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-responseURL"><span class="post-toc-number">2.1.6.</span> <span class="post-toc-text">XMLHttpRequest.responseURL</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-status"><span class="post-toc-number">2.1.7.</span> <span class="post-toc-text">XMLHttpRequest.status</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-statusText"><span class="post-toc-number">2.1.8.</span> <span class="post-toc-text">XMLHttpRequest.statusText</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XMLHttpRequest-的实例方法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">XMLHttpRequest 的实例方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-open"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">XMLHttpRequest.open()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-send"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">XMLHttpRequest.send()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-setRequestHeader"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">XMLHttpRequest.setRequestHeader()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#XMLHttpRequest-abort"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">XMLHttpRequest.abort()</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用示例"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">使用示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简单用法"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">简单用法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#POST"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">POST</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GET和POST请求数据区别"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">GET和POST请求数据区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -360,20 +360,11 @@
                 
     <!-- Paradox Post Header -->
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/thumbnails/JavaScript.jpg)">
     
             <p class="article-headline-p">
-                初识 hybrid
+                AJAX 总结
             </p>
         </div>
 
@@ -392,7 +383,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Mr.Stupid Bird</strong>
-        <span>8月 25, 2018</span>
+        <span>4月 04, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +405,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXElEQVR42u3aQXLDIAwF0Nz/0u0BOna+JKBO5rHKJDHwWIAs9Pr56vbCw8PDw8PDw8N7GO8Vt/un/v56OfxtbwvmhoeHh3eE92arjQeu9nz/z+bc8PDw8A7yrqZ79Tn/5uoAyMdK5oaHh4f3ubzqU/m4eHh4eN/Ku+8n+RUPDw/vU3jJC3/vGMgTuEk/G3MteHh4eDEvv2Q6//no/R4eHh5ewCuXNC2aevWSrDBDPDw8vM28fCPuFQHMD5vqfPDw8PB28+47vWfkA/fSGdUyWTw8PLwn8KILp/jZ+wTuPHzHw8PDO8lLguPk4qpXWFBdjnJIjYeHh7eUl2/0+bael1Ll/y8sHx4eHt4RXl48Ohq4mMxtLj0eHh7eZl5OzQPxaiIjT1g007h4eHh4m3l5KFxNsOZLUO0TDw8P7yRvsjVXqfNnk3QzHh4e3hleftVULTmtHhiTxcXDw8M7w+ttytWwuBeIb6wpw8PDwxvzklf9alp2R4nAsjQuHh4e3phXTblWYZOCgOq1HB4eHt5uXl6QmgTKyaJMkhHLstR4eHh4Y16VNE9AJHPoJTvw8PDwzvN62/Sqi7HkCHmz9Hh4eHjHeTmsl9jtIe+fwsPDwzvJq7bmZj0PlOelA3h4eHiLeK+45dv95MDIC60KITUeHh7eBl5+GCRDbknO4uHh4T2Sl2/Q8xKr3kJEqRM8PDy8j+KtOhiq3+Ph4eF9Cm9SBDBPT1y+AODh4eEd5OWXXnmSN7kq64XmeHh4eP/LW5ACKAbQyWI1E754eHh4m3nf1/Dw8PDw8PDw8B7QfgEw1j7ayAQ7swAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbklEQVR42u3a0WrrQAwE0Pz/T7evFy5xZyTbMeH4KRSn3rOFlTvS6+errxceHh4eHh4eHt7DeK/4+vf+d9/9/55333q3hs3a8PDw8O7k/XHUHvJmgHYrk7Xh4eHh3c9rD/rrlrhaGx4eHt7DePnSj1+sjzcLDw8P75t4x4XheOntpuDh4eE9n7c54ouYNdiOj2UteHh4eDFv0wC7+vOH+3t4eHh466Gr5ODOX7jbElUPXeHh4eFdwHt3EB9HAJtYIQ8pkuGtYdaCh4eHt+a1LaikfZWHs7NnFYUBDw8P71Re+5j2wbNX8HywIAoj8PDw8E7lzQanNsVgUwbw8PDwnsNrC0P7G2YRQ74FeHh4ePfzNi+4bSDblqJ8o/Hw8PDu4SVHczsItRkRaAsDHh4e3qd4RXtpEUBsGm+rBhgeHh7eqbxZEDB7Lc4bZu0T8fDw8J7Ay+OA/RLzgGOVteDh4eFdwGubXmeNC7SNrj/+DHh4eHgf4rXtqKR4JJuSY4YzZXh4eHhr3tUBa7tB+TYVowN4eHh4p/LywpCPCMxihdlQwml1Dw8PDy/m5Utsj/skmMgxRWyBh4eHdwuvjQk2EcPs58PRATw8PLwLePvmUx4rtL9/WJzw8PDwLua1V3JA5wVjH/sO/2PAw8PDW/DaCDW/p70/b7bVr9R4eHh4F/DyYtCSZsjZGvDw8PDu523aV/tG1+zOYdaCh4eHdyOvbX3NouE85ji5MODh4eFdxks+t43/fUnAw8PDu5/XNr3aAax2CCBpm52cteDh4eFd3FvfDxwkr9rt+AIeHh7e1bzvu/Dw8PDw8PDw8B5w/QKNq8Rw6djaJAAAAABJRU5ErkJggg==">
     
 </ul>
     
@@ -427,7 +418,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
     </ul>
     
 
@@ -443,7 +434,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=初识 hybrid&url=http://yoursite.com/2018/08/25/初识 hybrid/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=AJAX 总结&url=http://yoursite.com/2019/04/04/AJAX-总结/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -452,7 +443,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=初识 hybrid&url=http://yoursite.com/2018/08/25/初识 hybrid/index.html&via=Mr.Stupid Bird" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=AJAX 总结&url=http://yoursite.com/2019/04/04/AJAX-总结/index.html&via=Mr.Stupid Bird" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -461,7 +452,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/25/初识 hybrid/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/04/AJAX-总结/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -470,7 +461,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/25/初识 hybrid/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/04/AJAX-总结/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -494,48 +485,86 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="hybrid-是什么，为何用-hybrid？"><a href="#hybrid-是什么，为何用-hybrid？" class="headerlink" title="hybrid 是什么，为何用 hybrid？"></a>hybrid 是什么，为何用 hybrid？</h2><p>hybrid 即前端和客户端的混合开发。</p>
-<h3 id="hybrid存在价值："><a href="#hybrid存在价值：" class="headerlink" title="hybrid存在价值："></a>hybrid存在价值：</h3><ul>
-<li>可以快速迭代更新(无需APP审核)</li>
-<li>体验流畅（和 NA 的体验基本类似）</li>
-<li>减少开发成本和沟通成本，两端共用一套代码</li>
-</ul>
-<h3 id="webview"><a href="#webview" class="headerlink" title="webview"></a>webview</h3><p>webview 是 APP 的一个组件。（APP 可以有也可以没有）。<br>用于加载 H5页面,即一个小型的浏览器内核。</p>
-<h3 id="file-协议"><a href="#file-协议" class="headerlink" title="file 协议"></a>file 协议</h3><ul>
-<li>读取本地磁盘的文件，速度快，与网络环境无关</li>
-<li>绝对路径</li>
-</ul>
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>NA：体验要求极致，变化不频繁（如头条的新闻）<br>hybrid：体验要求高，变化频繁（如头条的新闻详情页面）</p>
-<h3 id="hybrid-具体实现"><a href="#hybrid-具体实现" class="headerlink" title="hybrid 具体实现"></a>hybrid 具体实现</h3><ul>
-<li>前端做好静态页面（HTML JS CSS），将文件交给客户端</li>
-<li>客户端拿到前端静态页面，以文件的形式存储在 APP 中</li>
-<li>客户端在一个 webview 中</li>
-<li>使用 file 协议加载静态页面</li>
-</ul>
-<h2 id="介绍一下-hybrid-更新和上线的流程"><a href="#介绍一下-hybrid-更新和上线的流程" class="headerlink" title="介绍一下 hybrid 更新和上线的流程"></a>介绍一下 hybrid 更新和上线的流程</h2><ul>
-<li>替换每个客户端的静态文件</li>
-<li><p>客户端去 server 下载最新静态页面文件</p>
-</li>
-<li><p>分版本号</p>
-</li>
-<li>将静态文件压缩成 zip 包，上传服务器</li>
-<li>服务端每次启动，都回去服务端检查版本号</li>
-<li>如果不是最新，下载最新的包</li>
-<li>下载完后解压，将现有文件覆盖</li>
-</ul>
-<h2 id="hybrid-和-H5-的主要区别"><a href="#hybrid-和-H5-的主要区别" class="headerlink" title="hybrid 和 H5 的主要区别"></a>hybrid 和 H5 的主要区别</h2><p>hybrid 的优点：</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>AJAX 即 “Asynchronous JavaScript and XML”（异步的JavaScript与XML技术），指的是通过 JavaScript 的异步通信，从服务器获取 XML 文档从中提取数据，再更新当前网页的对应部分，而不用刷新整个网页。后来，AJAX 这个词就成为 JavaScript 脚本发起 HTTP 通信的代名词，也就是说，只要用脚本发起通信，就可以叫做 AJAX 通信。</p>
+<p>具体来说，AJAX 包括以下几个步骤。</p>
+<ol>
+<li>创建 XMLHttpRequest 实例</li>
+<li>发出 HTTP 请求</li>
+<li>接收服务器传回的数据</li>
+<li>更新网页数据</li>
+</ol>
+<p>概括起来，就是一句话，AJAX 通过原生的XMLHttpRequest对象发出 HTTP 请求，得到服务器返回的数据后，再进行处理。现在，服务器返回的都是 JSON 格式的数据，XML 格式已经过时了，但是 AJAX 这个名字已经成了一个通用名词，字面含义已经消失了。</p>
+<p>注意，AJAX 只能向同源网址（协议、域名、端口都相同）发出 HTTP 请求，如果发出跨域请求，就会报错。</p>
+<h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h2><p><code>XMLHttpRequest</code>对象是 AJAX 的主要接口，用于浏览器与服务器之间的通信。尽管名字里面有XML和Http，它实际上可以使用多种协议（比如file或ftp），发送任何格式的数据（包括字符串和二进制）。</p>
+<h3 id="XMLHttpRequest-的实例属性"><a href="#XMLHttpRequest-的实例属性" class="headerlink" title="XMLHttpRequest 的实例属性"></a>XMLHttpRequest 的实例属性</h3><h4 id="XMLHttpRequest-readyState"><a href="#XMLHttpRequest-readyState" class="headerlink" title="XMLHttpRequest.readyState"></a>XMLHttpRequest.readyState</h4><p>XMLHttpRequest.readyState返回一个整数，表示实例对象的当前状态。该属性只读。它可能返回以下值。</p>
 <ul>
-<li>体验好，可快速迭代。<br>hybrid 的缺点：</li>
-<li>开发成本高。链条、测试、查 BUG 都比较麻烦。</li>
-<li>运维成本高。</li>
+<li>0  未初始化 – 表示 XMLHttpRequest 实例已经生成，尚未调用.open()方法 </li>
+<li>1  表示open()方法已经调用，但是实例的send()方法还没有调用，仍然可以使用实例的setRequestHeader()方法，设定 HTTP 请求的头信息。</li>
+<li>2  发送 – 已经调用.send()方法，并且服务器返回的头信息和状态码已经收到，但尚未接收到响应；。</li>
+<li>3  接收 – 表示正在接收服务器传来的数据体（body 部分）。这时，如果实例的responseType属性等于text或者空字符串，responseText属性就会包含已经收到的部分信息。</li>
+<li>4  完成 – 表示服务器返回的数据已经完全接收，或者本次接收已经失败。</li>
 </ul>
-<p>使用场景：<br>hybrid： 产品的稳定功能，体验要求高，迭代频繁。（产品型）<br>H5: 单次的运营活动或不常用功能。</p>
-<h2 id="前端-JS-和客户端如何通讯？（这里还是不太懂）"><a href="#前端-JS-和客户端如何通讯？（这里还是不太懂）" class="headerlink" title="前端 JS 和客户端如何通讯？（这里还是不太懂）"></a>前端 JS 和客户端如何通讯？（这里还是不太懂）</h2><ul>
-<li>通讯的基本形式： 调用能力，传递参数，监听回调</li>
-<li>schema 协议的理解和使用</li>
-<li>调用 schema 代码的封装</li>
-<li>内置上线的好处：更快更安全</li>
+<p>通信过程中，每当实例对象发生状态变化，它的readyState属性的值就会改变。这个值每一次变化，都会触发  <code>readyStateChange</code> 事件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">  <span class="comment">// 请求结束，处理服务器返回的数据</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 显示提示“加载中……”</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="XMLHttpRequest-onreadystatechange"><a href="#XMLHttpRequest-onreadystatechange" class="headerlink" title="XMLHttpRequest.onreadystatechange"></a>XMLHttpRequest.onreadystatechange</h4><p><code>XMLHttpRequest.onreadystatechange</code> 属性指向一个监听函数。 <code>readystatechange</code> 事件发生时（实例的 <code>readyState</code> 属性变化），就会执行这个属性。</p>
+<h4 id="XMLHttpRequest-response"><a href="#XMLHttpRequest-response" class="headerlink" title="XMLHttpRequest.response"></a>XMLHttpRequest.response</h4><p><code>XMLHttpRequest.response</code> 属性表示服务器返回的数据体（即 HTTP 回应的 body 部分）。它可能是任何数据类型，比如字符串、对象、二进制对象等等，具体的类型由 <em>XMLHttpRequest.responseType</em> 属性决定。该属性只读。</p>
+<p>如果本次请求没有成功或者数据不完整，该属性等于 <code>null</code> 。但是，如果 <code>responseType</code> 属性等于text或空字符串，在请求没有结束之前（ <code>readyState</code> 等于3的阶段）， <code>response</code> 属性包含服务器已经返回的部分数据。</p>
+<h4 id="XMLHttpRequest-responseType"><a href="#XMLHttpRequest-responseType" class="headerlink" title="XMLHttpRequest.responseType"></a>XMLHttpRequest.responseType</h4><p><code>XMLHttpRequest.responseType</code> 属性是一个字符串，表示服务器返回数据的类型。这个属性是可写的，可以在调用 <code>open()</code> 方法之后、调用 <code>send()</code> 方法之前，设置这个属性的值，告诉服务器返回指定类型的数据。如果responseType设为空字符串，就等同于默认值text。</p>
+<p><code>XMLHttpRequest.responseType</code> 属性可以等于以下值。</p>
+<ul>
+<li>“”（空字符串）：等同于text，表示服务器返回文本数据。</li>
+<li>“arraybuffer”：ArrayBuffer 对象，表示服务器返回二进制数组。</li>
+<li>“blob”：Blob 对象，表示服务器返回二进制对象。</li>
+<li>“document”：Document 对象，表示服务器返回一个文档对象。</li>
+<li>“json”：JSON 对象。</li>
+<li>“text”：字符串。</li>
 </ul>
+<p>如果将这个属性设为json，浏览器就会自动对返回数据调用 <code>JSON.parse()</code> 方法。也就是说，从 <code>xhr.response</code> 属性（注意，不是 <code>xhr.responseText</code> 属性）得到的不是文本，而是一个 JSON 对象。</p>
+<h4 id="XMLHttpRequest-responseText"><a href="#XMLHttpRequest-responseText" class="headerlink" title="XMLHttpRequest.responseText"></a>XMLHttpRequest.responseText</h4><p><code>XMLHttpRequest.responseText</code> 属性返回从服务器接收到的字符串，该属性为只读。只有 HTTP 请求完成接收以后，该属性才会包含完整的数据。</p>
+<h4 id="XMLHttpRequest-responseURL"><a href="#XMLHttpRequest-responseURL" class="headerlink" title="XMLHttpRequest.responseURL"></a>XMLHttpRequest.responseURL</h4><p><code>XMLHttpRequest.responseURL</code> 属性是字符串，表示发送数据的服务器的网址。</p>
+<p>注意，这个属性的值与 <code>open()</code> 方法指定的请求网址不一定相同。如果服务器端发生跳转，这个属性返回最后实际返回数据的网址。另外，如果原始 URL 包括锚点（fragment），该属性会把锚点剥离。</p>
+<h4 id="XMLHttpRequest-status"><a href="#XMLHttpRequest-status" class="headerlink" title="XMLHttpRequest.status"></a>XMLHttpRequest.status</h4><p><code>XMLHttpRequest.status</code> 属性返回一个整数，表示服务器回应的 HTTP 状态码。一般来说，如果通信成功的话，这个状态码是200；如果服务器没有返回状态码，那么这个属性默认是200。请求发出之前，该属性为0。该属性只读</p>
+<ul>
+<li>200, OK，访问正常</li>
+<li>301, Moved Permanently，永久移动</li>
+<li>302, Moved temporarily，暂时移动</li>
+<li>304, Not Modified，未修改</li>
+<li>307, Temporary Redirect，暂时重定向</li>
+<li>401, Unauthorized，未授权</li>
+<li>403, Forbidden，禁止访问</li>
+<li>404, Not Found，未发现指定网址</li>
+<li>500, Internal Server Error，服务器发生错误</li>
+</ul>
+<h4 id="XMLHttpRequest-statusText"><a href="#XMLHttpRequest-statusText" class="headerlink" title="XMLHttpRequest.statusText"></a>XMLHttpRequest.statusText</h4><p><code>XMLHttpRequest.statusText</code> 属性返回一个字符串，表示服务器发送的状态提示。不同于status属性，该属性包含整个状态信息，比如“OK”和“Not Found”。在请求发送之前（即调用open()方法之前），该属性的值是空字符串；如果服务器没有返回状态提示，该属性的值默认为“OK”。该属性为只读属性。</p>
+<h3 id="XMLHttpRequest-的实例方法"><a href="#XMLHttpRequest-的实例方法" class="headerlink" title="XMLHttpRequest 的实例方法"></a>XMLHttpRequest 的实例方法</h3><h4 id="XMLHttpRequest-open"><a href="#XMLHttpRequest-open" class="headerlink" title="XMLHttpRequest.open()"></a>XMLHttpRequest.open()</h4><p>XMLHttpRequest.open()方法用于指定 HTTP 请求的参数，或者说初始化 XMLHttpRequest 实例对象。它一共可以接受五个参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> open(</span><br><span class="line">   string method,</span><br><span class="line">   string url,</span><br><span class="line">   optional boolean <span class="keyword">async</span>,</span><br><span class="line">   optional string user,</span><br><span class="line">   optional string password</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>method</code>：表示 HTTP 动词方法，比如GET、POST、PUT、DELETE、HEAD等。</li>
+<li><code>url</code>: 表示请求发送目标 URL。</li>
+<li><code>async</code>: 布尔值，表示请求是否为异步，默认为true。如果设为false，则send()方法只有等到收到服务器返回了结果，才会进行下一步操作。该参数可选。由于同步 AJAX 请求会造成浏览器失去响应，许多浏览器已经禁止在主线程使用，只允许 Worker 里面使用。所以，这个参数轻易不应该设为false。</li>
+<li><code>user</code>：表示用于认证的用户名，默认为空字符串。该参数可选。</li>
+<li><code>password</code>：表示用于认证的密码，默认为空字符串。该参数可选。</li>
+</ul>
+<h4 id="XMLHttpRequest-send"><a href="#XMLHttpRequest-send" class="headerlink" title="XMLHttpRequest.send()"></a>XMLHttpRequest.send()</h4><p><code>XMLHttpRequest.send()</code> 方法用于实际发出 HTTP 请求。它的参数是可选的，如果不带参数，就表示 HTTP 请求只有一个 URL，没有数据体，典型例子就是 GET 请求；如果带有参数，就表示除了头信息，还带有包含具体数据的信息体，典型例子就是 POST 请求。</p>
+<p>GET 请求的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>,</span><br><span class="line">  <span class="string">'http://www.example.com/?id='</span> + <span class="built_in">encodeURIComponent</span>(id),</span><br><span class="line">  <span class="literal">true</span></span><br><span class="line">);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<p>GET请求的参数，作为查询字符串附加在 URL 后面。</p>
+<p>下面是发送 POST 请求的例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="keyword">var</span> data = <span class="string">'email='</span></span><br><span class="line">  + <span class="built_in">encodeURIComponent</span>(email)</span><br><span class="line">  + <span class="string">'&amp;password='</span></span><br><span class="line">  + <span class="built_in">encodeURIComponent</span>(password);</span><br><span class="line"></span><br><span class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'http://www.example.com'</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">xhr.send(data);</span><br></pre></td></tr></table></figure>
+<p><strong>注意，所有 XMLHttpRequest 的监听事件，都必须在send()方法调用之前设定。</strong></p>
+<h4 id="XMLHttpRequest-setRequestHeader"><a href="#XMLHttpRequest-setRequestHeader" class="headerlink" title="XMLHttpRequest.setRequestHeader()"></a>XMLHttpRequest.setRequestHeader()</h4><p><code>XMLHttpRequest.setRequestHeader()</code> 方法用于设置浏览器发送的 HTTP 请求的头信息。该方法必须在open()之后、send()之前调用。如果该方法多次调用，设定同一个字段，则每一次调用的值会被合并成一个单一的值发送。</p>
+<p>该方法接受两个参数。第一个参数是字符串，表示头信息的字段名，第二个参数是字段值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-Length'</span>, <span class="built_in">JSON</span>.stringify(data).length);</span><br><span class="line">xhr.send(<span class="built_in">JSON</span>.stringify(data));</span><br></pre></td></tr></table></figure>
+<h4 id="XMLHttpRequest-abort"><a href="#XMLHttpRequest-abort" class="headerlink" title="XMLHttpRequest.abort()"></a>XMLHttpRequest.abort()</h4><p><code>XMLHttpRequest.abort()</code> 方法用来终止已经发出的 HTTP 请求。调用这个方法以后， <code>readyState</code> 属性变为4，<code>status</code> 属性变为0。</p>
+<h3 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h3><h4 id="简单用法"><a href="#简单用法" class="headerlink" title="简单用法"></a>简单用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 通信成功时，状态值为4</span></span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.status === <span class="number">200</span>)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.error(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xhr.onerror = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.error(xhr.statusText);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'/endpoint'</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="keyword">var</span> data = <span class="string">'email='</span></span><br><span class="line">  + <span class="built_in">encodeURIComponent</span>(email)</span><br><span class="line">  + <span class="string">'&amp;password='</span></span><br><span class="line">  + <span class="built_in">encodeURIComponent</span>(password);</span><br><span class="line"></span><br><span class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'http://www.example.com'</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">xhr.send(data);</span><br></pre></td></tr></table></figure>
+<p><strong>注意：post请求一定要设置请求头的格式内容</strong></p>
+<h3 id="GET和POST请求数据区别"><a href="#GET和POST请求数据区别" class="headerlink" title="GET和POST请求数据区别"></a>GET和POST请求数据区别</h3><ul>
+<li>使用Get请求时,参数在URL中显示,而使用Post方式,则放在send里面</li>
+<li>使用Get请求发送数据量小,Post请求发送数据量大</li>
+<li>使用Get请求安全性低，会被缓存，而Post请求反之</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest - Web API 接口参考 | MDN</a><br><a href="https://zh.wikipedia.org/wiki/AJAX" target="_blank" rel="noopener">AJAX - 维基百科</a><br><a href="https://segmentfault.com/a/1190000017396192" target="_blank" rel="noopener">Ajax原理一篇就够了</a><br><a href="https://wangdoc.com/javascript/bom/xmlhttprequest.html" target="_blank" rel="noopener">XMLHttpRequest 对象</a><br><a href="https://juejin.im/post/5b1cea356fb9a01e713592c5" target="_blank" rel="noopener">Ajax请求后台数据</a></p>
 
     
 
@@ -555,7 +584,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/08/25/JavaScript 设计模式之工厂模式/" id="post_nav-newer" class="prev-content">
+        <a href="/2019/04/04/JavaScript中的URL编码/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -569,7 +598,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/08/24/JavaScript 设计模式之设计原则/" id="post_nav-older" class="next-content">
+        <a href="/2019/03/19/【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
