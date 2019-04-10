@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2019/1 | 
+            【自我解惑】Object.__proto__ | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Mr.Stupid Bird">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",JavaScript">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2019/1 | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="【自我解惑】Object.__proto__ | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="JavaScript"> 
 
+    
+        <meta property="article:published_time" content="4月 10, 2019" />
+        <meta property="article:modified_time" content="4月 10, 2019" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2019/1 | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="【自我解惑】Object.__proto__ | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2019/01/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2019/04/10/【自我解惑】Object-proto/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Stupid Bird&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Mr.Stupid Bird",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "【自我解惑】Object.__proto__",
+    "url": "http://yoursite.com/2019/04/10/【自我解惑】Object-proto/index.html",
+    "datePublished": "4月 10, 2019",
+    "dateModified": "4月 10, 2019",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -275,154 +308,253 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/01/22/JavaWeb基础入门/">JavaWeb基础入门</a></p>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
     </div>
+    -->
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/01/22/JavaWeb基础入门/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>1月 22, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/img/thumbnails/flutter_banner.jpg">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/thumbnails/JavaScript.jpg)">
     
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/01/05/Todo-List-built-with-Flutter/">Todo List built with Flutter</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Step by step tutorial how to build Todo List with Flutter.
-flutter是...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/01/05/Todo-List-built-with-Flutter/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>1月 05, 2019</span>
-            </div>
+            <p class="article-headline-p">
+                【自我解惑】Object.__proto__
+            </p>
         </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+
+
+
+
+
                 
-            </span>
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
 
-            
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avater.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mr.Stupid Bird</strong>
+        <span>4月 10, 2019</span>
+    </div>
 
-            
+    <div class="section-spacer"></div>
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC4ElEQVR42u3aQW4bQQwEQP//08k1QCClm5Rieab2ZMjy7tb4QJDNr19XXl/Y2NjY2NjY2NjYH8n+iq8/v188LP7+oyf+fZ/2nbGxsbFvYOev/uggnh/Qo6fMDrd9Z2xsbOx72O1LPD+C50/ZH3T7ztjY2NjYz2HJASWfRE0FNjY2NvabC1h+EM9h2NjY2NjvGCq1Y6a8RWlHUf91loaNjY398exZ0Pu9P39bvo2NjY39Yez22sS37Zhptvrz8A7Y2NjYh7L36zizAKANdDetETY2NvbZ7PqP489ng6e8WNaLntjY2NhHs5ORTdKi7KOCTRvzj2YGGxsb+xp2fhz5EKotP0lT1I6ZsLGxse9ht6Hvpl15VTmMno6NjY19DXsW4ubLPW0Y3Baz4VAJGxsb+8ey81snYUBS3jatSNs4YWNjY9/Dno2HhoVktPqTRwXRUAkbGxv7OPZmCbINAPLymfPqoBcbGxv7UHYbps5KV/vb/cALGxsb+wZ2O+hpjymPB75GVx30YmNjYx/KnpWZ5LDa6LeNoqOjx8bGxj6avQl0k5ZgczSzYdMw38bGxsb+gey8Idms2iSNxOwfkMe92NjY2Key86ZidihJ8ZsVqqSIYmNjY9/DnhWSTevSDpjy+9T5NjY2NvYPZ+8HQ8kdZoP+2dJPMVTCxsbGPo69jwHyQ8lXeZIRVb2yg42NjX0cOx/ot8Ogzef5UUbvgI2NjX0oez92z186D32TIVEdMGBjY2Mfyn7VYCh5/Ia6KavY2NjYN7NfNXjatBCvanKwsbGxT2W3TULy+SwMyCOHfE0HGxsb+x72rGi1gW7CyNuhFxQwbGxs7OPY+QrOftV+1qjkQ6WigGFjY2Nfxt4UrXyoNIsN3ljAsLGxsY9jJ49vS1e7oFP/G7CxsbEvYG/C2iRUaAvbPkjGxsbGvofdBr2bxmMzbMqbkLes7GBjY2N/JPueCxsbGxsbGxsbG/tjrt9mw6YYbJpucgAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=【自我解惑】Object.__proto__&url=http://yoursite.com/2019/04/10/【自我解惑】Object-proto/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=【自我解惑】Object.__proto__&url=http://yoursite.com/2019/04/10/【自我解惑】Object-proto/index.html&via=Mr.Stupid Bird" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/10/【自我解惑】Object-proto/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/10/【自我解惑】Object-proto/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>在看判断数据类型的时候有这么一个方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.string.call(value)</span><br></pre></td></tr></table></figure>
+<p>即通过 <code>Object.prototype.toString</code> 方法返回对象的类型字符串，以此来判断一个值的类型。</p>
+<p>然后我就很突发奇想，直接写 <code>Object.toString</code> 可以吗？虽然知道会不行，但至少还是想搞清楚为什么不行，也算是对我看了那么久的原型相关的知识进行复盘。</p>
+<p>首先是验证：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.toString === <span class="built_in">Object</span>.prototype.toString <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>果然不行。</p>
+<p>为什么呢？</p>
+<p>之所以会有这个错误，是因为我搞混了原型链的知识：</p>
+<p>先看定义：</p>
+<blockquote>
+<p><strong>访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着<strong>proto</strong>这条链向上找，这就是原型链。</strong></p>
+</blockquote>
+<p>而我以为 <code>Object.__proto__</code> 可以找到 <code>Object.prototype</code></p>
+<p>然而并不行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Object</span>.prototype <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>那么，最关键的问题出现了：<code>Object.__proto__</code> 指向哪里呢？</p>
+<p>一开始我记错了，以为是 <code>null</code></p>
+<p>结果我又错了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.__proto__ === <span class="literal">null</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p><code>Object.prototype.__proto__</code> 才是指向 <code>null</code></p>
+<p>这时候我猛然想起：</p>
+<blockquote>
+<p><strong>对象的 <code>__proto__</code> 指向的是创建它的函数的 <code>prototype</code></strong></p>
+</blockquote>
+<p><code>Object</code> 不仅是对象，也是一个构造函数！</p>
+<p>那既然是一个函数，那么他就肯定也是由 <code>Function</code> 创造的！</p>
+<p>所以 <code>Object.__proto_</code> 指向 <code>Function.prototype</code> !</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>如下图所示：</p>
+<p><a href="https://www.ibm.com/developerworks/cn/web/1306_jiangjj_jsinstanceof/figure1.jpg" target="_blank" rel="noopener">JavaScript原型图</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.cnblogs.com/wangfupeng1988/p/3979985.html" target="_blank" rel="noopener">深入理解javascript原型和闭包（4）——隐式原型</a><br><a href="http://www.cnblogs.com/wangfupeng1988/p/3979985.html" target="_blank" rel="noopener">深入理解javascript原型和闭包（6）——继承</a></p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/04/04/JavaScript中的URL编码/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
         </div>
     </div>
-</div>
 
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
-</div>
 
 
                     
