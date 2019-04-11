@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2018/9 | 
+            浅析 JavaScript 防抖和节流 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Mr.Stupid Bird">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",JavaScript">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/9 | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="浅析 JavaScript 防抖和节流 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="JavaScript"> 
 
+    
+        <meta property="article:published_time" content="4月 11, 2019" />
+        <meta property="article:modified_time" content="4月 11, 2019" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2018/9 | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="浅析 JavaScript 防抖和节流 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2018/09/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2019/04/11/浅析-JavaScript-防抖和节流/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Mr.Stupid Bird&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Mr.Stupid Bird",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "浅析 JavaScript 防抖和节流",
+    "url": "http://yoursite.com/2019/04/11/浅析-JavaScript-防抖和节流/index.html",
+    "datePublished": "4月 11, 2019",
+    "dateModified": "4月 11, 2019",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -275,223 +308,253 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/30/Web-security-XSS/">Web 安全-XSS</a></p>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
     </div>
+    -->
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/30/Web-security-XSS/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>9月 30, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#防抖（debounce）"><span class="post-toc-number">1.</span> <span class="post-toc-text">防抖（debounce）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是防抖"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是防抖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用场景"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">应用场景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#简易版"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">简易版</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ES5"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">ES5</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ES6"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">ES6</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#带有立即执行选项的防抖函数"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">带有立即执行选项的防抖函数</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#节流（throttle）"><span class="post-toc-number">2.</span> <span class="post-toc-text">节流（throttle）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是节流"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">什么是节流</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用场景-1"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">应用场景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现-1"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#效果"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">效果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原理"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">原理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/thumbnails/JavaScript.jpg)">
+    
+            <p class="article-headline-p">
+                浅析 JavaScript 防抖和节流
+            </p>
         </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/02/2018-log/">2018.9 日志</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            日常记录。
-
-9.1
 
 
-更新 Blog:
-【尝鲜】基于 P...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/02/2018-log/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>9月 02, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+
+
+
                 
-            </span>
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
 
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avater.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mr.Stupid Bird</strong>
+        <span>4月 11, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2klEQVR42u3aQXKjQBAEQP3/0+urDwuqmkYONCQnhSRgEkW43dXz+vfI44WNjY2NjY2NjY19S/YrPpKz/nOzX+8fvV77tF4zNjY29tbsN3/6g+/k57aktfVgY2NjP5N9dMuj7+TIvPwcXTNZz5sSiI2NjY09aCfOz5q3N9jY2NjYawVsLYrKI62kzcDGxsbGbgOa87Yk+XQNmZTAD2Zp2NjY2Ldn56XoPq//dL6NjY2NfWP2ZHCbF7OkLCVlb7RybGxs7E3Z17YKeRiUX+GyKAobGxt7a3Z+y/bcNuhvv5MXTmxsbOy92e0Yda1Effr9OkvDxsbG3oidDwbWBsP51fLNne0DwsbGxt6bvTYGuDZ+WntYo/k2NjY29kbsvP2YBE+TgUQRHrVZGjY2NvYW7Haweg5ISuC8IamviY2Njb01ex7xtMH9WrMRhUfXzrexsbGxv4q9VmDagetkU87kZ8DGxsbelZ3/u9+GUO1QIWldJg8aGxsb+8nspFzlw9r205qXhErY2NjYG7HbhqE98qgoeTSTcS82Njb23uykqciDpHnQP3m4hz8bNjY29tbsfNCbRDxXxVVt2/OmAGNjY2M/jJ2EOGvNxlVxUltusbGxsfdmt61CvqC8dcnDpnYrDzY2Nvbe7Hz7Y0ttm418wJysvJ5vY2NjY38te20MMCljk0087fYdbGxs7Kex19qG9mpXvX9euooCho2Njb0du13EpFXIx7dtIawLGDY2NvZG7HyIO9lw0z6sD+45xcbGxv5y9qQgtW3DJE5qrx9NRbCxsbG3YLdbG5MClhe8q1oUbGxsbOxrg6F2SLw2ijhvk7CxsbGfyW6Lx1rpyh9lW2Iv2HyJjY2N/Rj25Ky1gGnyWLGxsbGx1xqGvEVZW0l7X2xsbOwnsPPh7mSJ7RA3OTcaYGBjY2NvzW7DmnwDTUstClI7nMbGxsbelP2cAxsbGxsbGxsbG/s2xw+chqS3XjLKKQAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=浅析 JavaScript 防抖和节流&url=http://yoursite.com/2019/04/11/浅析-JavaScript-防抖和节流/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=浅析 JavaScript 防抖和节流&url=http://yoursite.com/2019/04/11/浅析-JavaScript-防抖和节流/index.html&via=Mr.Stupid Bird" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/11/浅析-JavaScript-防抖和节流/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/11/浅析-JavaScript-防抖和节流/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/01/尝试 parcel 配置 Vue/">【尝鲜】基于 Parcel 的零配置 Vue 开发模板</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            随着 webpack 越发复杂臃肿，Parcel 横空出世。
-作为一个有追求的程序员，怎能不尝尝鲜呢？
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/01/尝试 parcel 配置 Vue/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avater.jpg" width="44px" height="44px" alt="Mr.Stupid Bird's avatar">
-            </div>
-            <div>
-                <strong>Mr.Stupid Bird</strong>
-                <span>9月 01, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
                 
-            </span>
 
-            
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><strong>防抖和节流都是为了解决短时间内大量触发某函数而导致的性能问题</strong>，比如触发频率过高导致的响应速度跟不上触发频率，出现延迟，假死或卡顿的现象。但二者应对的业务需求不一样，所以实现的原理也不一样。</p>
+<h2 id="防抖（debounce）"><a href="#防抖（debounce）" class="headerlink" title="防抖（debounce）"></a>防抖（debounce）</h2><h3 id="什么是防抖"><a href="#什么是防抖" class="headerlink" title="什么是防抖"></a>什么是防抖</h3><blockquote>
+<p><strong>在事件被触发n秒后再执行回调函数，如果在这n秒内又被触发，则重新计时。</strong></p>
+</blockquote>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>(1) 用户在输入框中连续输入一串字符后，只会在输入完后去执行最后一次的查询ajax请求，这样可以有效减少请求次数，节约请求资源；</p>
+<p>(2) window的resize、scroll事件，不断地调整浏览器的窗口大小、或者滚动时会触发对应事件，防抖让其只触发一次；</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="简易版"><a href="#简易版" class="headerlink" title="简易版"></a>简易版</h4><h5 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fun, delay</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">args</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//获取函数的作用域和变量</span></span><br><span class="line">        <span class="keyword">let</span> that = <span class="keyword">this</span></span><br><span class="line">        <span class="keyword">let</span> _args = args</span><br><span class="line">        <span class="comment">//每次事件被触发，都会清除当前的timeer，然后重写设置超时调用</span></span><br><span class="line">        clearTimeout(fun.id)</span><br><span class="line">        fun.id = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            fun.call(that, _args)</span><br><span class="line">        &#125;, delay)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// func是用户传入需要防抖的函数</span></span><br><span class="line"><span class="comment">// wait是等待时间</span></span><br><span class="line"><span class="keyword">const</span> debounce = <span class="function">(<span class="params">func, wait = <span class="number">50</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 缓存一个定时器id</span></span><br><span class="line">  <span class="keyword">let</span> timer = <span class="number">0</span></span><br><span class="line">  <span class="comment">// 这里返回的函数是每次用户实际调用的防抖函数</span></span><br><span class="line">  <span class="comment">// 如果已经设定过定时器了就清空上一次的定时器</span></span><br><span class="line">  <span class="comment">// 开始一个新的定时器，延迟执行用户传入的方法</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (timer) clearTimeout(timer)</span><br><span class="line">    timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      func.apply(<span class="keyword">this</span>, args)</span><br><span class="line">    &#125;, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 不难看出如果用户调用该函数的间隔小于wait的情况下，上一次的时间还未到就被清除了，并不会执行函数</span></span><br></pre></td></tr></table></figure>
+<p>简单版的防抖，但是有缺陷，这个防抖只能在最后调用。一般的防抖会有immediate选项，表示是否立即调用。</p>
+<p>这两者的区别:</p>
+<ul>
+<li>例如在搜索引擎搜索问题的时候，我们当然是希望用户输入完最后一个字才调用查询接口，这个时候适用延迟执行的防抖函数，它总是在一连串（间隔小于wait的）函数触发之后调用。</li>
+<li>例如用户给interviewMap点star的时候，我们希望用户点第一下的时候就去调用接口，并且成功之后改变star按钮的样子，用户就可以立马得到反馈是否star成功了，这个情况适用立即执行的防抖函数，它总是在第一次调用，并且下一次调用必须与前一次调用的时间间隔大于wait才会触发。</li>
+</ul>
+<h4 id="带有立即执行选项的防抖函数"><a href="#带有立即执行选项的防抖函数" class="headerlink" title="带有立即执行选项的防抖函数"></a>带有立即执行选项的防抖函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个是用来获取当前时间戳的</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">now</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> +<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 防抖函数，返回函数连续调用时，空闲时间必须大于或等于 wait，func 才会执行</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param  &#123;function&#125; func        回调函数</span></span><br><span class="line"><span class="comment"> * @param  &#123;number&#125;   wait        表示时间窗口的间隔</span></span><br><span class="line"><span class="comment"> * @param  &#123;boolean&#125;  immediate   设置为ture时，是否立即调用函数</span></span><br><span class="line"><span class="comment"> * @return &#123;function&#125;             返回客户调用函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span> (<span class="params">func, wait = <span class="number">50</span>, immediate = true</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timer, context, args</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 延迟执行函数</span></span><br><span class="line">  <span class="keyword">const</span> later = <span class="function"><span class="params">()</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 延迟函数执行完毕，清空缓存的定时器序号</span></span><br><span class="line">    timer = <span class="literal">null</span></span><br><span class="line">    <span class="comment">// 延迟执行的情况下，函数会在延迟函数中执行</span></span><br><span class="line">    <span class="comment">// 使用到之前缓存的参数和上下文</span></span><br><span class="line">    <span class="keyword">if</span> (!immediate) &#123;</span><br><span class="line">      func.apply(context, args)</span><br><span class="line">      context = args = <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, wait)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 这里返回的函数是每次实际调用的函数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...params</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 如果没有创建延迟执行函数（later），就创建一个</span></span><br><span class="line">    <span class="keyword">if</span> (!timer) &#123;</span><br><span class="line">      timer = later()</span><br><span class="line">      <span class="comment">// 如果是立即执行，调用函数</span></span><br><span class="line">      <span class="comment">// 否则缓存参数和调用上下文</span></span><br><span class="line">      <span class="keyword">if</span> (immediate) &#123;</span><br><span class="line">        func.apply(<span class="keyword">this</span>, params)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        context = <span class="keyword">this</span></span><br><span class="line">        args = params</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="comment">// 如果已有延迟执行函数（later），调用的时候清除原来的并重新设定一个</span></span><br><span class="line">    <span class="comment">// 这样做延迟函数会重新计时</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      clearTimeout(timer)</span><br><span class="line">      timer = later()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="节流（throttle）"><a href="#节流（throttle）" class="headerlink" title="节流（throttle）"></a>节流（throttle）</h2><h3 id="什么是节流"><a href="#什么是节流" class="headerlink" title="什么是节流"></a>什么是节流</h3><p>规定一个单位时间，在这个单位时间内，只能有一次触发事件的回调函数执行，如果在同一个单位时间内某事件被触发多次，只有一次能生效。</p>
+<h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li><p>鼠标连续不断地触发某事件（如点击），只在单位时间内只触发一次；</p>
+</li>
+<li><p>在页面的无限加载场景下，需要用户在滚动页面时，每隔一段时间发一次 ajax 请求，而不是在用户停下滚动页面操作时才去请求数据；</p>
+</li>
+<li><p>监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断；</p>
+</li>
+</ul>
+<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, interval = <span class="number">300</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> canRun = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!canRun) <span class="keyword">return</span>;</span><br><span class="line">        canRun = <span class="literal">false</span>;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">            canRun = <span class="literal">true</span>;</span><br><span class="line">        &#125;, interval);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另一个版本：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fun, delay</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> last, deferTimer</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> that = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">let</span> _args = <span class="built_in">arguments</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> now = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="keyword">if</span> (last &amp;&amp; now &lt; last + delay) &#123;</span><br><span class="line">            clearTimeout(deferTimer);</span><br><span class="line">            deferTimer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                last = now;</span><br><span class="line">                fun.apply(that, _args);</span><br><span class="line">            &#125;, delay)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            last = now;</span><br><span class="line">            fun.apply(that, _args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>函数防抖是某一段时间内只执行一次。</p>
+<p>函数节流是间隔时间执行，不管事件触发有多频繁，都会保证在规定时间内一定会执行一次真正的事件处理函数。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>防抖是维护一个计时器，规定在delay时间后触发函数，但是在delay时间内再次触发的话，都会清除当前的 timer 然后重新设置超时调用，即重新计时。这样一来，只有最后一次操作能被触发。</p>
+<p>节流是通过判断是否到达一定时间来触发函数，若没到规定时间则使用计时器延后，而下一次事件则会重新设定计时器。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://segmentfault.com/a/1190000017262710" target="_blank" rel="noopener">详谈js防抖和节流</a><br><a href="https://juejin.im/post/5cab0c45f265da2513734390#heading-22" target="_blank" rel="noopener">【面试篇】寒冬求职季之你必须要懂的原生JS(上) - 防抖和节流的区别是什么？防抖和节流的实现。</a><br><a href="https://yuchengkai.cn/docs/frontend/#%E9%98%B2%E6%8A%96" target="_blank" rel="noopener">InterviewMap 防抖、节流</a><br><a href="https://juejin.im/entry/58c0379e44d9040068dc952f" target="_blank" rel="noopener">函数节流与函数防抖</a><br><a href="https://juejin.im/post/5b8de829f265da43623c4261" target="_blank" rel="noopener">7分钟理解JS的节流、防抖及使用场景</a></p>
 
-            
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/04/10/【自我解惑】Object-proto/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
         </div>
     </div>
-</div>
 
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
-</div>
 
 
                     
