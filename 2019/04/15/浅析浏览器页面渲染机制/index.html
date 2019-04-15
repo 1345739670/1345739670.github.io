@@ -12,7 +12,7 @@
     
     <title>
         
-            Web 安全-XSS | 
+            浅析浏览器页面渲染机制 | 
         
         Mr.Stupid Bird&#39;s Blog
     </title>
@@ -65,18 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Web 安全-XSS | Mr.Stupid Bird&#39;s Blog">
+    <meta property="og:title" content="浅析浏览器页面渲染机制 | Mr.Stupid Bird&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="9月 30, 2018" />
-        <meta property="article:modified_time" content="10月 04, 2018" />
+        <meta property="article:published_time" content="4月 15, 2019" />
+        <meta property="article:modified_time" content="4月 15, 2019" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Web 安全-XSS | Mr.Stupid Bird&#39;s Blog">
+    <meta name="twitter:title" content="浅析浏览器页面渲染机制 | Mr.Stupid Bird&#39;s Blog">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/09/30/Web-security-XSS/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2019/04/15/浅析浏览器页面渲染机制/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -110,10 +110,10 @@
         },
         "description": "Hi, nice to meet you"
     },
-    "headline": "Web 安全-XSS",
-    "url": "http://yoursite.com/2018/09/30/Web-security-XSS/index.html",
-    "datePublished": "9月 30, 2018",
-    "dateModified": "10月 04, 2018",
+    "headline": "浅析浏览器页面渲染机制",
+    "url": "http://yoursite.com/2019/04/15/浅析浏览器页面渲染机制/index.html",
+    "datePublished": "4月 15, 2019",
+    "dateModified": "4月 15, 2019",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前端安全"><span class="post-toc-number">1.</span> <span class="post-toc-text">前端安全</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#什么是-XSS"><span class="post-toc-number">2.</span> <span class="post-toc-text">什么是 XSS</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#XSS-分类"><span class="post-toc-number">3.</span> <span class="post-toc-text">XSS 分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储型-XSS"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">存储型 XSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反射型-XSS"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">反射型 XSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM-型-XSS"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">DOM 型 XSS</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何预防-XSS-的攻击"><span class="post-toc-number">4.</span> <span class="post-toc-text">如何预防 XSS 的攻击</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入过滤"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">输入过滤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#预防存储型和反射型-XSS-攻击"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">预防存储型和反射型 XSS 攻击</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#纯前端渲染"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">纯前端渲染</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转义-HTML"><span class="post-toc-number">4.2.2.</span> <span class="post-toc-text">转义 HTML</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#预防-DOM-型-XSS-攻击"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">预防 DOM 型 XSS 攻击</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#其他-XSS-防范措施"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他 XSS 防范措施</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Content-Security-Policy"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Content Security Policy</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入内容长度控制"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">输入内容长度控制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他安全措施"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">其他安全措施</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XSS-的检测"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">XSS 的检测</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XSS-攻击的总结"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">XSS 攻击的总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考文章"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考文章</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#页面加载过程"><span class="post-toc-number">1.</span> <span class="post-toc-text">页面加载过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器渲染过程"><span class="post-toc-number">2.</span> <span class="post-toc-text">浏览器渲染过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-浏览器会解析三个东西："><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 浏览器会解析三个东西：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-解析完成后，浏览器引擎会通过DOM-Tree-和-CSS-Rule-Tree-来构造-Rendering-Tree。"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 解析完成后，浏览器引擎会通过DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-最后通过调用操作系统Native-GUI的API绘制。"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. 最后通过调用操作系统Native GUI的API绘制。</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构建DOM"><span class="post-toc-number">3.</span> <span class="post-toc-text">构建DOM</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构建CSSOM"><span class="post-toc-number">4.</span> <span class="post-toc-text">构建CSSOM</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构建渲染树"><span class="post-toc-number">5.</span> <span class="post-toc-text">构建渲染树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局与绘制"><span class="post-toc-number">6.</span> <span class="post-toc-text">布局与绘制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何减少回流、重绘"><span class="post-toc-number">7.</span> <span class="post-toc-text">如何减少回流、重绘</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#性能优化策略"><span class="post-toc-number">8.</span> <span class="post-toc-text">性能优化策略</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">9.</span> <span class="post-toc-text">总结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">10.</span> <span class="post-toc-text">参考</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -373,7 +373,7 @@
         
     
             <p class="article-headline-p">
-                Web 安全-XSS
+                浅析浏览器页面渲染机制
             </p>
         </div>
 
@@ -392,7 +392,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Mr.Stupid Bird</strong>
-        <span>9月 30, 2018</span>
+        <span>4月 15, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,7 +414,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aQW7DMAwEwPz/0+21QBBnSUqKG4xOQVHHGhcw1SUfP1+9Hnh4eHh4eHh4eDfjPeL19/dfXfv8zc+fr+872RseHh7eSd6bV+3ljfNrr7eV3DfaGx4eHt5BXlIMquC1pSXaGx4eHt7NeDng+rVePYjj4eHhfR8vgU1+joeHh3dPXh4o5IFsgq+yN2YteHh4eDFv0gDb/fnD/T08PDy8J155pCluYk3GAkY7xMPDw9vM6wUB1YJxfVV1LfiPAQ8PD2/AS5pS+XDAfPigF+bi4eHhfZaXHIubAWureOSBMh4eHt4ZXr7pwqG2NXg6b33h4eHhneT1RqmqoUNeJPKCUejv4eHh4S3iTYLavA2WxA2TwoOHh4d3ktcbJ00aWnk0fH1tdXABDw8P7wyv+vruBRY5pleE8PDw8M7wko1WH0EeK/QCi2Z/Dw8PD28RL9lQ3pSqHo7XxhZ4eHh4Z3jVY3Q1hqgOE+TjAnh4eHh34OWtrDxmzeOJ/KG/CT7w8PDwjvAmja48tJ3wRkNXeHh4eEt5kwAiKQCT2Df/jIeHh3eSVw1kq6/sSdCwsb+Hh4eHt5RXPQrnIW8SWEyGFfDw8PDO8HpbyaPbapyxAIyHh4e3mVddkyGtyQBBYSgBDw8PbzNv8kLvHZcnwe6o7uHh4eEt5eXFIG//T8YOkntFQ1d4eHh4m3nzELZ6mJ6EES//GHh4eHg341XHBfLNJY81KWZ4eHh4/4VXLQ/59+cxBB4eHt55XjWMqG5obUsMDw8P77O8SQNsDs5DkOTR4+Hh4e3mfd/Cw8PDw8PDw8O7wfoFD1kwE8/w9GMAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2ElEQVR42u3aS24bMRAFQN3/0s42i5h6rynHElmzMqCRhtUDuNGfx9eV1wMbGxsbGxsbGxv7LdmP+Frf//en/3jkN/cn30p+bX0qbGxs7BvYT/71lwfNP10Hog3ukzNjY2NjX8BOHrOGJelqFr7kPOvQYGNjY2OvDz0LxCy42NjY2Ng/x55drwoQNjY2NnZSMOQpZ6fMyNn/qZeGjY2N/fbsdtD7Dn//wnwbGxsb+y3Zs6sd2c6aUG2ifXJmbGxs7EPZs+LhVc2mZJCQr2Zu9dKwsbGxD2UngFlDqm025UmxqMCwsbGxD2KvS4v1OLYeuJZD3/3RBTY2NvbZ7CRd5a2fJKAtaTa6KHpp2NjY2B/Oblch28Qzaw+1ryQJKzY2Nvap7LzFk5QWM3y7jjlbzcTGxsa+h92OBNrUklOTMxSDYWxsbOxD2cnD2sHAfmjaJc46gWFjY2Nfxt5fytwPaDuiGG4qYWNjY38ge7+Jv8/OBw87rwobGxv7VPZsXXI2MEgOnbe61mfDxsbGvo298+CWmv9C3q6KihZsbGzsC9jtAk3+O7Mlm/3hATY2NvZt7Hz4mi9Etss3s2e9eCqCjY2N/VHsNv20w4N8uJsPettCCBsbG/sedrugkxy3XQNqg7i+ExsbG/sG9v7qzOye/UXPerUIGxsb+1B2Xjbst/5/oqlUNMWwsbGxD2XPksdsSLCzfDMLFjY2NvYN7CSZJaVLW2C0TajZa8DGxsa+gf2qxJO3fma8WUGCjY2NfQO7vXLYOjSvGv0mYGxsbOyz2bP0kKe0FpCnyXoAjI2NjX00u20ttaXILMnlo4uo5YSNjY19ATtv0+RD2bxgaNd02iSKjY2Njd2OgfO21E7jKXkiNjY2NnZSWiSwpMyYLegkaRIbGxv7BvZOQ79NdTsDgzbRYmNjY9/Anq02zhr3+2GdvSpsbGzsU9n3XNjY2NjY2NjY2Nhvc/0Bj9RyFA6UdKAAAAAASUVORK5CYII=">
     
 </ul>
     
@@ -443,7 +443,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Web 安全-XSS&url=http://yoursite.com/2018/09/30/Web-security-XSS/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=浅析浏览器页面渲染机制&url=http://yoursite.com/2019/04/15/浅析浏览器页面渲染机制/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -452,7 +452,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Web 安全-XSS&url=http://yoursite.com/2018/09/30/Web-security-XSS/index.html&via=Mr.Stupid Bird" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=浅析浏览器页面渲染机制&url=http://yoursite.com/2019/04/15/浅析浏览器页面渲染机制/index.html&via=Mr.Stupid Bird" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/30/Web-security-XSS/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/15/浅析浏览器页面渲染机制/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -470,7 +470,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/30/Web-security-XSS/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/15/浅析浏览器页面渲染机制/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -494,186 +494,64 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Cross-Site Scripting（跨站脚本攻击）简称 XSS，是一种代码注入攻击。</p>
-<h1 id="前端安全"><a href="#前端安全" class="headerlink" title="前端安全"></a>前端安全</h1><p>随着互联网的高速发展，信息安全问题已经成为一个不可忽视的问题，而前端又是引发安全问题的重灾区。如今，前端开发人员除了要面对传统的 XSS、CSRF 等安全问题之外，还要面对网络劫持、非法调用 Hybrid API 等新型安全问题的困扰。</p>
-<h1 id="什么是-XSS"><a href="#什么是-XSS" class="headerlink" title="什么是 XSS"></a>什么是 XSS</h1><p>Cross-Site Scripting（跨站脚本攻击）简称 XSS（为了和 CSS 区分，这里把攻击的第一个字母改成了 X，于是叫做 XSS），是一种代码注入攻击。攻击者通过在目标网站上注入恶意脚本，使之在用户的浏览器上运行。利用这些恶意脚本，攻击者可获取用户的敏感信息如 Cookie、SessionID 等，进而危害用户数据安全。</p>
-<p>也就是说 XSS 的本质是：注入恶意脚本，并且未经过滤，与网站正常的代码混在一起；导致恶意脚本被执行。</p>
-<p>在部分情况下，由于输入的限制，注入的恶意脚本比较短。但可以通过引入外部的脚本，并由浏览器执行，来完成比较复杂的攻击策略。</p>
-<p>那么是不是可以这么说：XSS 的关键就是注入恶意脚本。那么用户是怎么被注入恶意代码的呢？</p>
-<p>不仅是用户的“UGC（User Generated Content，指用户原创内容。）”可以进行注入，而且包括 URL 上的参数等都可以是攻击的来源。所以在处理输入时，以下内容都不可信的：</p>
-<ul>
-<li>来自用户的 UGC 信息</li>
-<li>来自第三方的链接</li>
-<li>URL 参数</li>
-<li>POST 参数</li>
-<li>Referer （可能来自不可信的来源）</li>
-<li>Cookie （可能来自其他子域注入）</li>
+        <h2 id="页面加载过程"><a href="#页面加载过程" class="headerlink" title="页面加载过程"></a>页面加载过程</h2><ol>
+<li>浏览器根据 DNS 服务器得到域名的 IP 地址</li>
+<li>向这个 IP 的机器发送 HTTP 请求</li>
+<li>服务器收到、处理并返回 HTTP 请求</li>
+<li>浏览器得到返回内容</li>
+</ol>
+<h2 id="浏览器渲染过程"><a href="#浏览器渲染过程" class="headerlink" title="浏览器渲染过程"></a>浏览器渲染过程</h2><h3 id="1-浏览器会解析三个东西："><a href="#1-浏览器会解析三个东西：" class="headerlink" title="1. 浏览器会解析三个东西："></a>1. 浏览器会解析三个东西：</h3><ol>
+<li>HTML/SVG/XHTML。HTML字符串描述了一个页面的结构，浏览器会把HTML结构字符串解析转换DOM树形结构。</li>
+<li>CSS。解析CSS会产生CSS规则树，它和DOM结构比较像。</li>
+<li>Javascript脚本，等到Javascript 脚本文件加载后， 通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。</li>
+</ol>
+<h3 id="2-解析完成后，浏览器引擎会通过DOM-Tree-和-CSS-Rule-Tree-来构造-Rendering-Tree。"><a href="#2-解析完成后，浏览器引擎会通过DOM-Tree-和-CSS-Rule-Tree-来构造-Rendering-Tree。" class="headerlink" title="2. 解析完成后，浏览器引擎会通过DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。"></a>2. 解析完成后，浏览器引擎会通过DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。</h3><ul>
+<li>Rendering Tree 渲染树并不等同于DOM树，渲染树只会包括需要显示的节点和这些节点的样式信息。</li>
+<li>CSS 的 Rule Tree主要是为了完成匹配并把CSS Rule附加上Rendering Tree上的每个Element（也就是每个Frame）。</li>
+<li>然后，计算每个Frame 的位置，这又叫layout和reflow过程。</li>
 </ul>
-<h1 id="XSS-分类"><a href="#XSS-分类" class="headerlink" title="XSS 分类"></a>XSS 分类</h1><p>根据攻击的来源，XSS 攻击可分为存储型、反射型和 DOM 型三种。</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th style="text-align:right">存储位置</th>
-<th style="text-align:center">插入点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>存储型 XSS</td>
-<td style="text-align:right">后端数据库</td>
-<td style="text-align:center">HTML</td>
-</tr>
-<tr>
-<td>反射型 XSS</td>
-<td style="text-align:right">URL</td>
-<td style="text-align:center">HTML</td>
-</tr>
-<tr>
-<td>DOM型 XSS</td>
-<td style="text-align:right">后端数据库/前端存储/URL</td>
-<td style="text-align:center">前端JavaScript</td>
-</tr>
-</tbody>
-</table>
-<p>备注：</p>
-<ul>
-<li>存储区：恶意代码存放的位置。</li>
-<li>插入点：由谁取得恶意代码，并插入到网页上。</li>
-</ul>
-<h2 id="存储型-XSS"><a href="#存储型-XSS" class="headerlink" title="存储型 XSS"></a>存储型 XSS</h2><p>存储型 XSS 的攻击步骤：</p>
-<ol>
-<li>攻击者将恶意代码提交到目标网站的数据库中。</li>
-<li>用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器。</li>
-<li>用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。</li>
-<li>恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。</li>
-</ol>
-<p>这种攻击常见于带有用户保存数据的网站功能，如论坛发帖、商品评论、用户私信等。</p>
-<h2 id="反射型-XSS"><a href="#反射型-XSS" class="headerlink" title="反射型 XSS"></a>反射型 XSS</h2><p>反射型 XSS 的攻击步骤：</p>
-<ol>
-<li>攻击者构造出特殊的 URL，其中包含恶意代码。</li>
-<li>当打开带有恶意代码的 URL 时，网站服务端将恶意代码从 URL 中取出，拼接在 HTML 中返回给浏览器。</li>
-<li>浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。</li>
-<li>恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。</li>
-</ol>
-<p>反射型 XSS 跟存储型 XSS 的区别是：存储型 XSS 的恶意代码存在数据库里，反射型 XSS 的恶意代码存在 URL 里。</p>
-<p>反射型 XSS 漏洞常见于通过 URL 传递参数的功能，如网站搜索、跳转等。</p>
-<p>由于需要用户主动打开恶意的 URL 才能生效，攻击者往往会结合多种手段诱导用户点击。</p>
-<h2 id="DOM-型-XSS"><a href="#DOM-型-XSS" class="headerlink" title="DOM 型 XSS"></a>DOM 型 XSS</h2><p>DOM 型 XSS 的攻击步骤：</p>
-<ol>
-<li>攻击者构造出特殊的 URL，其中包含恶意代码。</li>
-<li>用户打开带有恶意代码的 URL。</li>
-<li>用户浏览器接收到响应后解析执行，前端 JavaScript 取出 URL 中的恶意代码并执行。</li>
-<li>恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。</li>
-</ol>
-<p>DOM 型 XSS 跟前两种 XSS 的区别：DOM 型 XSS 攻击中，取出和执行恶意代码由浏览器端完成，属于前端 JavaScript 自身的安全漏洞，而其他两种 XSS 都属于服务端的安全漏洞。</p>
-<h1 id="如何预防-XSS-的攻击"><a href="#如何预防-XSS-的攻击" class="headerlink" title="如何预防 XSS 的攻击"></a>如何预防 XSS 的攻击</h1><p>可以看出， XSS 攻击有两大关键：</p>
-<ol>
-<li>攻击者提交恶意代码。</li>
-<li>浏览器执行恶意代码。</li>
-</ol>
-<h2 id="输入过滤"><a href="#输入过滤" class="headerlink" title="输入过滤"></a>输入过滤</h2><p>当用户提交的时，由前端过滤后，再提交给后端，这个方案是否可行呢？</p>
-<p>答案显然是不可行的。一旦攻击者绕过前端过滤，直接构造请求，就可以提交恶意代码了。</p>
-<p>那既然前端过滤不行，那么由后端过滤呢？后端在写入数据库前，对输入进行过滤，然后把“安全的”内容，返回给前端。这样是否可行呢？</p>
-<p>假设一个正常的用户输入了 <code>5 &lt; 7</code> 这个内容，在写入数据库前，被转义，变成了 <code>5 &amp;lt; 7</code>。</p>
-<p>问题是：在提交阶段，我们并不确定内容要输出到哪里。</p>
-<p>这里的“并不确定内容要输出到哪里”有两层含义：</p>
-<ol>
-<li><p>用户的输入内容可能同时提供给前端和客户端，而一旦经过了 escapeHTML()，客户端显示的内容就变成了乱码( <code>5 &amp;lt; 7</code> )。例如：百度翻译、富文本编辑器。</p>
+<h3 id="3-最后通过调用操作系统Native-GUI的API绘制。"><a href="#3-最后通过调用操作系统Native-GUI的API绘制。" class="headerlink" title="3. 最后通过调用操作系统Native GUI的API绘制。"></a>3. 最后通过调用操作系统Native GUI的API绘制。</h3><h2 id="构建DOM"><a href="#构建DOM" class="headerlink" title="构建DOM"></a>构建DOM</h2><p>浏览器会遵守一套步骤将HTML 文件转换为 DOM 树。宏观上，可以分为几个步骤：<br><img src="https://user-gold-cdn.xitu.io/2018/12/28/167f5262f5d0aadd?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="HTML 文件转换为 DOM 树步骤"></p>
+<p>在网络中传输的内容其实都是 0 和 1 这些字节数据。当浏览器接收到这些字节数据以后，它会将这些字节数据转换为字符串，也就是我们写的代码。<br>然后浏览器从磁盘或网络读取HTML的原始字节，并根据文件的指定编码（例如 UTF-8）将它们转换成字符串。<br>最后一边生成Token一边消耗Token来生成节点对象。</p>
+<h2 id="构建CSSOM"><a href="#构建CSSOM" class="headerlink" title="构建CSSOM"></a>构建CSSOM</h2><p>当浏览器接收到一段CSS，浏览器首先要做的是识别出Token，然后构建节点并生成CSSOM。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/28/167f55aabacd4bac?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="构建CSSOM"></p>
+<p><strong>注意：CSS匹配HTML元素是一个相当复杂和有性能问题的事情。所以，DOM树要小，CSS尽量用id和class，千万不要过渡层叠下去。</strong></p>
+<h2 id="构建渲染树"><a href="#构建渲染树" class="headerlink" title="构建渲染树"></a>构建渲染树</h2><p>当我们生成 DOM 树和 CSSOM 树以后，就需要将这两棵树组合为渲染树。</p>
+<p>渲染树只会包括需要显示的节点和这些节点的样式信息，如果某个节点是 display: none 的，那么就不会在渲染树中显示。</p>
+<p>浏览器如果渲染过程中遇到JS文件怎么处理？</p>
+<p>如果遇到 <code>&lt;script&gt;</code> 就停止渲染，执行 JS 代码。因为浏览器有GUI渲染线程与JS引擎线程，为了防止渲染出现不可预期的结果，这两个线程是互斥的关系。<br>JavaScript的加载、解析与执行会阻塞DOM的构建，也就是说，在构建DOM时，HTML解析器若遇到了JavaScript，那么它会暂停构建DOM，将控制权移交给JavaScript引擎，等JavaScript引擎运行完毕，浏览器再从中断的地方恢复DOM构建。</p>
+<p>也就是说，如果你想首屏渲染的越快，就越不应该在首屏就加载 JS 文件，这也是都建议将 script 标签放在 body 标签底部的原因。</p>
+<p><strong>JS文件不只是阻塞DOM的构建，它会导致CSSOM也阻塞DOM的构建。</strong></p>
+<p>原本DOM和CSSOM的构建是互不影响的，但是一旦引入了JavaScript，CSSOM也开始阻塞DOM的构建，只有CSSOM构建完毕后，DOM再恢复DOM构建。</p>
+<p>这是因为JavaScript不只是可以改DOM，它还可以更改样式，也就是它可以更改CSSOM。因为不完整的CSSOM是无法使用的，如果JavaScript想访问CSSOM并更改它，那么在执行JavaScript时，必须要能拿到完整的CSSOM。所以就导致了一个现象，如果浏览器尚未完成CSSOM的下载和构建，而我们却想在此时运行脚本，那么浏览器将延迟脚本执行和DOM构建，直至其完成CSSOM的下载和构建。也就是说，在这种情况下，浏览器会先下载和构建CSSOM，然后再执行JavaScript，最后在继续构建DOM。</p>
+<h2 id="布局与绘制"><a href="#布局与绘制" class="headerlink" title="布局与绘制"></a>布局与绘制</h2><p>当浏览器生成渲染树以后，就会根据渲染树来进行布局（也可以叫做回流）。这一阶段浏览器要做的事情是要弄清楚各个节点在页面中的确切位置和大小。通常这一行为也被称为“自动重排”。</p>
+<p>布局流程的输出是一个“盒模型”，它会精确地捕获每个元素在视口内的确切位置和尺寸，所有相对测量值都将转换为屏幕上的绝对像素。</p>
+<p>布局完成后，浏览器会立即发出“Paint Setup”和“Paint”事件，将渲染树转换成屏幕上的像素。</p>
+<h2 id="如何减少回流、重绘"><a href="#如何减少回流、重绘" class="headerlink" title="如何减少回流、重绘"></a>如何减少回流、重绘</h2><ul>
+<li>使用 transform 替代 top</li>
+<li>使用 visibility 替换 display: none ，因为前者只会引起重绘，后者会引发回流（改变了布局）</li>
+<li><p>不要把节点的属性值放在一个循环里当成循环里的变量。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 获取 offsetTop 会导致回流，因为需要去获取正确的值</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">'.test'</span>).style.offsetTop)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>在前端中，不同的位置所需的编码也不同。</p>
-<ul>
-<li>当 <code>5 &amp;lt; 7</code> 作为 HTML 拼接页面时，可以正常显示。</li>
-<li>当 <code>5 &amp;lt; 7</code> 通过 Ajax 返回，然后赋值给 JavaScript 的变量时，前端得到的字符串就是转义后的字符。这个内容不能直接用于 Vue 等模板的展示，也不能直接用于内容长度计算。不能用于标题、alert 等。</li>
+<li><p>不要使用 table 布局，可能很小的一个小改动会造成整个 table 的重新布局</p>
+</li>
+<li>动画实现的速度的选择，动画速度越快，回流次数越多，也可以选择使用 requestAnimationFrame</li>
+<li>CSS 选择符从右往左匹配查找，避免节点层级过多</li>
+<li>将频繁重绘或者回流的节点设置为图层，图层能够阻止该节点的渲染行为影响别的节点。比如对于 video 标签来说，浏览器会自动将该节点变为图层。</li>
+</ul>
+<h2 id="性能优化策略"><a href="#性能优化策略" class="headerlink" title="性能优化策略"></a>性能优化策略</h2><ul>
+<li>JS优化： <code>&lt;script&gt;</code> 标签加上 defer属性 和 async属性 用于在不阻塞页面文档解析的前提下，控制脚本的下载和执行。<ul>
+<li>defer属性： 用于开启新的线程下载脚本文件，并使脚本在文档解析完成后执行。</li>
+<li>async属性： HTML5新增属性，用于异步下载脚本文件，下载完毕立即解释执行代码。</li>
 </ul>
 </li>
-</ol>
-<p>所以，输入侧过滤能够在某些情况下解决特定的 XSS 问题，但会引入很大的不确定性和乱码问题。在防范 XSS 攻击时应避免此类方法。</p>
-<p>当然，对于明确的输入类型，例如数字、URL、电话号码、邮件地址等等内容，进行输入过滤还是必要的。</p>
-<p>既然输入过滤并非完全可靠，我们就要通过“防止浏览器执行恶意代码”来防范 XSS。这部分分为两类：</p>
-<ul>
-<li>防止 HTML 中出现注入。</li>
-<li>防止 JavaScript 执行时，执行恶意代码。</li>
+<li>CSS优化： <code>&lt;link&gt;</code> 标签的 rel属性 中的属性值设置为 preload 能够让你在你的HTML页面中可以指明哪些资源是在页面加载完成后即刻需要的,最优的配置加载顺序，提高渲染性能</li>
 </ul>
-<!-- ## 防止 HTML 出现注入 -->
-<h2 id="预防存储型和反射型-XSS-攻击"><a href="#预防存储型和反射型-XSS-攻击" class="headerlink" title="预防存储型和反射型 XSS 攻击"></a>预防存储型和反射型 XSS 攻击</h2><p>由上可知，存储型和反射型 XSS 都是在服务端取出恶意代码后，插入到响应 HTML 里的，攻击者刻意编写的“数据”被内嵌到“代码”中，然后被浏览器所执行。</p>
-<p>预防这两种漏洞，有两种常见做法：</p>
-<ul>
-<li>改成纯前端渲染，把代码和数据分隔开。</li>
-<li>对 HTML 做充分转义。</li>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>浏览器工作流程：构建DOM -&gt; 构建CSSOM -&gt; 构建渲染树 -&gt; 布局 -&gt; 绘制。</li>
+<li>CSSOM会阻塞渲染，只有当CSSOM构建完毕后才会进入下一个阶段构建渲染树。</li>
+<li>通常情况下DOM和CSSOM是并行构建的，但是当浏览器遇到一个不带defer或async属性的script标签时，DOM构建将暂停，如果此时又恰巧浏览器尚未完成CSSOM的下载和构建，由于JavaScript可以修改CSSOM，所以需要等CSSOM构建完毕后再执行JS，最后才重新DOM构建。</li>
 </ul>
-<h3 id="纯前端渲染"><a href="#纯前端渲染" class="headerlink" title="纯前端渲染"></a>纯前端渲染</h3><p>先来看一下纯前端渲染的过程：</p>
-<ol>
-<li>浏览器先加载一个静态 HTML，此 HTML 中不包含任何跟业务相关的数据。</li>
-<li>然后浏览器执行 HTML 中的 JavaScript。</li>
-<li>JavaScript 通过 Ajax 加载业务数据，调用 DOM API 更新到页面上。</li>
-</ol>
-<p>在纯前端渲染中，我们会明确的告诉浏览器：下面要设置的内容是文本（.innerText），还是属性（.setAttribute），还是样式（.style）等等。浏览器不会被轻易的被欺骗，执行预期外的代码了。</p>
-<p>但纯前端渲染还需注意避免 DOM 型 XSS 漏洞（例如 onload 事件和 href 中的 javascript:xxx 等，请参考下文”预防 DOM 型 XSS 攻击“部分）。</p>
-<p>在很多内部、管理系统中，采用纯前端渲染是问什么问题的。但对于性能要求高，或有 SEO 需求的页面，我们仍然要面对拼接 HTML 的问题。</p>
-<h3 id="转义-HTML"><a href="#转义-HTML" class="headerlink" title="转义 HTML"></a>转义 HTML</h3><p>如果拼接 HTML 是必要的，可以使用合适的转义库，对 HTML 模板各处插入点进行充分的转义。</p>
-<p>虽说常用的模板引擎，如 doT.js、ejs、FreeMarker 等都对HTML 转义，但通常只有一个规则，就是把 &amp; &lt; &gt; “ ‘ / 这几个字符转义掉，确实能起到一定的 XSS 防护作用，但并不完善：</p>
-<table>
-<thead>
-<tr>
-<th>XSS 安全漏洞</th>
-<th>简单转义是否有防护作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HTML 标签文字内容</td>
-<td>有</td>
-</tr>
-<tr>
-<td>HTML 属性值</td>
-<td>有</td>
-</tr>
-<tr>
-<td>CSS 内联样式</td>
-<td>无</td>
-</tr>
-<tr>
-<td>内联 JSON</td>
-<td>无</td>
-</tr>
-<tr>
-<td>跳转链接</td>
-<td>无</td>
-</tr>
-</tbody>
-</table>
-<p>所以要完善 XSS 防护措施，我们要使用更完善更细致的转义策略。</p>
-<h2 id="预防-DOM-型-XSS-攻击"><a href="#预防-DOM-型-XSS-攻击" class="headerlink" title="预防 DOM 型 XSS 攻击"></a>预防 DOM 型 XSS 攻击</h2><p>DOM 型 XSS 攻击，实际上就是网站前端 JavaScript 代码本身不够严谨，把不可信的数据当作代码执行了。</p>
-<p>所以在使用 <code>.innerHTML</code>、<code>.outerHTML</code>、<code>document.write()</code> 时要特别小心，不要把不可信的数据作为 HTML 插到页面上，而应尽量使用 <code>.textContent</code>、<code>.setAttribute()</code> 等。</p>
-<p>如果用 Vue/React 技术栈，并且不使用 <code>v-html</code>/<code>dangerouslySetInnerHTML</code> 功能，就在前端 render 阶段避免 <code>innerHTML</code>、<code>outerHTML</code> 的 XSS 隐患。</p>
-<p>DOM 中的内联事件监听器，如 <code>location</code>、<code>onclick</code>、<code>onerror</code>、<code>onload</code>、<code>onmouseover</code> 等，<code>&lt;a&gt;</code> 标签的 <code>href</code>属性，JavaScript 的 <code>eval()</code>、<code>setTimeout()</code>、<code>setInterval()</code> 等，都能把字符串作为代码运行。如果不可信的数据拼接到字符串中传递给这些 API，很容易产生安全隐患，请务必避免。</p>
-<p>如果项目中有用到这些的话，一定要避免在字符串中拼接不可信数据。</p>
-<h1 id="其他-XSS-防范措施"><a href="#其他-XSS-防范措施" class="headerlink" title="其他 XSS 防范措施"></a>其他 XSS 防范措施</h1><p>虽然在渲染页面和执行 JavaScript 时，通过谨慎的转义可以防止 XSS 的发生，但完全依靠开发的谨慎仍然是不够的。以下介绍一些通用的方案，可以降低 XSS 带来的风险和后果。</p>
-<h2 id="Content-Security-Policy"><a href="#Content-Security-Policy" class="headerlink" title="Content Security Policy"></a>Content Security Policy</h2><p>严格的 CSP 在 XSS 的防范中可以起到以下的作用：</p>
-<ul>
-<li>禁止加载外域代码，防止复杂的攻击逻辑。</li>
-<li>禁止外域提交，网站被攻击后，用户的数据不会泄露到外域。</li>
-<li>禁止内联脚本执行（规则较严格，目前发现 GitHub 使用）。</li>
-<li>禁止未授权的脚本执行（新特性，Google Map 移动版在使用）。</li>
-<li>合理使用上报可以及时发现 XSS，利于尽快修复问题。</li>
-</ul>
-<p>关于更多的 CSP 的详情，在这里不做过多赘述。</p>
-<h2 id="输入内容长度控制"><a href="#输入内容长度控制" class="headerlink" title="输入内容长度控制"></a>输入内容长度控制</h2><p>对于不受信任的输入，都应该限定一个合理的长度。虽然无法完全防止 XSS 发生，但可以增加 XSS 攻击的难度。</p>
-<h2 id="其他安全措施"><a href="#其他安全措施" class="headerlink" title="其他安全措施"></a>其他安全措施</h2><ul>
-<li>HTTP-only Cookie: 禁止 JavaScript 读取某些敏感 Cookie，攻击者完成 XSS 注入后也无法窃取此 Cookie。</li>
-<li>验证码：防止脚本冒充用户提交危险操作。</li>
-</ul>
-<h2 id="XSS-的检测"><a href="#XSS-的检测" class="headerlink" title="XSS 的检测"></a>XSS 的检测</h2><ol>
-<li>使用通用 XSS 攻击字符串手动检测 XSS 漏洞。</li>
-<li>使用扫描工具自动检测 XSS 漏洞。</li>
-</ol>
-<h2 id="XSS-攻击的总结"><a href="#XSS-攻击的总结" class="headerlink" title="XSS 攻击的总结"></a>XSS 攻击的总结</h2><ul>
-<li>利用模板引擎<br>开启模板引擎自带的 HTML 转义功能。</li>
-<li>避免内联事件<br>尽量不要使用 <code>onLoad=&quot;onload(&#39;&#39;)&quot;</code>、<code>onClick=&quot;go(&#39;&#39;)&quot;</code> 这种拼接内联事件的写法。在 JavaScript 中通过 <code>.addEventlistener()</code> 事件绑定会更安全。</li>
-<li>避免拼接 HTML<br>前端采用拼接 HTML 的方法比较危险，如果框架允许，使用 createElement、setAttribute 之类的方法实现。或者采用比较成熟的渲染框架，如 Vue/React 等。</li>
-</ul>
-<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://segmentfault.com/a/1190000016551188" target="_blank" rel="noopener">前端安全系列（一）：如何防止XSS攻击？</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://juejin.im/post/5ca0c0abe51d4553a942c17d" target="_blank" rel="noopener">你不知道的浏览器页面渲染机制s</a></p>
 
     
 
@@ -693,21 +571,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/12/31/Dart 入门学习笔记/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/02/2018-log/" id="post_nav-older" class="next-content">
+        <a href="/2019/04/15/关于浏览器缓存/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
