@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            JavaScript面向对象编程（二）：继承 | 
+        
+        Klein&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Klein">
+    <meta name="description" itemprop="description" content="Klein&#39;s blog website">
+    <meta name="keywords" content=",JavaScript">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Klein&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://ruihuang.site">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="JavaScript面向对象编程（二）：继承 | Klein&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="Klein&#39;s blog website">
+    <meta property="og:article:tag" content="JavaScript"> 
+
+    
+        <meta property="article:published_time" content="3月 17, 2019" />
+        <meta property="article:modified_time" content="3月 17, 2019" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="JavaScript面向对象编程（二）：继承 | Klein&#39;s Blog">
+    <meta name="twitter:description" content="Klein&#39;s blog website">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ruihuang.site" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://ruihuang.site/2019/03/17/JavaScript面向对象编程（二）：继承/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Klein&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Klein",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "headline": "JavaScript面向对象编程（二）：继承",
+    "url": "https://ruihuang.site/2019/03/17/JavaScript面向对象编程（二）：继承/index.html",
+    "datePublished": "3月 17, 2019",
+    "dateModified": "3月 17, 2019",
+    "description": "Klein&#39;s blog website",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ruihuang.site"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-300.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: regular;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-regular.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot);
+            src: local('Roboto'),local('Roboto-Normal'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.eot?#iefix) format('embedded-opentype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff2) format('woff2'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.woff) format('woff'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.ttf) format('truetype'),url(https://lib.baomitu.com/fonts/roboto/roboto-v15-latin-500.svg#Roboto) format('svg')
+        }
+
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://lib.baomitu.com/material-design-icons/3.0.1/iconfont/MaterialIcons-Regular.eot);
+            src: url(https://lib.baomitu.com/material-design-icons/3.0.1/iconfont/MaterialIcons-Regular.woff2) format('woff2'),url(https://lib.baomitu.com/material-design-icons/3.0.1/iconfont/MaterialIcons-Regular.woff) format('woff'),url(https://lib.baomitu.com/material-design-icons/3.0.1/iconfont/MaterialIcons-Regular.ttf) format('truetype')
+        }
+    </style>
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构造函数的继承"><span class="post-toc-number">1.</span> <span class="post-toc-text">构造函数的继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#构造函数绑定"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">构造函数绑定</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型链继承（prototype模式）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">原型链继承（prototype模式）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组合继承"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">组合继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#直接继承-prototype"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">直接继承 prototype</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#利用空对象作为中介"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">利用空对象作为中介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#寄生组合式继承"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">寄生组合式继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#混入方式继承多个对象"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">混入方式继承多个对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浅拷贝继承"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">浅拷贝继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6类继承extends"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">ES6类继承extends</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#非构造函数继承"><span class="post-toc-number">2.</span> <span class="post-toc-text">非构造函数继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型式继承"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">原型式继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#寄生式继承"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">寄生式继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浅拷贝"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">浅拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#深拷贝"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">深拷贝</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小结"><span class="post-toc-number">3.</span> <span class="post-toc-text">小结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/thumbnails/JavaScript.jpg)">
+    
+            <p class="article-headline-p">
+                JavaScript面向对象编程（二）：继承
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avater.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Klein</strong>
+        <span>3月 17, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADkklEQVR42u3awW7jMAwE0P7/T+9eC+wmmCElNwWeT0UaWNbLYUyRX39c364vBDhw4MCBAwcOHDhwfDDHV3z950YvPn+58Lfvv7rz++8k/233ggMHDhw4bnDk23i1cAtRx2GwveFecODAgQPHNY52mTYC8429/xlmq+DAgQMHjt/FkQTkrJBrfwYcOHDgwPEbOdoIzJnef94GPw4cOHDg+FmOU8G2icz8+K9dCwcOHDhwPMmRDwF8/t+PznfgwIEDB45/OM5eSRGVlHCzsnD4zDhw4MCB4yjH2THozdDDpvW1GcXDgQMHDhxnOWa3eE/Ztq/abbfNqrqEw4EDBw4cFzg2I2iz8ehNgZf/PMOgxYEDBw4cJUceq/kG2pLsRqEYDVXgwIEDB46jHPuhgaSES4Izj8xNGOPAgQMHjmc49g2h6BiuLPnyaM+PF3HgwIEDx22ONnTzRlQbtzPivJCrK1ocOHDgwLHgaMOy3cbsCG82DLEq4XDgwIEDx9HDwVMBPIvSfSurjVgcOHDgwHGDY3aglhdsycZa3HzkIhqkwIEDBw4cRznag7nNuFtbjLWUecDjwIEDB45nODZjAftBhLxsmxWQRUWLAwcOHDgOceSP3kZvXgq2LwGz++DAgQMHjmc48sXyTc4GI061oKInwYEDBw4cRzk2wTaLyTYIkwifvQTgwIEDB47bHPkys/DLwzX/ATbPgwMHDhw4nuHIIzYPtnZUbtNSSp4ZBw4cOHDc42g30BZ+7TfzQi558rqEw4EDBw4cFw4HNwdzeWOpDcizhSUOHDhw4LjHMQvU/OAvj8Ykeg80mXDgwIEDx2WOKIri1lE79JCvPivtDrx34MCBAweOEUdbaJ09vMtXrMuz5P44cODAgeMox6xAmpV/swGFNlbzJhYOHDhw4LjBkbSX2i0lgbofj8if/FgXDgcOHDhwxB38vJDbH/+1JVbbBqvH73DgwIEDx1GO9poVeO2R4qZNdey9AwcOHDhwrKeOk9CaHfkljziL/PaFIHrvwIEDBw4ca45NmycPy6KsimnawTgcOHDgwPEkx2y0enaclzec8pAeNrpw4MCBA8ePcuQFVXuAuCrD4hi+ONCAAwcOHDgWQTuL3rwFNeM71nbCgQMHDhyHOJKjuqSISh4rL8M2WNEucODAgQPHBY7NQHO+4XxL7VqbUWwcOHDgwHGWw4UDBw4cOHDgwIEDB44Pu/4C7rVj5L9p7xoAAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>JavaScript中常见的继承：</p>
+<h2 id="构造函数的继承"><a href="#构造函数的继承" class="headerlink" title="构造函数的继承"></a>构造函数的继承</h2><h3 id="构造函数绑定"><a href="#构造函数绑定" class="headerlink" title="构造函数绑定"></a>构造函数绑定</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.species = <span class="string">"人类"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.a = <span class="number">1</span></span><br><span class="line">Person.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Chinese</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    Person.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch1 = <span class="keyword">new</span> Chinese(<span class="string">'小明'</span>, <span class="number">12</span>)</span><br><span class="line">ch1.species <span class="comment">// 人类</span></span><br><span class="line">ch1.a <span class="comment">// undefinde</span></span><br><span class="line">ch1.eat() <span class="comment">// undefinde</span></span><br></pre></td></tr></table></figure>
+<p>核心代码是 <code>SuperType.call(this)</code>，创建子类实例的时候调用父类构造函数，所以子类的每个实例都会把父类的属性和方法复制到自身。</p>
+<p>不过只能复制父类自身的属性和方法，无法复制父类原型的属性和方法</p>
+<p>缺点：</p>
+<ul>
+<li>只能继承父类的实例属性和方法，不能继承原型属性和方法</li>
+<li>无法实现复用，每个子类都有父类实例函数的副本，影响性能</li>
+</ul>
+<h3 id="原型链继承（prototype模式）"><a href="#原型链继承（prototype模式）" class="headerlink" title="原型链继承（prototype模式）"></a>原型链继承（prototype模式）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.species = <span class="string">"人类"</span>;</span><br><span class="line">    <span class="keyword">this</span>.list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.a = <span class="number">1</span></span><br><span class="line">Person.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Chinese</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Chinese.prototype = <span class="keyword">new</span> Person();</span><br><span class="line">Chinese.prototype.constructor = Chinese</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch1 = <span class="keyword">new</span> Chinese(<span class="string">'小明'</span>, <span class="number">12</span>)</span><br><span class="line">ch1.species <span class="comment">// 人类</span></span><br><span class="line">ch1.a <span class="comment">// 1</span></span><br><span class="line">ch1.eat() <span class="comment">// eat</span></span><br><span class="line">ch1.list <span class="comment">// [1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例对原型链上的引用类型进行操作</span></span><br><span class="line">ch1.list.push(<span class="number">4</span>)</span><br><span class="line">ch1.list <span class="comment">// [1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch2 = <span class="keyword">new</span> Chinese(<span class="string">'老周'</span>，<span class="number">21</span>);</span><br><span class="line">ch2.list <span class="comment">// [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<p><code>Chinese.prototype = new Person();</code>相当于完全删除了prototype 对象原先的值，然后赋予一个新值。</p>
+<p>那<code>Chinese.prototype.constructor = Chinese</code>又是什么？</p>
+<p>任何一个 <code>prototype</code> 对象都有一个 <code>constructor</code> 属性，指向它的构造函数。如果没有<code>Chinese.prototype.constructor = new Person()</code> 这一行，<code>Chinese.prototype.constructor</code> 会指向 <code>Chinese</code> 的；加了这一行以后，<code>Chinese.prototype.constructor</code> 指向 <code>Person</code> 。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果没有 Chinese.prototype.constructor = Chinese </span></span><br><span class="line">Chinese.prototype.constructor === Person <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>这显然会导致继承链的紊乱（ <code>ch1</code> 明明是用构造函数 <code>Chinese</code> 生成的），因此我们必须手动纠正。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ch1.__proto__.constructor === Person <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>缺点：</p>
+<p>多个实例对原型链上的引用类型的操作会导致原型对象被篡改。</p>
+<h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3><p>组合上述两种方法就是组合继承。用原型链实现对原型属性和方法的继承，用借用构造函数技术来实现实例属性的继承。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.species = <span class="string">"人类"</span>;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.a = <span class="number">1</span></span><br><span class="line">Person.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Chinese</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    Person.apply(<span class="keyword">this</span>, [name])</span><br><span class="line">    <span class="comment">// Person.call(this, name)</span></span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Chinese.prototype = <span class="keyword">new</span> Person();</span><br><span class="line">Chinese.prototype.constructor = Chinese</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch1 = <span class="keyword">new</span> Chinese(<span class="string">'小明'</span>, <span class="number">12</span>)</span><br><span class="line">ch1.species <span class="comment">// 人类</span></span><br><span class="line">ch1.a <span class="comment">// 1</span></span><br><span class="line">ch1.eat() <span class="comment">// eat</span></span><br></pre></td></tr></table></figure>
+<p>当第一次调用 <code>Person()</code> ：重写 <code>Chinese.prototype</code>，将 <code>Chinese.prototype</code> 指向 一个 <code>Person</code> 实例，包括两个属性 <code>name</code>，<code>species</code></p>
+<p>当第二次调用<code>Person()</code>：给 <code>ch1</code> 附加两个属性<code>name</code>，<code>color</code>。再加上 <code>Chinese</code> 构造器添加的 <code>age</code> 属性，<code>ch1</code>总共有三个属性 <code>name</code>，<code>color</code>，<code>age</code>。</p>
+<p>缺点：</p>
+<p>使用子类创建实例对象时，其原型中会存在与父类构造器自身相同数量的属性/方法。</p>
+<h3 id="直接继承-prototype"><a href="#直接继承-prototype" class="headerlink" title="直接继承 prototype"></a>直接继承 prototype</h3><p>该方法是对 原型链继承（prototype 继承） 的改进。</p>
+<p>将所有不变的方法/属性都写入 prototype 属性中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.species = <span class="number">1</span></span><br><span class="line">Person.prototype.list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">Person.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Chinese</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Chinese.prototype = Person.prototype;</span><br><span class="line">Chinese.prototype.constructor = Chinese</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch1 = <span class="keyword">new</span> Chinese(<span class="string">'小明'</span>, <span class="number">12</span>)</span><br><span class="line"><span class="keyword">var</span> ch2 = <span class="keyword">new</span> Chinese(<span class="string">'老周'</span>, <span class="number">21</span>)</span><br><span class="line">ch1.species <span class="comment">// 人类</span></span><br><span class="line">ch1.a <span class="comment">// 1</span></span><br><span class="line">ch1.eat() <span class="comment">// eat</span></span><br><span class="line"></span><br><span class="line">ch1.list.push(<span class="number">4</span>)</span><br><span class="line">ch1.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">ch2.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">ch1.list === ch2.list <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>缺点:</p>
+<p>是 <code>Chinese.prototype</code> 和 <code>Person.prototype</code> 现在指向了同一个对象，那么任何对 <code>Chinese.prototype</code> 的修改，都会反映到 <code>Person.prototype</code>。</p>
+<p>所以，上面这一段代码其实是有问题的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.constructor === Chinese <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>而且多个实例对原型链上的引用类型的操作会导致原型对象被篡改。</p>
+<h3 id="利用空对象作为中介"><a href="#利用空对象作为中介" class="headerlink" title="利用空对象作为中介"></a>利用空对象作为中介</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.species = <span class="string">'人类'</span></span><br><span class="line">Person.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Chinese</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">F.prototype = Person.prototype</span><br><span class="line">Chinese.prototype = <span class="keyword">new</span> F();</span><br><span class="line">Chinese.prototype.constructor = Chinese</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch1 = <span class="keyword">new</span> Chinese(<span class="string">'小明'</span>, <span class="number">12</span>)</span><br><span class="line"><span class="keyword">var</span> ch2 = <span class="keyword">new</span> Chinese(<span class="string">'老周'</span>, <span class="number">21</span>)</span><br><span class="line">ch1.species <span class="comment">// 人类</span></span><br><span class="line">ch1.a <span class="comment">// 1</span></span><br><span class="line">ch1.eat() <span class="comment">// eat</span></span><br></pre></td></tr></table></figure>
+<p>常将上面的方法，封装成一个函数，便于使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.species = <span class="string">'人类'</span>;</span><br><span class="line">Person.prototype.list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">Person.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Chinese</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">    F.prototype = Parent.prototype;</span><br><span class="line">    Child.prototype = <span class="keyword">new</span> F();</span><br><span class="line">    Child.prototype.constructor = Child.constructor;</span><br><span class="line">    Child.prototype.uber = Parent.prototype; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">extend(Chinese, Person);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch1 = <span class="keyword">new</span> Chinese(<span class="string">'小明'</span>, <span class="number">12</span>)</span><br><span class="line"><span class="keyword">var</span> ch2 = <span class="keyword">new</span> Chinese(<span class="string">'老周'</span>, <span class="number">21</span>)</span><br><span class="line">ch1.species <span class="comment">// 人类</span></span><br><span class="line">ch1.eat() <span class="comment">// eat</span></span><br><span class="line"></span><br><span class="line">ch1.list.push(<span class="number">4</span>)</span><br><span class="line">ch1.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">ch2.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">ch1.list === ch2.list <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><code>extend</code>函数的最后一行意思是为子对象设一个 <code>uber</code> 属性，这个属性直接指向父对象的 <code>prototype</code> 属性。这等于在子对象上打开一条通道，可以直接调用父对象的方法。这一行放在这里，只是为了实现继承的完备性，纯属备用性质。</p>
+<p>这个<code>extend</code>函数，就是YUI库如何实现继承的方法。</p>
+<p>而且该函数还有另外一种写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(Parent.prototype);</span><br><span class="line">  Child.prototype = obj;</span><br><span class="line">  Child.prototype.constructor = Child;</span><br><span class="line">  Child.prototype.uber = Parent.prototype;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个方法虽然改进了<code>Chinese.prototype</code> 和 <code>Person.prototype</code> 现在指向了 <code>Chinese</code> 的问题。但是依然有多个实例对原型链上的引用类型的操作会导致原型对象被篡改的问题</p>
+<p>缺点：</p>
+<p>多个实例对原型链上的引用类型的操作会导致原型对象被篡改。</p>
+<h3 id="寄生组合式继承"><a href="#寄生组合式继承" class="headerlink" title="寄生组合式继承"></a>寄生组合式继承</h3><p>在上面一种方式的基础上加入构造函数绑定继承来传递参数来实现继承</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.list = [<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.a = <span class="string">'a'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在父类构造器的原型属性上放共用属性/方法</span></span><br><span class="line">Person.prototype.species = <span class="string">'人类'</span>;</span><br><span class="line">Person.prototype.listOnPrototype = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">Person.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Chinese</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    Person.apply(<span class="keyword">this</span>, [name]);</span><br><span class="line">    <span class="comment">// Person.call(this, name);</span></span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> obj = <span class="built_in">Object</span>.create(Parent.prototype);</span><br><span class="line">    Child.prototype = obj;</span><br><span class="line">    Child.prototype.constructor = Child;</span><br><span class="line">    Child.prototype.uber = Parent.prototype; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">extend(Chinese, Person);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch1 = <span class="keyword">new</span> Chinese(<span class="string">'小明'</span>, <span class="number">12</span>);</span><br><span class="line"><span class="keyword">var</span> ch2 = <span class="keyword">new</span> Chinese(<span class="string">'老周'</span>, <span class="number">21</span>);</span><br><span class="line"></span><br><span class="line">ch1.species <span class="comment">// 人类</span></span><br><span class="line">ch1.name <span class="comment">// 小明</span></span><br><span class="line">ch1.age <span class="comment">// 12</span></span><br><span class="line">ch1.eat() <span class="comment">// eat</span></span><br><span class="line"></span><br><span class="line">ch2.species <span class="comment">// 人类</span></span><br><span class="line">ch2.name <span class="comment">// 老周</span></span><br><span class="line">ch2.age <span class="comment">// 21</span></span><br><span class="line">ch2.eat() <span class="comment">// eat</span></span><br><span class="line"></span><br><span class="line">ch1.list.push(<span class="number">4</span>)</span><br><span class="line">ch1.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">ch2.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">ch1.list === ch2.list <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>这个例子的高效率体现在它只调用了一次父类构造器，并且因此避免了在子类构造器的原型上创建不必要的、多余的属性。与此同时，原型链还能保持不变；因此，还能够正常使用 <code>instanceof</code> 和 <code>isPrototypeOf()</code></p>
+<p><strong>这是最成熟的方法，也是现在库实现的方法</strong></p>
+<h3 id="混入方式继承多个对象"><a href="#混入方式继承多个对象" class="headerlink" title="混入方式继承多个对象"></a>混入方式继承多个对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="string">'a'</span>;</span><br><span class="line">    <span class="keyword">this</span>.alist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent1.prototype.a1 = <span class="string">'a1'</span>;</span><br><span class="line">Parent1.prototype.a1list = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.b = <span class="string">'b'</span>;</span><br><span class="line">    <span class="keyword">this</span>.blist = [<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent2.prototype.b1 = <span class="string">'b1'</span>;</span><br><span class="line">Parent2.prototype.b1list = [<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    Parent1.call(<span class="keyword">this</span>);</span><br><span class="line">    Parent2.call(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.c = c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Child.prototype = <span class="built_in">Object</span>.create(Parent1.prototype);</span><br><span class="line"><span class="built_in">Object</span>.assign(Child.prototype, Parent2.prototype);</span><br><span class="line">Child.prototype.constructor = Child;</span><br><span class="line"></span><br><span class="line">Child.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch1 = <span class="keyword">new</span> Child(<span class="string">'c1'</span>);</span><br><span class="line"><span class="keyword">var</span> ch2 = <span class="keyword">new</span> Child(<span class="string">'c2'</span>);</span><br><span class="line"></span><br><span class="line">ch1.a <span class="comment">// a</span></span><br><span class="line">ch1.alist <span class="comment">// [1,2,3]</span></span><br><span class="line">ch1.a1list <span class="comment">// [4,5,6]</span></span><br><span class="line"></span><br><span class="line">ch2.a <span class="comment">// a</span></span><br><span class="line">ch2.alist <span class="comment">// [1,2,3]</span></span><br><span class="line">ch2.a1list <span class="comment">// [4,5,6]</span></span><br><span class="line"></span><br><span class="line">ch1.alist.push(<span class="number">4</span>)</span><br><span class="line">ch1.alist <span class="comment">// [1,2,3,4]</span></span><br><span class="line">ch2.alist <span class="comment">// [1,2,3]</span></span><br><span class="line"></span><br><span class="line">ch1.a1list.push(<span class="number">4</span>)</span><br><span class="line">ch1.a1list <span class="comment">// [4,5,6,4]</span></span><br><span class="line">ch2.a1list <span class="comment">// [4,5,6,4]</span></span><br><span class="line"></span><br><span class="line">ch1.a1list === ch2.a1list <span class="comment">// true</span></span><br><span class="line">ch1.b1list === ch2.b1list <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>是在寄生组合继承的基础上使用 <code>Object.assign</code> 方法在子类构造器的原型上添加属性/方法的方式来继承多个对象。</p>
+<p>所有子类实例通过原型链继承并共享子类构造器的原型上的使用 <code>Object.assign</code> 方法添加的属性/方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ch1.__proto__.b1list === Child.prototype.b1list <span class="comment">// true</span></span><br><span class="line">ch1.b1list === ch2.b1list <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>所有子类实例通过原型链继承并共享父类构造器的原型上的使用 <code>Object.create</code> 方法添加的属性/方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ch1.__proto__.__proto__a1list === Parent1.prototype.a1list <span class="comment">// true</span></span><br><span class="line">ch1.a1list === ch2.a1list <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>所以</p>
+<p><strong>在子类构造器自身的属性/方法不但会被继承而且会被共享。</strong><br><strong>在父类构造器自身的属性/方法会被继承但是不共享。</strong></p>
+<h3 id="浅拷贝继承"><a href="#浅拷贝继承" class="headerlink" title="浅拷贝继承"></a>浅拷贝继承</h3><p>把父类的所有不变属性，都放到它的 <code>prototype</code> 对象上。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype.species = <span class="string">'人类'</span></span><br><span class="line">Person.prototype.list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Chinese</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyExtend</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> p = Parent.prototype</span><br><span class="line">    <span class="keyword">let</span> c = Child.prototype</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> i <span class="keyword">in</span> p) &#123;</span><br><span class="line">        c[i] = p[i];</span><br><span class="line">    &#125;</span><br><span class="line">    c.uber = p</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">copyExtend(Chinese, Person)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ch1 = <span class="keyword">new</span> Chinese(<span class="string">'小明'</span>, <span class="number">12</span>);</span><br><span class="line"><span class="keyword">var</span> ch2 = <span class="keyword">new</span> Chinese(<span class="string">'老周'</span>, <span class="number">21</span>);</span><br><span class="line"></span><br><span class="line">ch1.species <span class="comment">// 人类</span></span><br><span class="line">ch1.list <span class="comment">//[1,2,3]</span></span><br><span class="line">ch1.list === Chinese.prototype.list <span class="comment">// true</span></span><br><span class="line">ch2.list === Chinese.prototype.list <span class="comment">// true</span></span><br><span class="line">ch1.list === ch2.list <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">Chinese.prototype.list === Person.prototype.list <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">ch1.list.push(<span class="number">4</span>)</span><br><span class="line">ch1.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">ch2.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">Person.prototype.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line"></span><br><span class="line">Chinese.prototype.constructor === Chinese <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>原理是将所有父构造器原型上的属性/方法浅复制到自构造器的原型上。</p>
+<p>实例通过原型链继承到子类构造器原型上的属性/方法。</p>
+<p>缺点：</p>
+<p>子类实例对原型链上的引用类型的操作会导致原型对象被篡改，而且不仅是子类构造器上的原型对象会被篡改，父类构造器上的原型对象也会被篡改。</p>
+<h3 id="ES6类继承extends"><a href="#ES6类继承extends" class="headerlink" title="ES6类继承extends"></a>ES6类继承extends</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line">    <span class="comment">// constructor</span></span><br><span class="line">    <span class="keyword">constructor</span>(height, width) &#123;</span><br><span class="line">        <span class="keyword">this</span>.height = height;</span><br><span class="line">        <span class="keyword">this</span>.width = width;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Getter</span></span><br><span class="line">    get area() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.calcArea()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Method</span></span><br><span class="line">    calcArea() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.height * <span class="keyword">this</span>.width;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> rectangle = <span class="keyword">new</span> Rectangle(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line"><span class="built_in">console</span>.log(rectangle.area);</span><br><span class="line"><span class="comment">// 输出 200</span></span><br><span class="line"></span><br><span class="line">-----------------------------------------------------------------</span><br><span class="line"><span class="comment">// 继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(length) &#123;</span><br><span class="line">    <span class="keyword">super</span>(length, length);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果子类中存在构造函数，则需要在使用“this”之前首先调用 super()。</span></span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'Square'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  get area() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.height * <span class="keyword">this</span>.width;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> square = <span class="keyword">new</span> Square(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(square.area);</span><br><span class="line"><span class="comment">// 输出 100</span></span><br></pre></td></tr></table></figure>
+<p><code>extends</code> 继承的核心代码如下，其实现和上述的寄生组合式继承方式一样</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_inherits</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 创建对象，创建父类原型的一个副本</span></span><br><span class="line">    <span class="comment">// 增强对象，弥补因重写原型而失去的默认的constructor 属性</span></span><br><span class="line">    <span class="comment">// 指定对象，将新创建的对象赋值给子类的原型</span></span><br><span class="line">    Child.prototype = <span class="built_in">Object</span>.create(Parent &amp;&amp; Parent.prototype, &#123;</span><br><span class="line">        <span class="string">'constructor'</span>: &#123;</span><br><span class="line">            value: <span class="string">'Child'</span>,</span><br><span class="line">            enumerable: <span class="literal">false</span>,</span><br><span class="line">            configurable: <span class="literal">true</span>,</span><br><span class="line">            writable: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (superType) &#123;</span><br><span class="line">        <span class="comment">// 如果浏览器支持 Object.setPrototypeOf</span></span><br><span class="line">        <span class="built_in">Object</span>.setPrototypeOf </span><br><span class="line">            ? <span class="built_in">Object</span>.setPrototypeOf(subType, superType) </span><br><span class="line">            : subType.__proto__ = superType;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>函数声明和类声明的区别：</li>
+</ol>
+<p><strong>函数声明会提升，类声明不会。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> Rectangle(); </span><br><span class="line"><span class="comment">// ReferenceError</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>首先需要声明你的类，然后才能访问它，否则抛出一个ReferenceError异常。</p>
+<ol start="2">
+<li>ES5继承和ES6继承的区别</li>
+</ol>
+<ul>
+<li><p>ES5的继承实质上是先创建子类的实例对象，然后再将父类的方法添加到this上（Parent.call(this)）.</p>
+</li>
+<li><p>ES6的继承有所不同，实质上是先创建父类的实例对象this，然后再用子类的构造函数修改this。因为子类没有自己的this对象，所以必须先调用父类的super()方法，否则新建实例报错</p>
+</li>
+</ul>
+<p>ES6 <code>extends</code> 继承，主要就是：</p>
+<ol>
+<li><p>将子类构造函数(Child)的原型(<strong>proto</strong>)指向了父类构造函数(Parent)。即：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Child.__proto__ ==== Parent</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将子类实例child的原型对象(Child.prototype) 的原型(<strong>proto</strong>)指向了父类parent的原型对象(Parent.prototype)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Child.prototype.__proto__ ==== Parent.prototype</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子类构造函数Child继承了父类构造函数Preant的里的属性。使用super调用的(ES5则用call或者apply调用传参)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    Person.call(<span class="keyword">this</span>, name);</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>寄生组合式继承的原理就是以上的第二和第三点，<code>extends</code> 正是在寄生组合继承的基础上实现了第一点。</p>
+<h2 id="非构造函数继承"><a href="#非构造函数继承" class="headerlink" title="非构造函数继承"></a>非构造函数继承</h2><h3 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = &#123;</span><br><span class="line">    species: <span class="string">"人类"</span>,</span><br><span class="line">    list: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">  F.prototype = obj;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Chinese = object(Person);</span><br><span class="line"><span class="keyword">var</span> Japanese = object(Person);</span><br><span class="line">Chinese.Nationality = <span class="string">'中国人'</span>;</span><br><span class="line">Chinese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Japanese.Nationality = <span class="string">'日本人'</span>;</span><br><span class="line">Japanese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Chinese.list.push</span><br><span class="line">Chinese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line"></span><br><span class="line">Japanese.list === Chinese.list <span class="comment">// true</span></span><br><span class="line">Chinese.__proto__ === Person <span class="comment">// true</span></span><br><span class="line">Chinese.__proto__ === Japanese.__proto__ <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><code>object()</code> 对传入其中的对象执行了一次浅复制，将构造函数F的原型直接指向传入的对象。</p>
+<p>缺点：</p>
+<ul>
+<li>原型链继承多个实例的引用类型属性指向相同，存在篡改的可能。</li>
+<li>无法传递参数</li>
+</ul>
+<p>另外，ES5中存在Object.create()的方法，能够代替上面的object方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = &#123;</span><br><span class="line">    species: <span class="string">"人类"</span>,</span><br><span class="line">    list: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Chinese = <span class="built_in">Object</span>.create(Person, &#123;</span><br><span class="line">    <span class="string">'Nationality'</span>: &#123;</span><br><span class="line">        value: <span class="string">'中国人'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> Japanese = <span class="built_in">Object</span>.create(Person, &#123;</span><br><span class="line">    <span class="string">'Nationality'</span>: &#123;</span><br><span class="line">        value: <span class="string">'日本人'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Chinese.Nationality <span class="comment">// 中国人</span></span><br><span class="line">Japanese.Nationality <span class="comment">// 日本人</span></span><br><span class="line">Chinese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Chinese.list.push(<span class="number">4</span>);</span><br><span class="line">Chinese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line"></span><br><span class="line">Japanese.list === Chinese.list <span class="comment">// true</span></span><br><span class="line">Chinese.__proto__ === Person <span class="comment">// true</span></span><br><span class="line">Chinese.__proto__ === Japanese.__proto__ <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="寄生式继承"><a href="#寄生式继承" class="headerlink" title="寄生式继承"></a>寄生式继承</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = &#123;</span><br><span class="line">    species: <span class="string">"人类"</span>,</span><br><span class="line">    list: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">  F.prototype = obj;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAnother</span>(<span class="params">original</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> clone = object(original)</span><br><span class="line">  clone.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">// 以某种方式来增强对象</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hi"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> clone; <span class="comment">// 返回这个对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Chinese = object(Person);</span><br><span class="line"><span class="keyword">var</span> Japanese = object(Person);</span><br><span class="line">Chinese.Nationality = <span class="string">'中国人'</span>;</span><br><span class="line">Japanese.Nationality = <span class="string">'日本人'</span>;</span><br><span class="line"></span><br><span class="line">Chinese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Chinese.sayHi() <span class="comment">// hi</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Japanese.sayHi() <span class="comment">// hi</span></span><br><span class="line">Chinese.list.push</span><br><span class="line">Chinese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line"></span><br><span class="line">Japanese.list === Chinese.list <span class="comment">// true</span></span><br><span class="line">Chinese.__proto__ === Person <span class="comment">// true</span></span><br><span class="line">Chinese.__proto__ === Japanese.__proto__ <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>Object.create版：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = &#123;</span><br><span class="line">    species: <span class="string">"人类"</span>,</span><br><span class="line">    list: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAnother</span>(<span class="params">original, propertiesObject</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> clone = <span class="built_in">Object</span>.create(original, propertiesObject)</span><br><span class="line">  clone.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">// 以某种方式来增强对象</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hi"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> clone; <span class="comment">// 返回这个对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Chinese = createAnother(Person, &#123;</span><br><span class="line">    <span class="string">'Nationality'</span>: &#123;</span><br><span class="line">        value: <span class="string">'中国人'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> Japanese = createAnother(Person, &#123;</span><br><span class="line">    <span class="string">'Nationality'</span>: &#123;</span><br><span class="line">        value: <span class="string">'日本人'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Chinese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Chinese.sayHi() <span class="comment">// hi</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Japanese.sayHi() <span class="comment">// hi</span></span><br><span class="line">Chinese.list.push</span><br><span class="line">Chinese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line"></span><br><span class="line">Japanese.list === Chinese.list <span class="comment">// true</span></span><br><span class="line">Chinese.__proto__ === Person <span class="comment">// true</span></span><br><span class="line">Chinese.__proto__ === Japanese.__proto__ <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>其实和原型式继承是一样的。只是在其基础上进行封装，为构造函数新增属性和方法。</p>
+<p>缺点（同原型式继承）：</p>
+<ul>
+<li>原型链继承多个实例的引用类型属性指向相同，存在篡改的可能。</li>
+<li>无法传递参数</li>
+</ul>
+<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>除了使用”prototype链”实现继承以外，还有另一种思路：把父对象的属性，全部拷贝给子对象，也能实现继承。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extendCopy</span>(<span class="params">p</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> c = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123; </span><br><span class="line">    　　c[i] = p[i];</span><br><span class="line">    &#125;</span><br><span class="line">    c.uber = p;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Person = &#123;</span><br><span class="line">    species: <span class="string">"人类"</span>,</span><br><span class="line">    list: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Chinese = extendCopy(Person);</span><br><span class="line">Chinese.Nationality = <span class="string">'中国人'</span></span><br><span class="line"><span class="keyword">var</span> Japanese = extendCopy(Person);</span><br><span class="line">Japanese.Nationality = <span class="string">'日本人'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Chinese.Nationality <span class="comment">// 中国人</span></span><br><span class="line">Japanese.Nationality <span class="comment">// 日本人</span></span><br><span class="line">Chinese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Chinese.list.push(<span class="number">4</span>);</span><br><span class="line">Chinese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line"></span><br><span class="line">Japanese.list === Chinese.list <span class="comment">// true</span></span><br><span class="line">Chinese.__proto__ === Japanese.__proto__ <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><code>extendCopy()</code>只是拷贝基本类型的数据，我们把这种拷贝叫做”浅拷贝”。这是早期jQuery实现继承的方式。</p>
+<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>深拷贝能够实现真正意义上的数组和对象的拷贝只要递归调用”浅拷贝”即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">p, c</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> c = c || &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</span><br><span class="line">　　    <span class="keyword">if</span> (<span class="keyword">typeof</span> p[i] === <span class="string">'object'</span>) &#123;</span><br><span class="line">            c[i] = (p[i].constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</span><br><span class="line">            deepCopy(p[i], c[i]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            c[i] = p[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Person = &#123;</span><br><span class="line">    species: <span class="string">"人类"</span>,</span><br><span class="line">    list: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Chinese = deepCopy(Person);</span><br><span class="line"><span class="keyword">var</span> Japanese = deepCopy(Person);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Chinese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3]</span></span><br><span class="line">Chinese.list.push(<span class="number">4</span>);</span><br><span class="line">Chinese.list <span class="comment">// [1,2,3,4]</span></span><br><span class="line">Japanese.list <span class="comment">// [1,2,3]</span></span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>继承对于JS来说就是父类拥有的方法和属性、静态方法等，子类也要拥有。子类中可以利用原型链查找，也可以在子类调用父类，或者从父类拷贝一份到子类等方案。 继承方法有很多，重点在于必须理解这些对象、原型以及构造器的工作方式。</p>
+<p>回顾ES6的 <code>extends</code>。主要原理就是三点：</p>
+<ol>
+<li>子类构造函数的<strong>proto</strong>指向父类构造器，继承父类的静态方法</li>
+<li>子类构造函数的prototype的<strong>proto</strong>指向父类构造器的prototype，继承父类的方法。</li>
+<li>子类构造器里调用父类构造器，继承父类的属性。</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html" target="_blank" rel="noopener">Javascript面向对象编程（二）：构造函数的继承</a><br><a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html" target="_blank" rel="noopener">Javascript面向对象编程（三）：非构造函数的继承</a><br><a href="https://juejin.im/post/5c433e216fb9a049c15f841b" target="_blank" rel="noopener">面试官问：JS的继承</a><br><a href="https://juejin.im/post/5bcb2e295188255c55472db0#heading-0" target="_blank" rel="noopener">JavaScript常用八种继承方案</a></p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/03/19/【深浅拷贝原理1】解析赋值、浅拷贝和深拷贝的区别/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/15/深入理解-Object-create/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avater.jpg" alt="Klein's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        contact@ruihuang.site
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/学习笔记/">学习笔记<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/实用工具/">实用工具<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/环境配置/">环境配置<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/瞎折腾/">瞎折腾<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Klein's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
